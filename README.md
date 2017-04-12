@@ -8,7 +8,14 @@ The collection of Elixir Tips and Tricks...
 
 This is just the other way of writing Multiple **OR** conditions. This is not the recommended approach because in regular approach when the condition evaluates to **true** , it stops executing the remaining conditions which saves time of evaluation unlike this approach which evaluates all conditions first in list. This is just bad but good for discoveries. 
 
-<script src="https://gist.github.com/blackode/9e3d873ad803ef6d4f653d8bf2e1b028.js"></script>
+```elixir
+# Regular Approach
+find = fn(x) when x>10 or x<5 or x==7 -> x end 
+
+# Our Hack
+hell = fn(x) when true in [x>10,x<5,x==7] -> x end 
+
+```
 
 ### 2. i( term) Elixir Term Type and Meta Data
 
@@ -20,9 +27,42 @@ iex> i(1..5)
 
 ### 3. iex Custom Configuration - iex Decoration
 
-Save the following file as `.iex.exs` in your `~` home directory and see the magic.
+Copy the content into a file and save the file as `.iex.exs` in your `~` home directory and see the magic.
+You can also download the file [HERE](https://gist.github.com/blackode/5728517116d7a4d08f0a4faddd8c145a)
 
-<script src="https://gist.github.com/blackode/5728517116d7a4d08f0a4faddd8c145a.js"></script>
+```elixir
+# IEx.configure colors: [enabled: true]
+# IEx.configure colors: [ eval_result: [ :cyan, :bright ] ]
+IO.puts IO.ANSI.red_background() <> IO.ANSI.white() <> " ❄❄❄ Good Luck with Elixir ❄❄❄ " <> IO.ANSI.reset
+Application.put_env(:elixir, :ansi_enabled, true)
+IEx.configure(
+ colors: [
+   eval_result: [:green, :bright] ,
+   eval_error: [[:red,:bright,"Bug Bug ..!!"]],
+   eval_info: [:yellow, :bright ],
+ ],
+ default_prompt: [
+   "\e[G",    # ANSI CHA, move cursor to column 1
+    :white,
+    "I",
+    :red,
+    "❤" ,       # plain string
+    :green,
+    "%prefix",:white,"|",
+     :blue,
+     "%counter",
+     :white,
+     "|",
+    :red,
+    "▶" ,         # plain string
+    :white,
+    "▶▶"  ,       # plain string
+      # ❤ ❤-»" ,  # plain string
+    :reset
+  ] |> IO.ANSI.format |> IO.chardata_to_string
+
+)
+```
 
 
 
@@ -32,12 +72,35 @@ Save the following file as `.iex.exs` in your `~` home directory and see the ma
 
 Each `x` sigil call respective `sigil_x` definition
 
-<script src="https://gist.github.com/blackode/15ddca326d604fbef68ae833504ac37e.js"></script>
+Defining Custom Sigils
+
+```elixir
+defmodule MySigils do
+  #returns the downcasing string if option l is given then returns the list of downcase letters
+  def sigil_l(string,[]), do: String.Casing.downcase(string)
+  def sigil_l(string,[?l]), do: String.Casing.downcase(string) |> String.graphemes
+  
+  #returns the upcasing string if option l is given then returns the list of downcase letters
+  def sigil_u(string,[]), do: String.Casing.upcase(string)
+  def sigil_u(string,[?l]), do: String.Casing.upcase(string) |> String.graphemes
+end
+```
+#### usage
+
+Load the module into iex
+```elixir
+iex> import MySigils
+iex> ~l/HELLO/
+"hello"
+iex> ~l/HELLO/l
+["h", "e", "l", "l", "o"]
+iex> ~u/hello/
+"HELLO"
+iex> ~u/hello/l
+["H", "E", "L", "L", "O"]
+```
 
 ### 5. Custom Error Definitions
-
-5. Custom Error Definitions
-
 #### Define Custom Error
 
 ```elixir
@@ -57,10 +120,15 @@ iex> raise BugError, message: "I am Bug.." #here passing the message dynamic
 ```
 
 ### 6. Get a Value from Nested Maps Easily
+The `get_in` function can be used to retrieve a nested value in nested maps using a list of keys.
+```elixir
+nested_map = %{ name: %{ first_name: "blackode"} }     #Example of Nested Map
+first_name = get_in(nested_map, [:name, :first_name])  # Retrieving the Key
 
-<script src="https://gist.github.com/blackode/c19472093bedff864a5e6363784dd026.js"></script>
-
-Getting a Value from Nested Maps
+# Returns nil for missing value 
+nil = get_in(nested, [:name, :last_name])              # returns nil when key is not present
+```
+Read docs:  [Kernel.get_in/2](http://elixir-lang.org/docs/stable/elixir/Kernel.html#get_in/2)
 
 ### 7. With Statement Benefits
 
