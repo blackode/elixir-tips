@@ -88,7 +88,7 @@ iex> with 1 <- 1+0,
 A **Protocol** is a way to dispatch to a particular implementation of a function based on the type of the parameter.
 The macros `defprotocol` and `defimpl` are used to define Protocols and Protocol implementations respectively  for different types in the following example.
 
-```
+```elixir
 defprotocol Triple do    
   def triple(input)  
 end  
@@ -110,7 +110,7 @@ end
 
 Load the code into `iex` and execute
 
-```
+```elixir
 iex> Triple.triple(3) 
 9
 Triple.triple([1, 2])
@@ -130,7 +130,7 @@ There is no ternary operator like `true ? "yes" : "no"` . So, the following i
 When using pipelines, sometimes we break the pipeline for `or` operation. 
 For example:
 
-```
+```elixir
 result = :input
 |> do_something
 |> do_another_thing
@@ -146,7 +146,7 @@ Indeed, `||` is only a shortcut for `Kernel.||` . We can use `Kernel.||` i
 
 The code above will be:
 
-```
+```elixir
 result = :input
 |> do_something
 |> do_another_thing
@@ -164,13 +164,13 @@ This above tip is from [qhwa](https://medium.com/@qhwa_85848)
 
 Code grouping stands for something great. It shows you how your code is grouped when you write multiple lines of code in single line with out using braces. It will be more clear with the following example.
 
-```
+```elixir
 one 1 |> two()
 ```
 
 If you want to see how this line of code is grouped into, you can check in the following format..
 
-```
+```elixir
 quote(do: one 1 |> two()) |> Macro.to_string |> IO.puts
 one(1 |> two())
 ```
@@ -187,7 +187,7 @@ The `||` operator always returns the first expression which is true. Elixir do
 
 #### ||
 
-```
+```elixir
 false || nil || :blackode || :elixir || :jose
 ```
 
@@ -195,7 +195,7 @@ Here if you observe the first expression is false next `nil` is also false in 
 
 #### &&
 
-```
+```elixir
 iex> true && :true && :elixir && 5
 5
 iex> nil && 100
@@ -213,7 +213,7 @@ In **Elixir** every term can compare with every other term. So one has to be c
 
 ![img](https://cdn-images-1.medium.com/max/800/0*SOFSiJHylCKMOb-9.)
 
-```
+```elixir
 iex> x = "I am x "
 "I am x "
 iex> x > 34
@@ -232,7 +232,7 @@ false
 
 When I see this first time, I said to my self “**Elixir is Crazy” . **This tip really saves time and it resembles your smartness. In Elixir every operator is a macro. So, we can use them as lambda functions.
 
-```
+```elixir
 iex> Enum.reduce([1,2,3], 0, &+/2)
 6
 iex> Enum.reduce([1,2,3], 0, &*/2)
@@ -251,15 +251,7 @@ This is my recent discovery. I always encounter a situation like converting `"$
 
 ![img](https://cdn-images-1.medium.com/max/800/0*ipJJTjsFiaGmCBpc.)
 
-```
-value = "$34.56"           |>
-        String.split("$")  |>  
-        tl                 |>   
-        List.first         |> 
-        String.to_float
-```
-
-```
+```elixir
 iex> value = "$34.56"              |>
 iex ...        String.split("$")   |>  
 iex ...         tl                 |>   
@@ -272,12 +264,7 @@ iex ...         String.to_float
 
 This tip made my day easy. I recently used this is in one of my projects.
 
-```
-"$" <> value = "$34.56"
- String.to_float value
-```
-
-```
+```elixir
 iex> "$" <> value = "$34.56"
 "$34.56"
 iex> String.to_float value  
@@ -288,7 +275,7 @@ iex> String.to_float value
 
 At beginning stage, I used to press `^c` `^c` twice and restart shell as `iex -S mix` whenever I make changes to the project files. If you are doing this now, stop it right now. You can just recompile the project.
 
-```
+```elixir
 $ iex -S mix
 iex> recompile() 
 ```
@@ -307,25 +294,16 @@ Before using the `Logger` module one has to do `require Logger` so all macro
 
 ![img](https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz.)
 
-```
+```elixir
 iex> require Logger
 Logger
 iex> Logger.info "This is the info"
-```
-
-```
 15:04:33.102 [info]  This is the info
 :ok
 iex> Logger.warn "This is warning"
-```
-
-```
 15:04:56.712 [warn]  This is warning
 :ok
 iex> Logger.error "This is error"
-```
-
-```
 15:05:19.570 [error] This is error
 :ok
 ```
@@ -336,7 +314,7 @@ This tip is from [Anwesh Reddy](https://medium.com/@kanishkablack)
 
 We can check the all the applications which are started along with our application. Sometimes we have to check whether a particular application is started or not. So, it helps you in those situations.. If you are a beginner, you don’t feel of using this much. But I am pretty sure of this tip will become handy when you work with multiple applications.
 
-```
+```elixir
 iex> Application.started_applications
 [{:logger, 'logger', '1.4.0'}, {:iex, 'iex', '1.4.0'},
  {:elixir, 'elixir', '1.4.0'}, {:compiler, 'ERTS  CXC 138 10', '7.0.1'},
@@ -351,24 +329,18 @@ But , you can use the `.` to retrieve the data from the keys as `map.key` u
 
 ![img](https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz.)
 
-```
+```elixir
 iex> map = %{name: "blackode", blog: "medium"}
 %{blog: "medium", name: "blackode"}
-```
-
-```
 iex> map.name
 "blackode"
-```
-
-```
 iex> map.blog
 "medium"
 ```
 
 Be sure that when you try to retrieve a key with `.` form which is not present in the map, it will raise an **key error **instead of returning the `nil`unlike the `map["key"]` which returns `nil` if `key` is not present in `map`
 
-```
+```elixir
 iex> map["age"]
 nil
 ```
@@ -384,7 +356,7 @@ Bug Bug ..!!
 Elixir `>=1.4.0` has **ANSI** color printing option to console. You can have great fun with colors. 
 You can also provide **background colors**.
 
-```
+```elixir
 iex> import IO.ANSI
 iex> IO.puts red <> "red"<>green<>" green" <> yellow <> " yellow" <>   reset <> " normal"
 red green yellow normal
