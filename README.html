@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>README</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="killer-elixir-tips">Killer Elixir-Tips</h1>
+
+<p>The collection of Elixir Tips and Tricks…</p>
+
+
+
+<h2 id="part-1">Part 1</h2>
+
+
+
+<h3 id="1-multiple-or">1. Multiple [ OR ]</h3>
+
+<p>This is just the other way of writing Multiple <strong>OR</strong> conditions. This is not the recommended approach because in regular approach when the condition evaluates to <strong>true</strong> , it stops executing the remaining conditions which saves time of evaluation unlike this approach which evaluates all conditions first in list. This is just bad but good for discoveries. </p>
+
+
+
+
+
+<h3 id="2-i-term-elixir-term-type-and-meta-data">2. i( term) Elixir Term Type and Meta Data</h3>
+
+<p>Prints information about the data type of any given term. Try that in <code>iex</code> and see the magic.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="135"><code class="language-elixir hljs scss">iex&gt; <span class="hljs-function">i(<span class="hljs-number">1</span>..<span class="hljs-number">5</span>)</span></code></pre>
+
+
+
+<h3 id="3-iex-custom-configuration-iex-decoration">3. iex Custom Configuration - iex Decoration</h3>
+
+<p>Save the following file as <code>.iex.exs</code> in your <code>~</code> home directory and see the magic.</p>
+
+
+
+<p><img src="https://cdn-images-1.medium.com/max/800/1*iy-IELdB8fjTo5H0sABlBQ.png" alt="img" title=""></p>
+
+
+
+<h3 id="4-creating-custom-sigils-and-documenting">4. Creating Custom Sigils and Documenting</h3>
+
+<p>Each <code>x</code> sigil call respective <code>sigil_x</code> definition</p>
+
+
+
+
+
+<h3 id="5-custom-error-definitions">5. Custom Error Definitions</h3>
+
+<ol>
+<li>Custom Error Definitions</li>
+</ol>
+
+
+
+<h4 id="define-custom-error">Define Custom Error</h4>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="136"><code class="language-elixir hljs sql">defmodule BugError <span class="hljs-operator"><span class="hljs-keyword">do</span>
+   defexception message: <span class="hljs-string">"BUG BUG .."</span> # message <span class="hljs-keyword">is</span> the <span class="hljs-keyword">default</span>
+<span class="hljs-keyword">end</span></span></code></pre>
+
+<p><strong>Usage</strong></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="137"><code class="language-elixir hljs python">$ iex bug_error.ex
+iex&gt; <span class="hljs-keyword">raise</span> BugError
+** (BugError) BUG BUG ..
+iex&gt; <span class="hljs-keyword">raise</span> BugError, message: <span class="hljs-string">"I am Bug.."</span> <span class="hljs-comment">#here passing the message dynamic</span>
+** (BugError) I am Bug..</code></pre>
+
+
+
+<h3 id="6-get-a-value-from-nested-maps-easily">6. Get a Value from Nested Maps Easily</h3>
+
+
+
+<p>Getting a Value from Nested Maps</p>
+
+
+
+<h3 id="7-with-statement-benefits">7. With Statement Benefits</h3>
+
+<p>The special form <code>with</code> is used to chain a sequence of matches in order and finally return the result of <code>do:</code> if all the clauses match. However, if one of the clauses does not match, its result of the miss matched expression is immediately returned.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="138"><code class="language-elixir hljs haskell"><span class="hljs-title">iex</span>&gt; with <span class="hljs-number">1</span> &lt;- <span class="hljs-number">1</span>+<span class="hljs-number">0</span>,
+          <span class="hljs-number">2</span> &lt;- <span class="hljs-number">1</span>+<span class="hljs-number">1</span>,
+          <span class="hljs-keyword">do</span>: <span class="hljs-type">IO</span>.puts <span class="hljs-string">"all matched"</span>
+<span class="hljs-string">"all matched"</span></code></pre>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="139"><code class="language-elixir hljs vhdl">iex&gt; <span class="hljs-keyword">with</span> <span class="hljs-number">1</span> &lt;- <span class="hljs-number">1</span>+<span class="hljs-number">0</span>,
+          <span class="hljs-number">2</span> &lt;- <span class="hljs-number">3</span>+<span class="hljs-number">1</span>,
+          do: IO.puts <span class="hljs-string">"all matched"</span>
+<span class="hljs-number">4</span>
+## since  <span class="hljs-number">2</span> &lt;- <span class="hljs-number">3</span>+<span class="hljs-number">1</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> matched so the result <span class="hljs-keyword">of</span> <span class="hljs-number">3</span>+<span class="hljs-number">1</span> <span class="hljs-keyword">is</span> returned.Writing Protocols**</code></pre>
+
+
+
+<h3 id="8-writing-protocols">8. Writing Protocols</h3>
+
+
+
+<h4 id="define-a-protocol">Define a Protocol</h4>
+
+<p>A <strong>Protocol</strong> is a way to dispatch to a particular implementation of a function based on the type of the parameter. <br>
+The macros <code>defprotocol</code> and <code>defimpl</code> are used to define Protocols and Protocol implementations respectively  for different types in the following example.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="140"><code class=" hljs ocaml">defprotocol Triple <span class="hljs-keyword">do</span>    
+  def triple(input)  
+<span class="hljs-keyword">end</span>  
+
+defimpl Triple, <span class="hljs-keyword">for</span>: Integer <span class="hljs-keyword">do</span>    
+  def triple(<span class="hljs-built_in">int</span>) <span class="hljs-keyword">do</span>     
+    <span class="hljs-built_in">int</span> * <span class="hljs-number">3</span>   
+  <span class="hljs-keyword">end</span>  
+<span class="hljs-keyword">end</span>   
+
+defimpl Triple, <span class="hljs-keyword">for</span>: List <span class="hljs-keyword">do</span>
+  def triple(<span class="hljs-built_in">list</span>) <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">list</span> ++ <span class="hljs-built_in">list</span> ++ <span class="hljs-built_in">list</span>   
+  <span class="hljs-keyword">end</span>  
+<span class="hljs-keyword">end</span> </code></pre>
+
+
+
+<h4 id="usage">Usage</h4>
+
+<p>Load the code into <code>iex</code> and execute</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="141"><code class=" hljs css"><span class="hljs-tag">iex</span>&gt; <span class="hljs-tag">Triple</span><span class="hljs-class">.triple</span>(3) 
+9
+<span class="hljs-tag">Triple</span><span class="hljs-class">.triple</span>(<span class="hljs-attr_selector">[1, 2]</span>)
+<span class="hljs-attr_selector">[1, 2, 1, 2,1,2]</span></code></pre>
+
+
+
+<h3 id="9-ternary-operator">9. Ternary Operator</h3>
+
+<p>There is no ternary operator like <code>true ? "yes" : "no"</code> . So, the following is suggested.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="142"><code class="language-elixir hljs bash"><span class="hljs-string">"no"</span> = <span class="hljs-keyword">if</span> <span class="hljs-number">1</span> == <span class="hljs-number">0</span>, <span class="hljs-keyword">do</span>: <span class="hljs-string">"yes"</span>, <span class="hljs-keyword">else</span>: <span class="hljs-string">"no"</span></code></pre>
+
+
+
+<h3 id="10-advantage-of-kernel">10. Advantage of Kernel.||</h3>
+
+<p>When using pipelines, sometimes we break the pipeline for <code>or</code> operation.  <br>
+For example:</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="143"><code class=" hljs bash">result = :input
+|&gt; <span class="hljs-keyword">do</span>_something
+|&gt; <span class="hljs-keyword">do</span>_another_thing</code></pre>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="144"><code class=" hljs bash"><span class="hljs-comment"># Bad</span>
+result = (result || :default_output)
+|&gt; <span class="hljs-keyword">do</span>_something_<span class="hljs-keyword">else</span></code></pre>
+
+<p>Indeed, <code>||</code> is only a shortcut for <code>Kernel.||</code> . We can use <code>Kernel.||</code> in the pipeline instead to avoid breaking the pipeline.</p>
+
+<p>The code above will be:</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="145"><code class=" hljs bash">result = :input
+|&gt; <span class="hljs-keyword">do</span>_something
+|&gt; <span class="hljs-keyword">do</span>_another_thing
+|&gt; Kernel.||(:default_output)  <span class="hljs-comment">#&lt;-- This line</span>
+|&gt; <span class="hljs-keyword">do</span>_something_<span class="hljs-keyword">else</span></code></pre>
+
+<p>This above tip is from <a href="https://medium.com/@qhwa_85848">qhwa</a></p>
+
+
+
+<h2 id="part-2">Part 2</h2>
+
+
+
+<h3 id="1-code-grouping"><strong>1  Code Grouping</strong></h3>
+
+<p>Code grouping stands for something great. It shows you how your code is grouped when you write multiple lines of code in single line with out using braces. It will be more clear with the following example.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="146"><code class="language-elixir hljs livecodeserver"><span class="hljs-constant">one</span> <span class="hljs-number">1</span> |&gt; <span class="hljs-constant">two</span>()</code></pre>
+
+<p>If you want to see how this line of code is grouped into, you can check in the following format..</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="147"><code class=" hljs livecodeserver"><span class="hljs-constant">quote</span>(<span class="hljs-built_in">do</span>: <span class="hljs-constant">one</span> <span class="hljs-number">1</span> |&gt; <span class="hljs-constant">two</span>()) |&gt; Macro.to_string |&gt; IO.puts
+<span class="hljs-constant">one</span>(<span class="hljs-number">1</span> |&gt; <span class="hljs-constant">two</span>())</code></pre>
+
+<p>So, by using the <code>quote</code> and <code>Macro.to_string</code> you can see how our code is grouped.</p>
+
+<p>This tip came out in discussion with the creator of <strong>Ecto</strong> <a href="https://elixirforum.com/users/michalmuskala"><strong>MichalMuskala</strong></a> in the Elixir forum.</p>
+
+
+
+<h3 id="2-elixir-short-circuit-operators">2  Elixir Short Circuit Operators &amp;&amp; — ||</h3>
+
+<p>These replaces the nested complicated conditions. These are my best friends in the situations dealing with more complex comparisons. Trust me you gonna love this.</p>
+
+<p>The <code>||</code> operator always returns the first expression which is true. Elixir doesn’t care about the remaining expressions, and won’t evaluate them after a match has been found.</p>
+
+
+
+<h4 id="title">||</h4>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="148"><code class=" hljs ruby"><span class="hljs-keyword">false</span> || <span class="hljs-keyword">nil</span> || <span class="hljs-symbol">:blackode</span> || <span class="hljs-symbol">:elixir</span> || <span class="hljs-symbol">:jose</span></code></pre>
+
+<p>Here if you observe the first expression is false next <code>nil</code> is also false in elixir next <code>:blackode</code> which evaluates to true and its value is returned immediately with out evaluating the <code>:elixir</code> and <code>:jose</code> . Similarly if all the statements evaluates to <code>false</code> the last expression is returned.</p>
+
+
+
+<h4 id="title-1">&amp;&amp;</h4>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="149"><code class=" hljs ruby">iex&gt; <span class="hljs-keyword">true</span> &amp;&amp; <span class="hljs-symbol">:true</span> &amp;&amp; <span class="hljs-symbol">:elixir</span> &amp;&amp; <span class="hljs-number">5</span>
+<span class="hljs-number">5</span>
+iex&gt; <span class="hljs-keyword">nil</span> &amp;&amp; <span class="hljs-number">100</span>
+<span class="hljs-keyword">nil</span>
+iex&gt; salary = is_login &amp;&amp; is_admin &amp;&amp; is_staff &amp;&amp; <span class="hljs-number">100_000</span></code></pre>
+
+<p>This <code>&amp;&amp;</code> returns the second expression if the first expression is <code>true</code> or else it returns the first expression with out evaluating the second expression. In the above examples the last one is the situation where we encounter to use the <code>&amp;&amp;</code> operator.</p>
+
+
+
+<h3 id="3-comparing-two-different-data-types">3  Comparing two different data types</h3>
+
+<p>I have self experience with this . When I am novice in elixir, I just compared <code>"5" &gt; 4</code> unknowingly by an accident and to my surprise it returned with <code>true</code>.</p>
+
+<p>In <strong>Elixir</strong> every term can compare with every other term. So one has to be careful in comparisons.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/800/0*SOFSiJHylCKMOb-9." alt="img" title=""></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="150"><code class=" hljs bash">iex&gt; x = <span class="hljs-string">"I am x "</span>
+<span class="hljs-string">"I am x "</span>
+iex&gt; x &gt; <span class="hljs-number">34</span>
+<span class="hljs-literal">true</span>
+iex&gt; x &gt; [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+<span class="hljs-literal">true</span>
+iex&gt;▶ [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] &lt; <span class="hljs-number">1234567890</span>
+<span class="hljs-literal">false</span></code></pre>
+
+<p><strong>Order of Comparison</strong></p>
+
+<blockquote>
+  <p>number &lt; atom &lt; reference &lt; fun &lt; port &lt; pid &lt; tuple &lt; map &lt; list &lt; bitstring (binary)</p>
+</blockquote>
+
+
+
+<h3 id="4-arithmetic-operators-as-lambda-functions">4  Arithmetic Operators as Lambda functions</h3>
+
+<p>When I see this first time, I said to my self “**Elixir is Crazy” . **This tip really saves time and it resembles your smartness. In Elixir every operator is a macro. So, we can use them as lambda functions.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="151"><code class=" hljs oxygene">iex&gt; <span class="hljs-keyword">Enum</span>.reduce([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], <span class="hljs-number">0</span>, &amp;+/<span class="hljs-number">2</span>)
+<span class="hljs-number">6</span>
+iex&gt; <span class="hljs-keyword">Enum</span>.reduce([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], <span class="hljs-number">0</span>, &amp;*/<span class="hljs-number">2</span>)
+<span class="hljs-number">0</span>
+iex&gt; <span class="hljs-keyword">Enum</span>.reduce([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], <span class="hljs-number">3</span>, &amp;*/<span class="hljs-number">2</span>)
+<span class="hljs-number">18</span>
+iex&gt; <span class="hljs-keyword">Enum</span>.reduce([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], <span class="hljs-number">3</span>, &amp;-/<span class="hljs-number">2</span>)
+-<span class="hljs-number">1</span>
+iex&gt; <span class="hljs-keyword">Enum</span>.reduce([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], <span class="hljs-number">3</span>, &amp;<span class="hljs-comment">//2)</span>
+<span class="hljs-number">0.5</span></code></pre>
+
+
+
+<h3 id="5-binary-pattern-matching">5  Binary pattern matching</h3>
+
+<p>This is my recent discovery. I always encounter a situation like converting <code>"$34.56"</code> which is a string and I suppose do arithmetic operations. I usually do something like this before binary pattern matching..</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/800/0*ipJJTjsFiaGmCBpc." alt="img" title=""></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="152"><code class=" hljs 1c">value = <span class="hljs-string">"$34.56"</span>           <span class="hljs-string">|&gt;</span>
+        String.split(<span class="hljs-string">"$"</span>)  <span class="hljs-string">|&gt;  </span>
+        tl                 <span class="hljs-string">|&gt;   </span>
+        List.first         <span class="hljs-string">|&gt; </span>
+        String.to_float</code></pre>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="153"><code class=" hljs r">iex&gt; value = <span class="hljs-string">"$34.56"</span>              |&gt;
+iex <span class="hljs-keyword">...</span>        String.split(<span class="hljs-string">"$"</span>)   |&gt;  
+iex <span class="hljs-keyword">...</span>         tl                 |&gt;   
+iex <span class="hljs-keyword">...</span>         List.first         |&gt; 
+iex <span class="hljs-keyword">...</span>         String.to_float
+<span class="hljs-number">34.56</span></code></pre>
+
+
+
+<h4 id="tip-approach">Tip Approach</h4>
+
+<p>This tip made my day easy. I recently used this is in one of my projects.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="311"><code class=" hljs bash">iex&gt; <span class="hljs-string">"$"</span> &lt;&gt; value = <span class="hljs-string">"<span class="hljs-variable">$34</span>.56"</span>
+<span class="hljs-string">"<span class="hljs-variable">$34</span>.56"</span>
+iex&gt; String.to_float value  
+<span class="hljs-number">34.56</span></code></pre>
+
+
+
+<h3 id="6-recompiling-project">6  Recompiling Project</h3>
+
+<p>At beginning stage, I used to press <code>^c</code> <code>^c</code> twice and restart shell as <code>iex -S mix</code> whenever I make changes to the project files. If you are doing this now, stop it right now. You can just recompile the project.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="363"><code class="language-elixir hljs ruby"><span class="hljs-variable">$ </span>iex -<span class="hljs-constant">S</span> mix
+iex&gt; recompile() </code></pre>
+
+<p><strong>Warning:</strong> The changes in the <code>config/config.ex</code> are not reflected. You have to restart the shell again.</p>
+
+
+
+<h3 id="7-logger-module">7  Logger Module</h3>
+
+<p>Logger is one of my favorite modules. This come in default and starts along with your application. You have to just <code>require</code> this module. When I am new to Elixir, I always used to write the console outputs as <code>IO.puts "This is value of data"</code> for code debugging but, those lines get mixed up with other lines of information and It became hard to trace those lines.</p>
+
+<p>This <code>Logger</code> module solved my problem. It has many features but, I use three definitions very often <code>warn</code> <code>info</code> and <code>error</code> Each definition prints the information with different **colors **which is more easy to find the statement at a glance.</p>
+
+<p>The best side of this module is it prints along with the <strong>time</strong>, means it also prints the time while executing your statement. So, you can know the direction of flow of execution.</p>
+
+<p>Before using the <code>Logger</code> module one has to do <code>require Logger</code> so all macros will be loaded inside your working module.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz." alt="img" title=""></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="558"><code class=" hljs css"><span class="hljs-tag">iex</span>&gt; <span class="hljs-tag">require</span> <span class="hljs-tag">Logger</span>
+<span class="hljs-tag">Logger</span>
+
+<span class="hljs-tag">iex</span>&gt; <span class="hljs-tag">Logger</span><span class="hljs-class">.info</span> "<span class="hljs-tag">This</span> <span class="hljs-tag">is</span> <span class="hljs-tag">the</span> <span class="hljs-tag">info</span>"
+
+15<span class="hljs-pseudo">:04</span><span class="hljs-pseudo">:33</span><span class="hljs-class">.102</span> <span class="hljs-attr_selector">[info]</span>  <span class="hljs-tag">This</span> <span class="hljs-tag">is</span> <span class="hljs-tag">the</span> <span class="hljs-tag">info</span>
+<span class="hljs-pseudo">:ok</span>
+<span class="hljs-tag">iex</span>&gt; <span class="hljs-tag">Logger</span><span class="hljs-class">.warn</span> "<span class="hljs-tag">This</span> <span class="hljs-tag">is</span> <span class="hljs-tag">warning</span>"
+
+15<span class="hljs-pseudo">:04</span><span class="hljs-pseudo">:56</span><span class="hljs-class">.712</span> <span class="hljs-attr_selector">[warn]</span>  <span class="hljs-tag">This</span> <span class="hljs-tag">is</span> <span class="hljs-tag">warning</span>
+<span class="hljs-pseudo">:ok</span>
+<span class="hljs-tag">iex</span>&gt; <span class="hljs-tag">Logger</span><span class="hljs-class">.error</span> "<span class="hljs-tag">This</span> <span class="hljs-tag">is</span> <span class="hljs-tag">error</span>"
+
+15<span class="hljs-pseudo">:05</span><span class="hljs-pseudo">:19</span><span class="hljs-class">.570</span> <span class="hljs-attr_selector">[error]</span> <span class="hljs-tag">This</span> <span class="hljs-tag">is</span> <span class="hljs-tag">error</span>
+<span class="hljs-pseudo">:ok</span></code></pre>
+
+<p>This tip is from <a href="https://medium.com/@kanishkablack">Anwesh Reddy</a></p>
+
+
+
+<h3 id="8-finding-all-started-applications">8  Finding All Started Applications</h3>
+
+<p>We can check the all the applications which are started along with our application. Sometimes we have to check whether a particular application is started or not. So, it helps you in those situations.. If you are a beginner, you don’t feel of using this much. But I am pretty sure of this tip will become handy when you work with multiple applications.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="559"><code class=" hljs ruby">iex&gt; <span class="hljs-constant">Application</span>.started_applications
+[{<span class="hljs-symbol">:logger</span>, <span class="hljs-string">'logger'</span>, <span class="hljs-string">'1.4.0'</span>}, {<span class="hljs-symbol">:iex</span>, <span class="hljs-string">'iex'</span>, <span class="hljs-string">'1.4.0'</span>},
+ {<span class="hljs-symbol">:elixir</span>, <span class="hljs-string">'elixir'</span>, <span class="hljs-string">'1.4.0'</span>}, {<span class="hljs-symbol">:compiler</span>, <span class="hljs-string">'ERTS  CXC 138 10'</span>, <span class="hljs-string">'7.0.1'</span>},
+ {<span class="hljs-symbol">:stdlib</span>, <span class="hljs-string">'ERTS  CXC 138 10'</span>, <span class="hljs-string">'3.0.1'</span>}, {<span class="hljs-symbol">:kernel</span>, <span class="hljs-string">'ERTS  CXC 138 10'</span>, <span class="hljs-string">'5.0.1'</span>}]</code></pre>
+
+
+
+<h3 id="9-advantage-of-map-keys-as-atoms-and-binarystrings">9  Advantage of Map keys as :atoms and binary(strings)</h3>
+
+<p>Before I let you to use this tip, I just want to remind you that <strong>:atoms</strong> are not garbage collected. Atom keys are great! If you have a fixed number of them defined statically in your code, you are in no danger.What you should not do is convert user supplied input into atoms without sanitizing them first because it can lead to out of memory. <strong>You should also be cautious if you create dynamic atoms in your code.</strong></p>
+
+<p>But , you can use the <code>.</code> to retrieve the data from the keys as <code>map.key</code> unlike the usual notation like <code>map["key"]</code> . That really saves the typing. But, I don’t encourage this because, as a programmer we should really care about memory.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz." alt="img" title=""></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="648"><code class=" hljs perl">iex&gt; <span class="hljs-keyword">map</span> = %{name: <span class="hljs-string">"blackode"</span>, blog: <span class="hljs-string">"medium"</span>}
+%{blog: <span class="hljs-string">"medium"</span>, name: <span class="hljs-string">"blackode"</span>}
+
+iex&gt; <span class="hljs-keyword">map</span>.name
+<span class="hljs-string">"blackode"</span>
+
+iex&gt; <span class="hljs-keyword">map</span>.blog
+<span class="hljs-string">"medium"</span></code></pre>
+
+<p>Be sure that when you try to retrieve a key with <code>.</code> form which is not present in the map, it will raise an **key error **instead of returning the <code>nil</code>unlike the <code>map["key"]</code> which returns <code>nil</code> if <code>key</code> is not present in <code>map</code></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="649"><code class=" hljs go">iex&gt; <span class="hljs-keyword">map</span>[<span class="hljs-string">"age"</span>]
+<span class="hljs-constant">nil</span></code></pre>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="650"><code class=" hljs css"><span class="hljs-tag">iex</span>&gt; <span class="hljs-tag">map</span><span class="hljs-class">.age</span>
+<span class="hljs-tag">Bug</span> <span class="hljs-tag">Bug</span> ..!!** (<span class="hljs-tag">KeyError</span>) <span class="hljs-tag">key</span> <span class="hljs-pseudo">:age</span> <span class="hljs-tag">not</span> <span class="hljs-tag">found</span> <span class="hljs-tag">in</span>: %<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">blog</span>:<span class="hljs-value"> <span class="hljs-string">"medium"</span>, name: <span class="hljs-string">"blackode"</span></span></span></span>}
+<span class="hljs-tag">Bug</span> <span class="hljs-tag">Bug</span> ..!!</code></pre>
+
+
+
+<h3 id="10-color-printing">10 Color Printing</h3>
+
+<p>Elixir <code>&gt;=1.4.0</code> has <strong>ANSI</strong> color printing option to console. You can have great fun with colors.  <br>
+You can also provide <strong>background colors</strong>.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="651"><code class=" hljs xml">iex&gt; import IO.ANSI
+iex&gt; IO.puts red <span class="hljs-tag">&lt;&gt;</span> "red"<span class="hljs-tag">&lt;&gt;</span>green<span class="hljs-tag">&lt;&gt;</span>" green" <span class="hljs-tag">&lt;&gt;</span> yellow <span class="hljs-tag">&lt;&gt;</span> " yellow" <span class="hljs-tag">&lt;&gt;</span>   reset <span class="hljs-tag">&lt;&gt;</span> " normal"
+red green yellow normal</code></pre>
+
+<p>The red prints in red color, green in green color, yellow in yellow color and normal in white. Have fun with colors…</p>
+
+<p>For more details on color printing check <a href="https://github.com/blackode/printex"><strong>Printex</strong></a> module which I created for fun in Elixir.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz." alt="img" title=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/1000/0*Qskz94BcqMSyPAuH.png" alt="img" title=""></p>
+
+
+
+<h2 id="part-3">Part 3</h2>
+
+
+
+<h3 id="1-functions-as-guard-clauses">1. Functions as Guard Clauses</h3>
+
+<p>We cannot make use of the functions as guard clauses in elixir. It means, <code>when</code> cannot accept functions that returns Boolean values as conditions. Consider the following lines of code…</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="652"><code class="language-elixir hljs ruby">defmodule <span class="hljs-constant">Hello</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>hello(name,age) <span class="hljs-keyword">when</span> is_kid(age) <span class="hljs-keyword">do</span>
+    <span class="hljs-constant">IO</span>.puts <span class="hljs-string">"Hello Kid <span class="hljs-subst">#{name}</span>"</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>hello(name,age) <span class="hljs-keyword">when</span> is_adult(age) <span class="hljs-keyword">do</span>
+    <span class="hljs-constant">IO</span>.puts <span class="hljs-string">"Hello Mister <span class="hljs-subst">#{name}</span>"</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>is_kid age <span class="hljs-keyword">do</span>
+    age &lt; <span class="hljs-number">12</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> </span>is_adult age <span class="hljs-keyword">do</span>
+    age &gt; <span class="hljs-number">18</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span></code></pre>
+
+<p>Here we defined a <strong>module</strong> <code>Hello</code> and a function <code>hello</code> that takes two parameters of <code>name</code> and <code>age</code>. So, based on age I am trying <code>IO.puts</code>accordingly. If you do so you will get an error saying….</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="653"><code class=" hljs ruby">** (<span class="hljs-constant">CompileError</span>) hello.<span class="hljs-symbol">ex:</span><span class="hljs-number">2</span><span class="hljs-symbol">:</span> cannot invoke local is_kid/<span class="hljs-number">1</span> inside guard
+    hello.<span class="hljs-symbol">ex:</span><span class="hljs-number">2</span><span class="hljs-symbol">:</span> (<span class="hljs-class"><span class="hljs-keyword">module</span>)</span></code></pre>
+
+<p>This is because <strong>when</strong> cannot accept functions as guards. We need to convert them to <code>macros</code>  <br>
+Lets do that…</p>
+
+<p>““elixir <br>
+defmodule MyGuards do</p>
+
+<p>defmacro is_kid age do <br>
+    quote do: unquote(age) &lt; 12 <br>
+  end</p>
+
+<p>defmacro is_adult age do <br>
+    quote do: unquote(age) &gt; 18 <br>
+  end</p>
+
+<p>end</p>
+
+
+
+<h1 id="order-of-module-matters-here">order of module matters here…..</h1>
+
+<p>defmodule Hello do</p>
+
+<p>import MyGuards</p>
+
+<p>def hello(name,age) when is_kid(age) do <br>
+    IO.puts “Hello Kid #{name}” <br>
+  end</p>
+
+<p>def hello(name,age) when is_adult(age) do <br>
+    IO.puts “Hello Mister #{name}”</p>
+
+<p>def hello(name,age) do <br>
+    IO.puts “Hello Youth #{name}” <br>
+  end</p>
+
+<p>end <br>
+““</p>
+
+<p>In the above lines of code, we wrapped all our guards inside a module <code>MyGuards</code> and make sure the module is top of the module <code>Hello</code> so, the macros first gets compiled. Now compile and execute you will see the following output..</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="654"><code class="language-elixir hljs ruby">iex&gt; <span class="hljs-constant">Hello</span>.hello <span class="hljs-string">"blackode"</span>,<span class="hljs-number">21</span>
+<span class="hljs-constant">Hello</span> <span class="hljs-constant">Mister</span> blackode
+<span class="hljs-symbol">:ok</span>
+iex&gt; <span class="hljs-constant">Hello</span>.hello <span class="hljs-string">"blackode"</span>,<span class="hljs-number">11</span>
+<span class="hljs-constant">Hello</span> <span class="hljs-constant">Kid</span> blackode
+<span class="hljs-symbol">:ok</span></code></pre>
+
+
+
+<h3 id="2-finding-the-presence-of-sub-string">2. Finding the presence of Sub-String</h3>
+
+<p>Using <code>=~</code> operator we can find whether the <strong>right</strong> sub-string present in <strong>left</strong> string or not..</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="655"><code class="language-elixir hljs bash">iex&gt; <span class="hljs-string">"blackode"</span> =~ <span class="hljs-string">"kode"</span> 
+<span class="hljs-literal">true</span>  
+iex&gt; <span class="hljs-string">"blackode"</span> =~ <span class="hljs-string">"medium"</span> 
+<span class="hljs-literal">false</span>  
+iex&gt; <span class="hljs-string">"blackode"</span> =~ <span class="hljs-string">""</span> 
+<span class="hljs-literal">true</span></code></pre>
+
+
+
+<h3 id="3-finding-whether-module-is-loaded-or-not">3. Finding whether Module is loaded or not</h3>
+
+<p>Sometimes, we have to make sure that certain module is loaded before making a call to the function. We are supposed to ensure the module is loaded.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="656"><code class=" hljs xml">Code.ensure_loaded? <span class="hljs-tag">&lt;<span class="hljs-title">Module</span>&gt;</span></code></pre>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="657"><code class="language-elixir hljs ruby">iex&gt; <span class="hljs-constant">Code</span>.ensure_loaded? <span class="hljs-symbol">:kernel</span>
+<span class="hljs-keyword">true</span>
+iex&gt; <span class="hljs-constant">Code</span>.ensure_loaded <span class="hljs-symbol">:kernel</span>
+{<span class="hljs-symbol">:module</span>, <span class="hljs-symbol">:kernel</span>}</code></pre>
+
+<p>Similarly we are having <code>ensure_compile</code> to check whether the module is compiled or not…</p>
+
+
+
+<h3 id="4-binary-to-capital-atom">4. Binary to Capital Atom</h3>
+
+<p>Elixir provides a special syntax which is usually used for module names. What is called a module name is an <strong>uppercase*</strong> ASCII letter* followed by any number of <strong>lowercase*</strong> or <strong><em>uppercase</em></strong> ASCII letters*, <em>numbers</em>, or <em>underscores</em>.</p>
+
+<p>This identifier is equivalent to an atom prefixed by <code>Elixir.</code>. So in the <code>defmodule Blackode</code> example <code>Blackode</code> is equivalent to <code>:"Elixir.Blackode"</code></p>
+
+<p>When we use <code>String.to_atom "Blackode"</code> it converts it into <code>:Blackode</code> But actually we need something like “**Blackode” **to **Blackode. **To do that we need to use <code>Module.concat</code></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="658"><code class="language-elixir hljs mathematica">iex(<span class="hljs-number">2</span>)&gt; <span class="hljs-keyword">String</span>.to_atom <span class="hljs-string">"Blackode"</span>
+:Blackode
+iex(<span class="hljs-number">3</span>)&gt; <span class="hljs-keyword">Module</span>.concat Elixir,<span class="hljs-string">"Blackode"</span>
+Blackode</code></pre>
+
+<p>In Command line applications whatever you pass they convert it into <strong>binary</strong>. So, again you suppose to do some casting operations …</p>
+
+
+
+<h3 id="5-pattern-match-vs-destructure">5. Pattern match [ vs ]destructure.</h3>
+
+<p>We all know that <code>=</code> does the pattern match for left and right side. We cannot do <code>[a,b,c]=[1,2,3,4]</code> this raise a <code>MatchError</code></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="659"><code class="language-elixir hljs livecodeserver">iex(<span class="hljs-number">11</span>)&gt; [<span class="hljs-operator">a</span>,b,c]=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+** (MatchError) no match <span class="hljs-operator">of</span> <span class="hljs-constant">right</span> hand side <span class="hljs-built_in">value</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</code></pre>
+
+<p>We can use <code>destructure/2</code> to do the job.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="660"><code class="language-elixir hljs scss"><span class="hljs-function">iex(<span class="hljs-number">1</span>)</span>&gt; destructure <span class="hljs-attr_selector">[a,b,c]</span>,<span class="hljs-attr_selector">[1,2,3,4]</span>
+<span class="hljs-attr_selector">[1, 2, 3]</span>
+<span class="hljs-function">iex(<span class="hljs-number">2</span>)</span>&gt; {<span class="hljs-tag">a</span>,<span class="hljs-tag">b</span>,c}
+{1, 2, 3}</code></pre>
+
+<p>If the left side is having more entries than in right side, it assigns the <code>nil</code>value for remaining entries..</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="661"><code class="language-elixir hljs ruby">iex&gt; destructure([a, b, c], [<span class="hljs-number">1</span>])
+iex&gt; {a, b, c} 
+{<span class="hljs-number">1</span>, <span class="hljs-keyword">nil</span>, <span class="hljs-keyword">nil</span>}</code></pre>
+
+
+
+<h3 id="6-data-decoration-inspect-with-label-option">6. Data decoration [ inspect with :label ] option</h3>
+
+<p>We can decorate our output with <code>inspect</code> and <code>label</code> option. The string of <code>label</code> is added at the beginning of the data we are inspecting.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="662"><code class="language-elixir hljs css"><span class="hljs-tag">iex</span>(1)&gt; <span class="hljs-tag">IO</span><span class="hljs-class">.inspect</span> <span class="hljs-attr_selector">[1,2,3]</span>,<span class="hljs-tag">label</span>: "<span class="hljs-tag">the</span> <span class="hljs-tag">list</span> "
+<span class="hljs-tag">the</span> <span class="hljs-tag">list</span> : <span class="hljs-attr_selector">[1, 2, 3]</span>
+<span class="hljs-attr_selector">[1, 2, 3]</span></code></pre>
+
+<p>If you closely observe this it again returns the inspected data. So, we can use them as intermediate results in <code>|&gt;</code> pipe operations like following……</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="663"><code class="language-elixir hljs 1c">[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] 
+<span class="hljs-string">|&gt; IO.inspect(label: "</span>before change<span class="hljs-string">") </span>
+<span class="hljs-string">|&gt; Enum.map(&amp;(&amp;1 * 2)) </span>
+<span class="hljs-string">|&gt; IO.inspect(label: "</span>after change<span class="hljs-string">") </span>
+<span class="hljs-string">|&gt; length</span></code></pre>
+
+<p>You will see the following <code>output</code></p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="664"><code class="language-elixir hljs css"><span class="hljs-tag">before</span> <span class="hljs-tag">change</span>: <span class="hljs-attr_selector">[1, 2, 3]</span>
+<span class="hljs-tag">after</span> <span class="hljs-tag">change</span>: <span class="hljs-attr_selector">[2, 4, 6]</span>
+3</code></pre>
+
+
+
+<h3 id="7-anonymous-functions-to-pipe">7. Anonymous functions to pipe</h3>
+
+<p>We can pass the anonymous functions in two ways. One is directly using <code>&amp;</code>like following..</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="665"><code class="language-elixir hljs 1c">[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+<span class="hljs-string">|&gt; length</span>
+<span class="hljs-string">|&gt; (&amp;(&amp;1*&amp;1)).()</span></code></pre>
+
+<p>This is the most weirdest approach. How ever, we can use the reference of the anonymous function by giving its name.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="666"><code class="language-elixir hljs 1c">square = &amp; &amp;<span class="hljs-number">1</span> * &amp;<span class="hljs-number">1</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+<span class="hljs-string">|&gt; length</span>
+<span class="hljs-string">|&gt; square.()</span></code></pre>
+
+<p>The above style is much better than previous . You can also use <code>fn</code> to define anonymous functions.</p>
+
+
+
+<h3 id="8-retrieve-character-integer-codepoints">8. Retrieve Character Integer Codepoints — ?</h3>
+
+<p>We can use <code>?</code> operator to retrieve character integer codepoints.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="667"><code class="language-elixir hljs ruby">iex&gt; <span class="hljs-string">?a</span>
+<span class="hljs-number">97</span>
+iex&gt; ?<span class="hljs-comment">#</span>
+<span class="hljs-number">35</span></code></pre>
+
+<p>The following two tips are mostly useful for beginners…</p>
+
+
+
+<h3 id="9-subtraction-over-lists">9. Subtraction over Lists</h3>
+
+<p>We can perform the subtraction over lists for removing the elements in list.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="668"><code class="language-elixir hljs css"><span class="hljs-tag">iex</span>&gt; <span class="hljs-attr_selector">[1,2,3,4.5]</span><span class="hljs-tag">--</span><span class="hljs-attr_selector">[1,2]</span>
+<span class="hljs-attr_selector">[3, 4.5]</span>
+<span class="hljs-tag">iex</span>&gt; <span class="hljs-attr_selector">[1,2,3,4.5,1]</span><span class="hljs-tag">--</span><span class="hljs-attr_selector">[1]</span>  
+<span class="hljs-attr_selector">[2, 3, 4.5, 1]</span>
+<span class="hljs-tag">iex</span>&gt; <span class="hljs-attr_selector">[1,2,3,4.5,1]</span><span class="hljs-tag">--</span><span class="hljs-attr_selector">[1,1]</span>
+<span class="hljs-attr_selector">[2, 3, 4.5]</span>
+<span class="hljs-tag">iex</span>&gt; <span class="hljs-attr_selector">[1,2,3,4.5]</span><span class="hljs-tag">--</span><span class="hljs-attr_selector">[6]</span>    
+<span class="hljs-attr_selector">[1, 2, 3, 4.5]</span></code></pre>
+
+<p>We can also perform same operations on char lists too..</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="669"><code class="language-elixir hljs bash">iex(<span class="hljs-number">12</span>)&gt; <span class="hljs-string">'blackode'</span>--<span class="hljs-string">'ode'</span>
+<span class="hljs-string">'black'</span>
+iex(<span class="hljs-number">13</span>)&gt; <span class="hljs-string">'blackode'</span>--<span class="hljs-string">'z'</span>    
+<span class="hljs-string">'blackode'</span></code></pre>
+
+<p>If the element to subtract is not present in the list then it simply returns the list.</p>
+
+
+
+<h3 id="10-using-previous-results-in-iex">10. Using Previous results in IEx</h3>
+
+<p>When you are working with <code>iex</code> environment , you can see a number increment every time you evaluate an expression in the shell like <code>iex(2)&gt;``iex(3)&gt;</code></p>
+
+<p>Those numbers helps us to reuse the result with <code>v/1</code> function which has been loaded by default..</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="670"><code class="language-elixir hljs erlang"><span class="hljs-function"><span class="hljs-title">iex</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span>&gt; <span class="hljs-title">list</span> = [1,2,3,4,5]
+[1, 2, 3, 4, 5]
+<span class="hljs-title">iex</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span>&gt; <span class="hljs-title">double_lsit</span> = E<span class="hljs-title">num</span>.<span class="hljs-title">map</span><span class="hljs-params">(list, &amp;(&amp;<span class="hljs-number">1</span>*<span class="hljs-number">2</span>)</span>)
+[2, 4, 6, 8, 10]
+<span class="hljs-title">iex</span><span class="hljs-params">(<span class="hljs-number">3</span>)</span>&gt; <span class="hljs-title">v</span> 1         
+[1, 2, 3, 4, 5]
+<span class="hljs-title">iex</span><span class="hljs-params">(<span class="hljs-number">4</span>)</span>&gt; <span class="hljs-title">v</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span> ++ <span class="hljs-title">v</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span>
+[1, 2, 3, 4, 5, 2, 4, 6, 8, 10]</span></code></pre>
+
+
+
+<h2 id="part-4">Part 4</h2>
+
+
+
+<h3 id="1-running-multiple-mix-tasks">1. Running Multiple Mix Tasks</h3>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="671"><code class="language-elixir hljs cs">mix <span class="hljs-keyword">do</span> deps.<span class="hljs-keyword">get</span>,compile</code></pre>
+
+<p>You can run multiple tasks by separating them with coma <code>,</code></p>
+
+<p>How ever you can also create aliases in your mix project in a file called <code>mix.exs</code> .</p>
+
+<p>The project definition looks like the following way when you create one using a <code>mix</code> tool.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="672"><code class="language-elixir hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>project <span class="hljs-keyword">do</span>
+    [<span class="hljs-symbol">app:</span> <span class="hljs-symbol">:proect_name</span>,
+     <span class="hljs-symbol">version:</span> <span class="hljs-string">"0.1.0"</span>,
+     <span class="hljs-symbol">elixir:</span> <span class="hljs-string">"~&gt; 1.4-rc"</span>,
+     <span class="hljs-symbol">build_embedded:</span> <span class="hljs-constant">Mix</span>.env == <span class="hljs-symbol">:prod</span>,
+     <span class="hljs-symbol">start_permanent:</span> <span class="hljs-constant">Mix</span>.env == <span class="hljs-symbol">:prod</span>,
+     <span class="hljs-symbol">deps:</span> deps()]
+  <span class="hljs-keyword">end</span></code></pre>
+
+<p>You are also allowed to add some extra fields…</p>
+
+<p>Here you have to add the <code>aliases</code> field. </p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="673"><code class="language-elixir hljs json">[
+ aliases: aliases()
+]</code></pre>
+
+<p>Don’t forget to add <code>,</code> at the end when you add this in the middle of <code>list</code> . </p>
+
+<p>The <code>aliases()</code> should return the <code>key-value</code> list.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="674"><code class="language-elixir hljs livecodeserver">defp aliases <span class="hljs-built_in">do</span>
+      [
+        <span class="hljs-string">"ecto.setup"</span>: [<span class="hljs-string">"ecto.create"</span>, <span class="hljs-string">"ecto.migrate"</span>, <span class="hljs-string">"ecto.seed"</span>]
+      ]
+<span class="hljs-function"><span class="hljs-keyword">end</span></span></code></pre>
+
+<p>So, whenever you run the <code>mix ecto.setup</code> the three tasks <code>ecto.create</code>, <code>ecto.migrate</code> and <code>ecto.seed</code> will run one after the other.</p>
+
+<p>You can also add them directly as following unlike I did with private function.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="675"><code class="language-elixir hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> </span>project <span class="hljs-keyword">do</span>
+    [<span class="hljs-symbol">app:</span> <span class="hljs-symbol">:project_name</span>,
+     <span class="hljs-symbol">version:</span> <span class="hljs-string">"0.1.0"</span>,
+     <span class="hljs-symbol">aliases:</span> [<span class="hljs-string">"ecto.setup"</span><span class="hljs-symbol">:</span> [<span class="hljs-string">"ecto.create"</span>, <span class="hljs-string">"ecto.migrate"</span>,   <span class="hljs-string">"ecto.seed"</span>]]      
+.....
+  <span class="hljs-keyword">end</span></code></pre>
+
+
+
+<h3 id="2-accessing-the-documentation">2. Accessing the Documentation</h3>
+
+<p>Elixir stores the documentation inside the <code>bytecode</code> in a memory. You access the documentation with the help of <code>Code.get_docs/2</code> function . This means, the documentation accessed when it is required but not when it is loaded in the virtual machine like  <code>iex</code></p>
+
+<p>Suppose you defined a module in memory like ones you defined in <strong>IEx</strong>, cannot have their documentation accessed as they do not have their bytecode written to disk.</p>
+
+<p>Let us check this…</p>
+
+<p>Create a module with name <code>test.ex</code> with the following code. You can copy and paste it.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="676"><code class="language-elixir hljs scala">defmodule Test do
+  <span class="hljs-annotation">@moduledoc</span> <span class="hljs-string">"""
+  This is the test module docs
+  """</span>
+  <span class="hljs-annotation">@doc</span> <span class="hljs-string">"""
+  This is the documentation of hello function
+  """</span>
+  <span class="hljs-keyword">def</span> hello do
+    IO.puts <span class="hljs-string">"hello"</span>
+  end
+end</code></pre>
+
+<p>Now stay in the directory where your file exists and run the command</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="677"><code class="language-elixir hljs ruby"><span class="hljs-variable">$ </span>iex test.ex</code></pre>
+
+<p>Now you can access the function definitions but not the documentation.</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="678"><code class="language-elixir hljs ruby">iex&gt; <span class="hljs-constant">Test</span>.hello
+hello
+<span class="hljs-symbol">:ok</span></code></pre>
+
+<p>That means the code is compiled but documentation is not stored in the memory. So, you cannot access the docs. Lets check that…</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="679"><code class="language-elixir hljs ruby">iex&gt; <span class="hljs-constant">Code</span>.get_docs <span class="hljs-constant">Hello</span>,<span class="hljs-symbol">:moduledoc</span>
+<span class="hljs-keyword">nil</span></code></pre>
+
+<p>You will see the output as <code>nil</code> when you are trying to access the <strong>docs</strong> of the module you have created so far. This is because, the  <code>bytecode</code> is not available in disk.  <br>
+In simple way <code>beam</code> file is not present. Lets do that…</p>
+
+<p>Press <code>Ctrl+C</code> twice so you will come out of the shell and this time you run the command as</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="680"><code class="language-elixir hljs ruby"><span class="hljs-variable">$ </span>elixirc test.ex</code></pre>
+
+<p>After running the command, you will see a file with name <code>Elixir.Test.beam</code> . Now the <code>bytecode</code> for the module <code>Test</code> is available in memory. Now you can access the documentation as follows…</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="681"><code class="language-elixir hljs ruby"><span class="hljs-variable">$ </span>iex
+iex&gt; <span class="hljs-constant">Code</span>.get_docs <span class="hljs-constant">Test</span>,<span class="hljs-symbol">:moduledoc</span>
+{<span class="hljs-number">3</span>, <span class="hljs-string">"This is the test module docs\n"</span>}</code></pre>
+
+<p>The output is tuple with two elements. The first element is the line number of the documentation it starts and second element is the actual documentation in the binary form.</p>
+
+<p>You can read more about this function <a href="https://hexdocs.pm/elixir/Code.html#get_docs/2">here</a></p>
+
+
+
+<h3 id="3-verbose-testing">3. Verbose Testing</h3>
+
+<p>When you go with <code>mix test</code> it will run all the tests defined and gives you the time of testing. However, you can see more verbose output like which test you are running with the <code>--trace</code> option like following…</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="682"><code class="language-elixir hljs brainfuck"><span class="hljs-comment">mix</span> <span class="hljs-comment">test</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">trace</span></code></pre>
+
+<p>It will list out the all tests with names you defined as <code>test "test_string"</code> here <code>test_string</code> is the name of the test.</p>
+
+
+
+<h3 id="4-dynamic-function-name-in-elixir-macro">4. Dynamic Function Name in Elixir Macro</h3>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="683"><code class="language-elixir hljs livecodeserver">defmacro gen_function(fun_name) <span class="hljs-built_in">do</span>
+  <span class="hljs-constant">quote</span> <span class="hljs-built_in">do</span> 
+    def unquote(:<span class="hljs-string">"#{fun_name}"</span>)() <span class="hljs-built_in">do</span>
+      <span class="hljs-comment"># your code...</span>
+    <span class="hljs-function"><span class="hljs-keyword">end</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">end</span></span>
+<span class="hljs-function"><span class="hljs-keyword">end</span></span></code></pre>
+
+<p>To be simple the name of the function should be an <strong>atom</strong> instead of binary.</p>
+
+
+
+<h3 id="5-run-shell-commands-in-elixir"><strong>5. Run Shell Commands in Elixir</strong></h3>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="684"><code class="language-elixir hljs livecodeserver">System.cmd(<span class="hljs-command"><span class="hljs-keyword">command</span>,<span class="hljs-title">args</span>,<span class="hljs-title">options</span> \\[])</span></code></pre>
+
+<p>Executes the given command with args.</p>
+
+<ul>
+<li><strong>command</strong> is expected to be an executable available in PATH unless an absolute path is given.</li>
+<li><strong>args</strong> must be a list of binaries which the executable will receive as its <br>
+arguments as is. This means that:</li>
+</ul>
+
+
+
+<h4 id="examples">Examples</h4>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="685"><code class="language-elixir hljs avrasm">iex&gt; System<span class="hljs-preprocessor">.cmd</span> <span class="hljs-string">"echo"</span>, [<span class="hljs-string">"hello"</span>]
+    {<span class="hljs-string">"hello\n"</span>, <span class="hljs-number">0</span>}</code></pre>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="686"><code class="language-elixir hljs cs">iex&gt; System.cmd <span class="hljs-string">"echo"</span>, [<span class="hljs-string">"hello"</span>],<span class="hljs-keyword">into</span>: []
+    {[<span class="hljs-string">"hello\n"</span>], <span class="hljs-number">0</span>}</code></pre>
+
+<p>Get help from <code>iex</code> with <code>h System.cmd</code> </p>
+
+<p>Checkout the documentation about <code>System</code> for more information and  <br>
+also check <a href="http://www.erlang.org/doc/man/os.html">Erlang os Module</a>.</p>
+
+
+
+<h3 id="6-printing-list-as-list-without-ascii-encoding">6. Printing List as List without ASCII-Encoding</h3>
+
+<p>You know that when the list contains all the numbers as <strong>ASCII</strong> values, it will list out those values instead of the original numbers. Lets check that…</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="687"><code class="language-elixir hljs bash">iex&gt; IO.inspect [<span class="hljs-number">97</span>,<span class="hljs-number">98</span>]
+<span class="hljs-string">'ab'</span>
+<span class="hljs-string">'ab'</span></code></pre>
+
+<p>The code point of <code>a</code> is <code>97</code> and <code>b</code> is <code>98</code> hence it is listing out them as <code>char_list</code>. However you can tell the <code>IO.inspect</code> to list them as list itself with option <code>char_lists: :as_list</code> .</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="688"><code class="language-elixir hljs ruby">iex&gt; <span class="hljs-constant">IO</span>.inspect [<span class="hljs-number">97</span>,<span class="hljs-number">98</span>],<span class="hljs-symbol">charlists:</span> <span class="hljs-symbol">:as_lists</span>
+[<span class="hljs-number">97</span>, <span class="hljs-number">98</span>]
+<span class="hljs-string">'ab'</span></code></pre>
+
+<p>Open<code>iex</code> and type <code>h Inspect.Opts</code>, you will see that Elixir does this kind of thing with other values as well, specifically <strong>structs</strong> and <strong>binaries</strong>.</p>
+
+
+
+<h3 id="7-accessing-file-name-and-line-number-etc-for-debugging">7. Accessing file name and line number etc… for Debugging</h3>
+
+
+
+<h4 id="defmacro-env">defmacro <strong>ENV</strong>()</h4>
+
+<p>This macro gives the current environment information. You can get the information like current <code>filename</code> <code>line</code> <code>function</code> and others…</p>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="689"><code class=" hljs livecodeserver">iex(<span class="hljs-number">4</span>)&gt; __ENV__.<span class="hljs-built_in">file</span>
+<span class="hljs-string">"iex"</span></code></pre>
+
+
+
+<pre class="prettyprint" data-initialized="true" data-gclp-id="728"><code class=" hljs erlang"><span class="hljs-function"><span class="hljs-title">iex</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>&gt; __ENV__.<span class="hljs-title">line</span>
+5</span></code></pre>
+
+<p>You can also use them for debugging purpose in your lines of code.</p>
+
+<p>1</p>
+
+<p>1 <br>
+2 <br>
+2 <br>
+2</p>
+
+<p>3 <br>
+3 <br>
+3 <br>
+4</p>
+
+<p>4 <br>
+4</p>
+
+<p>5 <br>
+5 <br>
+5 <br>
+5 <br>
+6 <br>
+6 <br>
+6 <br>
+7 <br>
+7 <br>
+7 <br>
+8 <br>
+8</p>
+
+<p>8</p>
+
+<p>9 <br>
+9 <br>
+10 <br>
+10 <br>
+10 <br>
+11 <br>
+11 <br>
+11 <br>
+12 <br>
+12 <br>
+13</p>
+
+<p>13</p></div></body>
+</html>
