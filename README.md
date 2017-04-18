@@ -1,6 +1,6 @@
 # Killer Elixir-Tips
 
-Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Uniques Tips and Tricks with clear explanation with live examples and outputs. These tips will speed up your development and saves your time in typing the code as well. 
+Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Unique Tips and Tricks with clear explanation with live examples and outputs. These tips will speed up your development and saves your time in typing code as well. 
 
 
 
