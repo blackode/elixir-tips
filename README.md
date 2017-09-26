@@ -1344,7 +1344,11 @@ end
 See this in action…
 [![asciicast](https://asciinema.org/a/S64h7ydwzfMXsPgOeSfcRXejA.png)](https://asciinema.org/a/S64h7ydwzfMXsPgOeSfcRXejA)
 
-Get me a cup of coffee https://paypal.me/ankanna
+Thanks for Reading.
+ 
+If you feel they are useful...
+
+Buy me a cup of coffee   https://paypal.me/ankanna
 
 
  
