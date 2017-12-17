@@ -124,7 +124,7 @@ iex> raise BugError, message: "I am Bug.." #here passing the message dynamic
 ### 6. Get a Value from Nested Maps Easily
 The `get_in` function can be used to retrieve a nested value in nested maps using a list of keys.
 ```elixir
-nested_map = %{ name: %{ first_name: "blackode"} }     #Example of Nested Map
+nested_map = %{ name: %{ first_name: "blackode"} }     # Example of Nested Map
 first_name = get_in(nested_map, [:name, :first_name])  # Retrieving the Key
 
 # Returns nil for missing value 
@@ -148,7 +148,7 @@ iex> with 1 <- 1+0,
           2 <- 3+1,
           do: IO.puts "all matched"
 4
-## since  2 <- 3+1 is not matched so the result of 3+1 is returned.Writing Protocols**
+## since  2 <- 3+1 is not matched so the result of 3+1 is returned
 ```
 
 ### 8. Writing Protocols
@@ -184,7 +184,7 @@ Load the code into `iex` and execute
 iex> Triple.triple(3) 
 9
 Triple.triple([1, 2])
-[1, 2, 1, 2,1,2]
+[1, 2, 1, 2, 1, 2]
 ```
 
 ### 9. Ternary Operator
@@ -300,7 +300,7 @@ false
 
 ### 4  Arithmetic Operators as Lambda functions
 
-When I see this first time, I said to my self “**Elixir is Crazy” . **This tip really saves time and it resembles your smartness. In Elixir every operator is a macro. So, we can use them as lambda functions.
+When I see this first time, I said to my self “**Elixir is Crazy**”. This tip really saves time and it resembles your smartness. In Elixir every operator is a macro. So, we can use them as lambda functions.
 
 ```elixir
 iex> Enum.reduce([1,2,3], 0, &+/2)
@@ -322,11 +322,11 @@ This is my recent discovery. I always encounter a situation like converting `"$
 ![img](https://cdn-images-1.medium.com/max/800/0*ipJJTjsFiaGmCBpc.)
 
 ```elixir
-iex> value = "$34.56"              |>
-iex ...        String.split("$")   |>  
-iex ...         tl                 |>   
-iex ...         List.first         |> 
-iex ...         String.to_float
+iex> value = "$34.56"
+iex ...      |> String.split("$")
+iex ...      |> tl
+iex ...      |> List.first
+iex ...      |> String.to_float
 34.56
 ```
 
@@ -347,7 +347,7 @@ At beginning stage, I used to press `^c` `^c` twice and restart shell as `ie
 
 ```elixir
 $ iex -S mix
-iex> recompile() 
+iex> recompile
 ```
 
 **Warning:** The changes in the `config/config.ex` are not reflected. You have to restart the shell again.
@@ -356,7 +356,7 @@ iex> recompile()
 
 Logger is one of my favorite modules. This come in default and starts along with your application. You have to just `require` this module. When I am new to Elixir, I always used to write the console outputs as `IO.puts "This is value of data"` for code debugging but, those lines get mixed up with other lines of information and It became hard to trace those lines.
 
-This `Logger` module solved my problem. It has many features but, I use three definitions very often `warn` `info` and `error` Each definition prints the information with different **colors **which is more easy to find the statement at a glance.
+This `Logger` module solved my problem. It has many features but, I use three definitions very often `warn` `info` and `error` Each definition prints the information with different **colors** which is more easy to find the statement at a glance.
 
 The best side of this module is it prints along with the **time**, means it also prints the time while executing your statement. So, you can know the direction of flow of execution.
 
@@ -393,9 +393,9 @@ iex> Application.started_applications
 
 ### 9  Advantage of Map keys as :atoms and binary(strings)
 
-Before I let you to use this tip, I just want to remind you that **:atoms** are not garbage collected. Atom keys are great! If you have a fixed number of them defined statically in your code, you are in no danger.What you should not do is convert user supplied input into atoms without sanitizing them first because it can lead to out of memory. **You should also be cautious if you create dynamic atoms in your code.**
+Before I let you to use this tip, I just want to remind you that **:atoms** are not garbage collected. Atom keys are great! If you have a fixed number of them defined statically in your code, you are in no danger. What you should not do is convert user supplied input into atoms without sanitizing them first because it can lead to out of memory. **You should also be cautious if you create dynamic atoms in your code.**
 
-But , you can use the `.` to retrieve the data from the keys as `map.key` unlike the usual notation like `map["key"]` . That really saves the typing. But, I don’t encourage this because, as a programmer we should really care about memory.
+But , you can use the `.` to retrieve the data from the keys as `map.key` unlike the usual notation like `map["key"]` . That really saves the typing. But, I don’t encourage this because, as programmers we should really care about memory.
 
 ![img](https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz.)
 
@@ -408,7 +408,7 @@ iex> map.blog
 "medium"
 ```
 
-Be sure that when you try to retrieve a key with `.` form which is not present in the map, it will raise an **key error **instead of returning the `nil`unlike the `map["key"]` which returns `nil` if `key` is not present in `map`
+Be sure that when you try to retrieve a key with `.` form which is not present in the map, it will raise an **key error** instead of returning the `nil` unlike the `map["key"]` which returns `nil` if `key` is not present in `map`
 
 ```elixir
 iex> map["age"]
@@ -428,7 +428,8 @@ You can also provide **background colors**.
 
 ```elixir
 iex> import IO.ANSI
-iex> IO.puts red <> "red"<>green<>" green" <> yellow <> " yellow" <>   reset <> " normal"
+iex> IO.puts red <> "red" <> green <> " green" <> yellow <> " yellow" <> reset <> " normal"
+iex> IO.puts Enum.join [red, "red", green, " green", yellow, " yellow", reset, " normal"]
 red green yellow normal
 ```
 
@@ -450,10 +451,10 @@ We cannot make use of the functions as guard clauses in elixir. It means, `when
 
 ```elixir
 defmodule Hello do
-  def hello(name,age) when is_kid(age) do
+  def hello(name, age) when is_kid(age) do
     IO.puts "Hello Kid #{name}"
   end
-  def hello(name,age) when is_adult(age) do
+  def hello(name, age) when is_adult(age) do
     IO.puts "Hello Mister #{name}"
   end
   def is_kid age do
@@ -492,14 +493,14 @@ defmodule Hello do
 
   import MyGuards
 
-  def hello(name,age) when is_kid(age) do
+  def hello(name, age) when is_kid(age) do
     IO.puts "Hello Kid #{name}"
   end
 
-  def hello(name,age) when is_adult(age) do
+  def hello(name, age) when is_adult(age) do
     IO.puts "Hello Mister #{name}"
   
-   def hello(name,age) do
+   def hello(name, age) do
     IO.puts "Hello Youth #{name}"
   end
 
@@ -509,10 +510,10 @@ end
 In the above lines of code, we wrapped all our guards inside a module `MyGuards` and make sure the module is top of the module `Hello` so, the macros first gets compiled. Now compile and execute you will see the following output..
 
 ```elixir
-iex> Hello.hello "blackode",21
+iex> Hello.hello "blackode", 21
 Hello Mister blackode
 :ok
-iex> Hello.hello "blackode",11
+iex> Hello.hello "blackode", 11
 Hello Kid blackode
 :ok
 ```
@@ -549,11 +550,11 @@ Similarly we are having `ensure_compile` to check whether the module is compil
 
 ### 4. Binary to Capital Atom
 
-Elixir provides a special syntax which is usually used for module names. What is called a module name is an **uppercase*** ASCII letter* followed by any number of **lowercase*** or ***uppercase*** ASCII letters*, *numbers*, or *underscores*.
+Elixir provides a special syntax which is usually used for module names. What is called a module name is an ***uppercase ASCII letter*** followed by any number of *lowercase* or *uppercase ASCII letters*, *numbers*, or *underscores*.
 
-This identifier is equivalent to an atom prefixed by `Elixir.`. So in the `defmodule Blackode` example `Blackode` is equivalent to `:"Elixir.Blackode"`
+This identifier is equivalent to an atom prefixed by `Elixir.` So in the `defmodule Blackode` example `Blackode` is equivalent to `:"Elixir.Blackode"`
 
-When we use `String.to_atom "Blackode"` it converts it into `:Blackode` But actually we need something like “**Blackode” **to **Blackode. **To do that we need to use `Module.concat`
+When we use `String.to_atom "Blackode"` it converts it into `:Blackode` But actually we need something like “**Blackode” to Blackode**. To do that we need to use `Module.concat`
 
 ```elixir
 iex(2)> String.to_atom "Blackode"
@@ -564,25 +565,25 @@ Blackode
 
 In Command line applications whatever you pass they convert it into **binary**. So, again you suppose to do some casting operations …
 
-### 5. Pattern match [ vs ]destructure.
+### 5. Pattern match [ vs ] destructure.
 
-We all know that `=` does the pattern match for left and right side. We cannot do `[a,b,c]=[1,2,3,4]` this raise a `MatchError`
+We all know that `=` does the pattern match for left and right side. We cannot do `[a, b, c] = [1, 2, 3, 4]` this raise a `MatchError`
 
 ```elixir
-iex(11)> [a,b,c]=[1,2,3,4]
+iex(11)> [a, b, c] = [1, 2, 3, 4]
 ** (MatchError) no match of right hand side value: [1, 2, 3, 4]
 ```
 
 We can use `destructure/2` to do the job.
 
 ```elixir
-iex(1)> destructure [a,b,c],[1,2,3,4]
+iex(1)> destructure [a, b, c], [1, 2, 3, 4]
 [1, 2, 3]
-iex(2)> {a,b,c}
+iex(2)> {a, b, c}
 {1, 2, 3}
 ```
 
-If the left side is having more entries than in right side, it assigns the `nil`value for remaining entries..
+If the left side is having more entries than in right side, it assigns the `nil` value for remaining entries..
 
 ```elixir
 iex> destructure([a, b, c], [1])
@@ -595,7 +596,7 @@ iex> {a, b, c}
 We can decorate our output with `inspect` and `label` option. The string of `label` is added at the beginning of the data we are inspecting.
 
 ```elixir
-iex(1)> IO.inspect [1,2,3],label: "the list "
+iex(1)> IO.inspect [1, 2, 3], label: "the list "
 the list : [1, 2, 3]
 [1, 2, 3]
 ```
@@ -623,8 +624,8 @@ after change: [2, 4, 6]
 We can pass the anonymous functions in two ways. One is directly using `&`like following..
 
 ```elixir
-[1,2,3,4,5]
-|> length
+[1, 2, 3, 4, 5]
+|> length()
 |> (&(&1*&1)).()
 ```
 
@@ -632,8 +633,8 @@ This is the most weirdest approach. How ever, we can use the reference of the an
 
 ```elixir
 square = & &1 * &1
-[1,2,3,4,5]
-|> length
+[1, 2, 3, 4, 5]
+|> length()
 |> square.()
 ```
 
@@ -657,22 +658,22 @@ The following two tips are mostly useful for beginners…
 We can perform the subtraction over lists for removing the elements in list.
 
 ```elixir
-iex> [1,2,3,4.5]--[1,2]
+iex> [1, 2, 3, 4.5] -- [1, 2]
 [3, 4.5]
-iex> [1,2,3,4.5,1]--[1]  
+iex> [1, 2, 3, 4.5, 1] -- [1]  
 [2, 3, 4.5, 1]
-iex> [1,2,3,4.5,1]--[1,1]
+iex> [1, 2, 3, 4.5, 1] -- [1, 1]
 [2, 3, 4.5]
-iex> [1,2,3,4.5]--[6]    
+iex> [1, 2, 3, 4.5] -- [6]
 [1, 2, 3, 4.5]
 ```
 
 We can also perform same operations on char lists too..
 
 ```elixir
-iex(12)> 'blackode'--'ode'
+iex(12)> 'blackode' -- 'ode'
 'black'
-iex(13)> 'blackode'--'z'    
+iex(13)> 'blackode' -- 'z'    
 'blackode'
 ```
 
@@ -680,16 +681,16 @@ If the element to subtract is not present in the list then it simply returns the
 
 ### 10. Using Previous results in IEx
 
-When you are working with `iex` environment , you can see a number increment every time you evaluate an expression in the shell like `iex(2)>``iex(3)>`
+When you are working with `iex` environment , you can see a number increment every time you evaluate an expression in the shell like `iex(2)>` `iex(3)>`
 
 Those numbers helps us to reuse the result with `v/1` function which has been loaded by default..
 
 ```elixir
-iex(1)> list = [1,2,3,4,5]
+iex(1)> list = [1, 2, 3, 4, 5]
 [1, 2, 3, 4, 5]
 iex(2)> double_lsit = Enum.map(list, &(&1*2))
 [2, 4, 6, 8, 10]
-iex(3)> v 1         
+iex(3)> v 1
 [1, 2, 3, 4, 5]
 iex(4)> v(1) ++ v(2)
 [1, 2, 3, 4, 5, 2, 4, 6, 8, 10]
@@ -738,9 +739,9 @@ The `aliases()` should return the `key-value` list.
 
 ```elixir
 defp aliases do
-      [
-        "ecto.setup": ["ecto.create", "ecto.migrate", "ecto.seed"]
-      ]
+  [
+    "ecto.setup": ["ecto.create", "ecto.migrate", "ecto.seed"]
+  ]
 end
 ```
 
@@ -752,14 +753,14 @@ You can also add them directly as following unlike I did with private function.
 def project do
     [app: :project_name,
      version: "0.1.0",
-     aliases: ["ecto.setup": ["ecto.create", "ecto.migrate",   "ecto.seed"]]      
+     aliases: ["ecto.setup": ["ecto.create", "ecto.migrate", "ecto.seed"]]      
 .....
   end
 ```
 
 ### 2. Accessing the Documentation
 
-Elixir stores the documentation inside the `bytecode` in a memory. You access the documentation with the help of `Code.get_docs/2` function . This means, the documentation accessed when it is required but not when it is loaded in the virtual machine like  `iex`
+Elixir stores the documentation inside the `bytecode` in a memory. You access the documentation with the help of `Code.get_docs/2` function . This means, the documentation accessed when it is required, but not when it is loaded in the virtual machine like  `iex`
 
 Suppose you defined a module in memory like ones you defined in **IEx**, cannot have their documentation accessed as they do not have their bytecode written to disk.
 
@@ -772,6 +773,7 @@ defmodule Test do
   @moduledoc """
   This is the test module docs
   """
+  
   @doc """
   This is the documentation of hello function
   """
@@ -798,7 +800,7 @@ hello
 That means the code is compiled but documentation is not stored in the memory. So, you cannot access the docs. Lets check that…
 
 ```elixir
-iex> Code.get_docs Hello,:moduledoc
+iex> Code.get_docs Hello, :moduledoc
 nil
 ```
 
@@ -815,7 +817,7 @@ After running the command, you will see a file with name `Elixir.Test.beam` . N
 
 ```elixir
 $ iex
-iex> Code.get_docs Test,:moduledoc
+iex> Code.get_docs Test, :moduledoc
 {3, "This is the test module docs\n"}
 ```
 
@@ -850,7 +852,7 @@ To be simple the name of the function should be an **atom** instead of binary.
 ### **5. Run Shell Commands in Elixir**
 
 ```elixir
-System.cmd(command,args,options \\[])
+System.cmd(command, args, options \\ [])
 ```
 
 Executes the given command with args.
@@ -867,7 +869,7 @@ iex> System.cmd "echo", ["hello"]
 ```
 
 ```elixir
-iex> System.cmd "echo", ["hello"],into: []
+iex> System.cmd "echo", ["hello"], into: []
     {["hello\n"], 0}
 ```
 
@@ -881,7 +883,7 @@ also check [Erlang os Module](http://www.erlang.org/doc/man/os.html).
 You know that when the list contains all the numbers as **ASCII** values, it will list out those values instead of the original numbers. Lets check that…
 
 ```elixir
-iex> IO.inspect [97,98]
+iex> IO.inspect [97, 98]
 'ab'
 'ab'
 ```
@@ -889,12 +891,12 @@ iex> IO.inspect [97,98]
 The code point of `a` is `97` and `b` is `98` hence it is listing out them as `char_list`. However you can tell the `IO.inspect` to list them as list itself with option `char_lists: :as_list` .
 
 ```elixir
-iex> IO.inspect [97,98],charlists: :as_lists
+iex> IO.inspect [97, 98], charlists: :as_lists
 [97, 98]
 'ab'
 ```
 
-Open`iex` and type `h Inspect.Opts`, you will see that Elixir does this kind of thing with other values as well, specifically **structs** and **binaries**.
+Open `iex` and type `h Inspect.Opts`, you will see that Elixir does this kind of thing with other values as well, specifically **structs** and **binaries**.
 
 ### 7. Accessing file name and line number etc…
 
@@ -925,7 +927,7 @@ iex> pid("0.21.32")
 #PID<0.21.32>
 ```
 
-#### def pid(a,b,c)
+#### def pid(a, b, c)
 
 Creates a **PID** with 3 non negative integers passed as arguments to the function.
 
@@ -938,7 +940,7 @@ iex> pid(0, 21, 32)
 
 Suppose you are writing a library and you want to test one of your functions for the type pid, then you can create one and test over it.
 
-You cannot create the pid like assigning `pid = #PID<0.21.32>` because** #** is considered as comment here.
+You cannot create the pid like assigning `pid = #PID<0.21.32>` because `#` is considered as comment here.
 
 ```elixir
 iex(6)> pid = #PID<0.21.32>
@@ -971,13 +973,13 @@ iex(2)> String.replace str,"@","#"
 ```
 
 The 
-`String.replace str,"@","#"`is same as 
-`String.replace str,"@","#",global: true`
+`String.replace str, "@", "#"`is same as 
+`String.replace str, "@", "#", global: true`
 
 But, if you want to replace only the first occurrence of the pattern, you need to pass the option `global: false` . So, it replaces only the first occurrence of `@` . Lets check that…
 
 ```elixir
-iex(3)> String.replace str,"@","#",global: false
+iex(3)> String.replace str, "@", "#", global: false
 "hello#hi.com, blackode@medium.com"
 ```
 
@@ -985,7 +987,7 @@ Here only first `@` is replaced with `#`.
 
 ### 10.Memory Usage
 
-You can check the memory usage with `:erlang.memory` 
+You can check the memory usage (in bytes) with `:erlang.memory` 
 
 ```elixir
 iex(1)> :erlang.memory
@@ -1002,7 +1004,7 @@ iex(2)> :erlang.memory :atom
 
 ## Part 5
 
-### 1.Fetching the default Mix Compilers list
+### 1. Fetching the default Mix Compilers list
 
 ```elixir
 iex> Mix.compilers
@@ -1021,11 +1023,11 @@ end
 We all know that a proper list is a combination of `head` and `tail` like `[head | tail]` . We can use the same principle for picking out the elements in the list like the following way…
 
 ```elixir
-iex> [first|[second|[third|[fourth|_rest ]]]]= [1,2,3,4,5,6,7]
+iex> [first | [second | [third | [ fourth | _rest ]]]] = [1, 2, 3, 4, 5, 6, 7]
 [1, 2, 3, 4, 5, 6, 7]
 iex> first
 1
-iex> {second,third,fourth}
+iex> {second, third, fourth}
 {2, 3, 4}
 iex(5)>
 ```
@@ -1033,22 +1035,22 @@ iex(5)>
 We all know that the get_in function is used to extract the key which is deeper inside the map by providing the list with keys like a following way…        
 
 ```elixir
-iex> user=%{"name"=>{"first_name"=>"blackode","last_name"=>"john" }}
+iex> user = %{"name" => {"first_name" => "blackode", "last_name" => "john" }}
 %{"name" => %{"first_name" => "blackode", "last_name" => "john"}}
-iex > get_in user,["name","first_name"]
+iex > get_in user, ["name", "first_name"]
 "blackode"
 ```
 
 But, if there is a list of maps `[maps]` where you have to extract `first_name` of the each map, generally we go for `enum` . We can also achieve this by using the `get_in` and `Access.all()`
 
 ```elixir
-iex> users=[%{"user"=>%{"first_name"=>"john","age"=>23}},
-             %{"user"=>%{"first_name"=>"hari","age"=>22}},
-             %{"user"=>%{"first_name"=>"mahesh","age"=>21}}]
+iex> users=[%{"user" => %{"first_name" => "john", "age" => 23}},
+            %{"user" => %{"first_name" => "hari", "age" => 22}},
+            %{"user" => %{"first_name" => "mahesh", "age" => 21}}]
 # that is a list of maps 
-iex> get_in users, [Access.all(),"user","age"]
+iex> get_in users, [Access.all(), "user", "age"]
 [23, 22, 21]
-iex> get_in users, [Access.all(),"user","first_name"]
+iex> get_in users, [Access.all(), "user", "first_name"]
 ["john", "hari", "mahesh"]
 ```
 **Note:** If the key is not present in map, then it returns nil 
@@ -1075,19 +1077,19 @@ For instance, given a user with a list of books, here is how to deeply
 traverse the map and convert all book names to uppercase:
 
 ```elixir
-iex> user = %{name: "john", books: [%{name: "my soul",type: "tragedy"},%{name: "my heart", type: "romantic"}, %{name: "my enemy", type: "horror"}]}
+iex> user = %{name: "john", books: [%{name: "my soul", type: "tragedy"}, %{name: "my heart", type: "romantic"}, %{name: "my enemy", type: "horror"}]}
 iex> update_in user, [:books, Access.all(), :name], &String.upcase/1
-%{books: [%{name: "MY SOUL", type: "tragedy"},%{name: "MY HEART", type: "romantic"}, %{name: "MY ENEMY", type: "horror"}],
-  name: "john"}
-iex> get_in user, [:books, Access.all(), :name]                              ["my soul", "my heart", "my enemy"]
+%{books: [%{name: "MY SOUL", type: "tragedy"}, %{name: "MY HEART", type: "romantic"}, %{name: "MY ENEMY", type: "horror"}], name: "john"}
+iex> get_in user, [:books, Access.all(), :name]
+["my soul", "my heart", "my enemy"]
 ```
-Here, user is not a list unlike in the previous examples where we passed the users as a list. But, we changed the position of Access.all() and inside the list of keys [:books,Access.all(),:name] , the value of the key :books should return the list, other wise it raises an error.
+Here, user is not a list unlike in the previous examples where we passed the users as a list. But, we changed the position of `Access.all()` and inside the list of keys `[:books, Access.all(), :name]`, the value of the key `:books` should return the list, other wise it raises an error.
 ### 4. Data Comprehension along with filters
-We achieve the data comprehension through `for x <- [1,2,3],do: x+1` . But we can also add the comprehension along with filter.
+We achieve the data comprehension through `for x <- [1, 2, 3], do: x + 1` . But we can also add the comprehension along with filter.
 ##### General Usage
 ```elixir
-iex> for x <- [1,2,3,4], do: x+1
-[2,3,4,5]
+iex> for x <- [1, 2, 3, 4], do: x + 1
+[2, 3, 4, 5]
 # that is how we use in general lets think out of the box
 ```
 ##### With filters
@@ -1095,9 +1097,9 @@ iex> for x <- [1,2,3,4], do: x+1
 Here I am using two lists of numbers and cross product over the lists and filtering out the product which is a odd number.
 
 ```elixir
-iex> for x <- [1,2,3,4], y <- [5,6,7,8], rem(x*y,2)==0,do: {x,y,x*y}
+iex> for x <- [1, 2, 3, 4], y <- [5, 6, 7, 8], rem(x * y, 2) == 0, do: {x, y, x * y}
 [{1, 5, 5}, {1, 7, 7}, {3, 5, 15}, {3, 7, 21}]
-#here rem(x*y,2) is acting as a filter.
+#here rem(x * y, 2) is acting as a filter.
 ```
 ## 5. Comprehension with binary strings.
 
@@ -1107,9 +1109,9 @@ Lets check that…
 ```elixir
 iex> b_string = <<"blackode">>
 "blackode"
-iex> for << x <- b_string >>, do: x+1
+iex> for << x <- b_string >>, do: x + 1
 'cmbdlpef'
-#here I am just printing out the letter after every letter in the "blackode"
+#here it is printing out the letter after every letter in the "blackode"
 ```
 Did you observe that `x <- b_string` is just changed something like `<< x <- b_string >>` to make the sense.
 
@@ -1117,9 +1119,13 @@ Did you observe that `x <- b_string` is just changed something like `<< x <- b_s
 Here we are taking the elixir comprehension to the next level.            
 We read the input from the keyboard and convert that to upcase and after that it should wait for another entry.
 ```elixir
-for x <- IO.stream(:stdio,:line),into: IO.stream(:stdio, :line), do: String.upcase(x)
-Basically IO.stream(:stdio,:line) will the read a line input from the keyboard.
-iex(10)> for x <- IO.stream(:stdio,:line),into: IO.stream(:stdio, :line), do: String.upcase(x)
+for x <- IO.stream(:stdio, :line), into: IO.stream(:stdio, :line), do: String.upcase(x)
+```
+
+Basically `IO.stream(:stdio, :line)` will the read a line input from the keyboard.
+
+```elixir
+iex> for x <- IO.stream(:stdio, :line), into: IO.stream(:stdio, :line), do: String.upcase(x)
 hello
 HELLO
 hi
@@ -1174,11 +1180,11 @@ helloblackode
 ```
 This is the best style and recommended one.   
 
-If you are having the list of strings `["hello","blackode"]` then use `Enum.join`
+If you are having the list of strings `["hello", "blackode"]` then use `Enum.join`
 ```elixir
-iex> mystrings=["hello","blackode"]
-["hello","blackode"]
-iex> mystrings |> Enum.join
+iex> mystrings = ["hello", "blackode"]
+["hello", "blackode"]
+iex> Enum.join(mystrings)
 "helloblackode"
 ```
 ## Part 6
@@ -1204,7 +1210,7 @@ iex> “hello” <> <<0>>
 
 ### 3 Initialisation of Multiple with Same value
 ```elixir
-iex> x=y=z=5
+iex> x = y = z = 5
 5
 iex> x
 5
@@ -1242,7 +1248,7 @@ The above warning is from the [ORIGINAL DOCUMENTATION](https://hexdocs.pm/elixir
 ### 5 Check Whether Function is Exported or not
 Elixir provides `function_exported?/3` to achieve this…
 
-```elxiir
+```elixir
 # Defining the module with one exported function and private one
 defmodule Hello do
   def hello name do
@@ -1270,31 +1276,31 @@ If you observe the above string, it comprises of **two blank spaces** , **one e
 
 ```elixir
 string = "Hello Blackode! Medium-is-5*"
-String.split string,[" ", "!", "-","*"]
+String.split string, [" ", "!", "-", "*"]
 #output
 ["Hello", "Blackode", "", "Medium", "is", "5", ""]
 ```
 The pattern is generated at run time. You can still validate with `:binary.compiled`
 
 ### 7 Checking the closeness of strings
-You can find the distance between the two strings using `String.jaro_distance/2 `. This gives a float value in the range `0..1`
+You can find the distance between the two strings using `String.jaro_distance/2`. This gives a float value in the range `0..1`
 Taking the `0` for no close and `1` is for exact closeness.
 
 ```elixir
-iex> String.jaro_distance "ping","pong"
+iex> String.jaro_distance "ping", "pong"
 0.8333333333333334
-iex> String.jaro_distance "color","colour"
+iex> String.jaro_distance "color", "colour"
 0.9444444444444445
-iex> String.jaro_distance "foo","foo"
+iex> String.jaro_distance "foo", "foo"
 1.0
 ```
-For the **FUN** , you can find your closeness with your name and your partner or lover in case if aren’t married. Hey… ! I am just kidding…. It is just an algorithm which is predefined where our love is undefined. Cheers …….. :)
+For the **FUN**, you can find your closeness with your name and your partner or lover in case if aren’t married. Hey… ! I am just kidding…. It is just an algorithm which is predefined where our love is undefined. Cheers …….. :)
 
 ### 8 last and first for Strings
 We know that `first` and `last` for `lists` gets you the element first and last respectively in the given list. Similarly, the strings give you the first and last `graphemes` in the given string.
 
 ```elixir
-iex> string="blackode medium"
+iex> string = "blackode medium"
 "blackode medium"
 iex> String.first string
 "b"
@@ -1305,7 +1311,7 @@ See this in action…
 [![asciicast](https://asciinema.org/a/vc3j3LXurrwWdskBME5vTDsYF.png)](https://asciinema.org/a/vc3j3LXurrwWdskBME5vTDsYF)
 
 ### 9 Executing code Immediately after loading a Module
-Elixir provides `@on_load` which accepts `atom` as  function name in the same module or a `tuple` with function_name and its arity like `{ function_name,0}`.
+Elixir provides `@on_load` which accepts `atom` as  function name in the same module or a `tuple` with function_name and its arity like `{function_name, 0}`.
 
 ```elixir
 #Hello module 
@@ -1344,21 +1350,11 @@ end
 See this in action…
 [![asciicast](https://asciinema.org/a/S64h7ydwzfMXsPgOeSfcRXejA.png)](https://asciinema.org/a/S64h7ydwzfMXsPgOeSfcRXejA)
 
+See also [Elixir Style Guide](https://github.com/christopheradams/elixir_style_guide) 
+
+
 Thanks for Reading.
  
 If you feel they are useful...
 
 Buy me a cup of coffee   https://paypal.me/ankanna
-
-
- 
-
-
-
-
-
-
-
-
-
-
