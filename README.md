@@ -1354,7 +1354,3 @@ See also [Elixir Style Guide](https://github.com/christopheradams/elixir_style_g
 
 
 Thanks for Reading.
- 
-If you feel they are useful...
-
-Buy me a cup of coffee   https://paypal.me/ankanna
