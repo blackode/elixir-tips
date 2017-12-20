@@ -2,8 +2,13 @@
 
 Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Unique Tips and Tricks with clear explanation with live examples and outputs. These tips will speed up your development and saves your time in typing code as well.              
 
-You can read specific parts with following links...
-[Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
+You can read specific parts with following links...    
+
+--------------
+
+[Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
+
+--------------
 
 ## Part 1
 
@@ -227,6 +232,11 @@ result = :input
 This above tip is from [qhwa](https://medium.com/@qhwa_85848)
 
 
+--------------
+
+[Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
+
+--------------
 
 ## Part 2
 
@@ -442,6 +452,11 @@ For more details on color printing check [**Printex**](https://github.com/black
 ![img](https://cdn-images-1.medium.com/max/1000/0*Qskz94BcqMSyPAuH.png)
 
 
+--------------
+
+[Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
+
+--------------
 
 ## Part 3
 
@@ -697,6 +712,11 @@ iex(4)> v(1) ++ v(2)
 ```
 
 
+--------------
+
+[Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
+
+--------------
 
 ## Part 4
 
@@ -1002,6 +1022,12 @@ iex(2)> :erlang.memory :atom
 264529
 ```
 
+--------------
+
+[Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
+
+--------------
+
 ## Part 5
 
 ### 1. Fetching the default Mix Compilers list
@@ -1187,7 +1213,17 @@ iex> mystrings = ["hello", "blackode"]
 iex> Enum.join(mystrings)
 "helloblackode"
 ```
+
+
+--------------
+
+[Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
+
+--------------
+
+
 ## Part 6
+
 ```
 Elixir version 1.5.1 & Erlang otp version 20
 ```
