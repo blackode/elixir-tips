@@ -11,6 +11,9 @@ You can read specific parts with following links...
       
 --------------
 
+## Note
+#### You can find all the articles at [MEDIUM BLACKODE PUBLICATION](https://medium.com/blackode)
+
 ## Part 1
 
 ### 1. Multiple [ OR ]
@@ -1840,5 +1843,9 @@ In general, with out using `alias __MODULE__` , we have to type full module name
 like `%User.Authentication{key: "key", token: ".."}` to define the struct but
 now simply `%Auth{key: "key", token: ".."}` will be the better approach.
 
+
+
+## Note
+#### You can find all the articles at [MEDIUM BLACKODE PUBLICATION](https://medium.com/blackode)
 
 ### Thanks for Reading.
