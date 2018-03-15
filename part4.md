@@ -14,7 +14,7 @@ The project definition looks like the following way when you create one using a 
 
 ```elixir
 def project do
-    [app: :proect_name,
+    [app: :project_name,
      version: "0.1.0",
      elixir: "~> 1.4-rc",
      build_embedded: Mix.env == :prod,
