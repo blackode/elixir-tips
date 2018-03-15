@@ -741,7 +741,7 @@ The project definition looks like the following way when you create one using a 
 
 ```elixir
 def project do
-    [app: :proect_name,
+    [app: :project_name,
      version: "0.1.0",
      elixir: "~> 1.4-rc",
      build_embedded: Mix.env == :prod,
@@ -1268,7 +1268,7 @@ See this in action here...
 
 ### 4 Not Null implementation in Structs
 This is much like adding a not null constraint to the structs. When you try to define the struct with the absence of that key in the struct, it should raise an exception. Lets do that…                
-You have to use `@enfoce_keys [<keys>]` while defining the struct…
+You have to use `@enforce_keys [<keys>]` while defining the struct…
 
 ```elixir
 # Defining struct
