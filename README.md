@@ -1693,7 +1693,7 @@ def fun(a, b) do
   ...
 end
 ```
-When `fun/3` is invoked with `:laughing`, `"time"` it prints:
+When `fun/2` is invoked with `:laughing`, `"time"` it prints:
 
 ```elixir
 [a: :laughing, b: "time"]
