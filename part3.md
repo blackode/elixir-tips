@@ -116,6 +116,7 @@ false
 ```
 Check the following execution screen shot.
 
+![ScreenShot Defguard Execution](defguard.png)
 
 ### 2. Finding the presence of Sub-String
 
