@@ -73,6 +73,8 @@ Hello Kid blackode
 :ok
 ```
 
+Starting on Elixir v1.6, you can use [defguard/1](https://hexdocs.pm/elixir/Kernel.html#defguard/1).
+
 ### 2. Finding the presence of Sub-String
 
 Using `=~` operator we can find whether the **right** sub-string present in **left** string or not..
