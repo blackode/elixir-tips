@@ -538,6 +538,51 @@ iex> Hello.hello "blackode", 11
 Hello Kid blackode
 :ok
 ```
+Starting on Elixir v1.6, you can use [defguard/1](https://hexdocs.pm/elixir/Kernel.html#defguard/1).       
+
+The `defguard` is also a macro. You can also create private guards with `defguardp`. Hope, you got the point here.        
+Consider the following example.    
+
+        
+**NOTE**: The `defguard` and `defguardp` should reside inside the module like other macros. It raises a compile time error, if some thing that don't fit in the guard clause section `when`.     
+
+Suppose, you want to check the given number is either `three` or `five`, you can define the guard as following.
+
+```elixir
+defmodule Number.Guards do
+  defguard is_three_or_five(number) when (number===3) or (number===5)
+end
+```
+### Usage
+```elixir
+import Number.Guards
+defmodule Hello do
+  def check_favorite_number(num) when is_three_or_five(num) do
+    IO.puts "The given #{num} is on of my favourite numbers"
+  end
+  def check_favorite_number(_num), do: IO.puts "Not my favorite number"
+end
+```
+
+You can also use them inside your code logic as they results `boolean` value. 
+```elixir
+iex> import Number.Guards
+Number.Guards
+
+iex> is_three_or_five(5)
+true
+
+iex> is_three_or_five(3)
+true
+
+iex> is_three_or_five(1)
+false
+
+```
+Check the following execution screen shot.
+
+![ScreenShot Defguard Execution](defguard.png)
+
 
 ### 2. Finding the presence of Sub-String
 
