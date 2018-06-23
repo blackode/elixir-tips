@@ -1893,4 +1893,7 @@ now simply `%Auth{key: "key", token: ".."}` will be the better approach.
 ## Note
 #### You can find all the articles at [MEDIUM BLACKODE PUBLICATION](https://medium.com/blackode)
 
+## How to contribute ?
+Contribute to `Part-8` creating a new branch `Part-8` and make a pull request with atleast 3 Unique tips.
+
 ### Thanks for Reading.
