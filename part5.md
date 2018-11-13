@@ -27,6 +27,18 @@ iex> {second, third, fourth}
 {2, 3, 4}
 iex(5)>
 ```
+
+We can also use simplified syntax for the same job:
+
+```elixir
+iex> [first, second, third, fourth | _rest] = [1, 2, 3, 4, 5, 6, 7]
+[1, 2, 3, 4, 5, 6, 7]
+iex> first
+1
+iex> {second, third, fourth}
+{2, 3, 4}
+```
+
 ### 3. get_in /Acess.all()
 We all know that the get_in function is used to extract the key which is deeper inside the map by providing the list with keys like a following way…        
 
