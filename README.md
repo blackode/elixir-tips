@@ -4,6 +4,8 @@ Elixir Tips and Tricks from the Experience of Development. Each part consists of
 
 You can read specific parts with following links...    
 
+
+
 --------------
 
 [Part 1](#part-1)   [Part 2](#part-2)       [Part 3](#part-3)       [Part 4](#part-4)         [Part 5](#part-5)     [Part 6](#part-6)
@@ -12,7 +14,13 @@ You can read specific parts with following links...
 --------------
 
 ## Note
-#### You can find all the articles at [MEDIUM BLACKODE PUBLICATION](https://medium.com/blackode)
+Check out our Medium Publication        
+
+[![Medium Blog Image](medium_blog.jpg)](https://medium.com/blackode)
+
+If you wish to join our telegram channel, here it is         
+
+[![Telegram  Blog Image](telegram_channel.png)](https://t.me/blackoders)
 
 ## Part 1
 
