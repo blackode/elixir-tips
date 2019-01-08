@@ -1,6 +1,6 @@
 # Killer Elixir-Tips
 
-Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Unique Tips and Tricks with clear explanation with live examples and outputs. These tips will speed up your development and saves your time in typing code as well.              
+Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Unique Tips and Tricks with a clear explanation with live examples and outputs. These tips will speed up your development and save  you time in typing code as well.              
 
 You can read specific parts with following links...    
 
@@ -26,7 +26,7 @@ If you wish to join our telegram channel, here it is
 
 ### 1. Multiple [ OR ]
 
-This is just the other way of writing Multiple **OR** conditions. This is not the recommended approach because in regular approach when the condition evaluates to **true** , it stops executing the remaining conditions which saves time of evaluation unlike this approach which evaluates all conditions first in list. This is just bad but good for discoveries. 
+This is just the other way of writing Multiple **OR** conditions. This is not the recommended approach because in the regular approach when the condition evaluates to **true** , it stops executing the remaining conditions which saves evaluation time unlike this approach which evaluates all conditions first in list. This is just bad but good for discoveries. 
 
 ```elixir
 # Regular Approach
@@ -89,7 +89,7 @@ IEx.configure(
 
 ### 4. Creating Custom Sigils and Documenting
 
-Each `x` sigil call respective `sigil_x` definition
+Each `x` sigil calls its respective `sigil_x` definition
 
 Defining Custom Sigils
 
@@ -151,7 +151,7 @@ Read docs:  [Kernel.get_in/2](http://elixir-lang.org/docs/stable/elixir/Kernel.h
 
 ### 7. With Statement Benefits
 
-The special form `with` is used to chain a sequence of matches in order and finally return the result of `do:` if all the clauses match. However, if one of the clauses does not match, its result of the miss matched expression is immediately returned.
+The special form `with` is used to chain a sequence of matches in order and finally return the result of `do:` if all the clauses match. However, if one of the clauses does not match, the result of the miss matched expression is immediately returned.
 
 ```elixir
 iex> with 1 <- 1+0,
@@ -300,7 +300,7 @@ This `&&` returns the second expression if the first expression is `true` or
 
 ### 3  Comparing two different data types
 
-I have self experience with this . When I am novice in elixir, I just compared `"5" > 4` unknowingly by an accident and to my surprise it returned with `true`.
+I have self experience with this. When I was a novice in elixir, I just compared `"5" > 4` unknowingly by an accident and to my surprise it returned with `true`.
 
 In **Elixir** every term can compare with every other term. So one has to be careful in comparisons.
 
@@ -355,7 +355,7 @@ iex ...      |> String.to_float
 
 #### Tip Approach
 
-This tip made my day easy. I recently used this is in one of my projects.
+This tip makes my day easy. I recently used this is in one of my projects.
 
 ```elixir
 iex> "$" <> value = "$34.56"
@@ -377,11 +377,11 @@ iex> recompile
 
 ### 7  Logger Module
 
-Logger is one of my favorite modules. This come in default and starts along with your application. You have to just `require` this module. When I am new to Elixir, I always used to write the console outputs as `IO.puts "This is value of data"` for code debugging but, those lines get mixed up with other lines of information and It became hard to trace those lines.
+Logger is one of my favorite modules. This come by default and starts along with your application. You have to just `require` this module. When I was new to Elixir, I always used to write the console outputs as `IO.puts "This is value of data"` for code debugging but, those lines get mixed up with other lines of information and It became hard to trace those lines.
 
 This `Logger` module solved my problem. It has many features but, I use three definitions very often `warn` `info` and `error` Each definition prints the information with different **colors** which is more easy to find the statement at a glance.
 
-The best side of this module is it prints along with the **time**, means it also prints the time while executing your statement. So, you can know the direction of flow of execution.
+The best side of this module is that it prints along with the **time**, that means it also prints the time while executing your statement. So, you can know the direction of flow of execution.
 
 Before using the `Logger` module one has to do `require Logger` so all macros will be loaded inside your working module.
 
@@ -405,7 +405,7 @@ This tip is from [Anwesh Reddy](https://medium.com/@kanishkablack)
 
 ### 8  Finding All Started Applications
 
-We can check the all the applications which are started along with our application. Sometimes we have to check whether a particular application is started or not. So, it helps you in those situations.. If you are a beginner, you don’t feel of using this much. But I am pretty sure of this tip will become handy when you work with multiple applications.
+We can check the all the applications which are started along with our application. Sometimes we have to check whether a particular application is started or not. So, it helps you in those situations. If you are a beginner, you don’t feel will be using this much. But I am pretty sure of this tip will become handy when you work with multiple applications.
 
 ```elixir
 iex> Application.started_applications
@@ -418,7 +418,7 @@ iex> Application.started_applications
 
 Before I let you to use this tip, I just want to remind you that **:atoms** are not garbage collected. Atom keys are great! If you have a fixed number of them defined statically in your code, you are in no danger. What you should not do is convert user supplied input into atoms without sanitizing them first because it can lead to out of memory. **You should also be cautious if you create dynamic atoms in your code.**
 
-But , you can use the `.` to retrieve the data from the keys as `map.key` unlike the usual notation like `map["key"]` . That really saves the typing. But, I don’t encourage this because, as programmers we should really care about memory.
+But, you can use the `.` to retrieve the data from the keys as `map.key` unlike the usual notation like `map["key"]` . That really saves on typing. But, I don’t encourage this because, as programmers we should really care about memory.
 
 ![img](https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz.)
 
@@ -1853,7 +1853,7 @@ keys `name`, `blog` to be present inside the map with any values.
 #### Execution screenshot
 ![image](https://cdn-images-1.medium.com/max/2000/1*Me9434rZFV1lEmwZd2toNA.png)
 
-If you observer the screenshot, we tried to access the function by sending a map
+If you observe the screenshot, we tried to access the function by sending a map
 with single key parameter where it is not allowed then with two keys map and the
 keys are exactly pattern matched where it is allowed to use the function then
 evenutally tried with more keys still it worked.
@@ -1862,7 +1862,7 @@ evenutally tried with more keys still it worked.
 
 ### 2|> Universal Code base formatter
 
-Code formatting is easy now with the help of mix task `mix format` . It will
+Code formatting is easy now with the help of mix task `mix format`. It will
 take care of all you care about cleaning and refactoring as well. It can assure
 a clean code base or simply universal code base which maintains some useful
 standards. This really saves a lot of time.
@@ -1944,7 +1944,7 @@ end)
 
 ### What’s the magic here❓
 
-Nothing , just pattern_matching , the boon for functional programmers. The magic lies inside Map.new and the **anonymous** function where we used our **magic band **to see the actual **logic**.
+Nothing , just pattern_matching, the boon for functional programmers. The magic lies inside Map.new and the **anonymous** function where we used our **magic band **to see the actual **logic**.
 
 ![](https://cdn-images-1.medium.com/max/3816/1*rlUV3ulHJ_VN7bsOTsVi3A.png)
 
@@ -2087,7 +2087,7 @@ This is highly recommended command to check out **what hex version** is installe
 
 ### Why is that useful?
 
-I have had experienced a bug in the project in my machine but not from my co-programmer though we work on the same project. The actual problem is we are using different hex versions. I come to know this by running mix hex.info in both systems. That saved a lot of time.
+I have had experienced a bug in the project in my machine but not from my co-programmer though we work on the same project. The actual problem is we are using different hex versions. I came to know this by running mix hex.info in both systems. That saved a lot of time.
 
 ```elixir
 mix hex.info
@@ -2119,7 +2119,7 @@ Replace ***<<package_name>>*** and ***<<version>>*** as you required.
 
 *Let’s create a brief story here.*
 
-The moment when GOD’S are against you, your manager will come and give you a vast legacy project code and asked you to find out ***all the places where a particular function*** is called. In a sentence, the **callers** of a particular function.
+The moment when GOD’S against you, your manager will come and give you a vast legacy project code and asked you to find out ***all the places where a particular function*** is called. In a sentence, the **callers** of a particular function.
 
 **What will you do?** I don’t think it is a smart way of surfing in each and every file. I don’t. So, you don’t.
 
@@ -2148,7 +2148,7 @@ You can add function arity to be more specific, in this case mix xref callers Po
 
 **BOOM !** Now, you can surprise the manager with results before he reaches his cabin. Be fast and smart.
 
-I solely experienced this when my co-worker I better say **co-programmer** asked for help regarding the situation but no manager in my case.
+I solely experienced this when my co-worker I better say **co-programmer** asked for help regarding the situation but there's no manager in my case.
 
 Explore more about **xref**
 
@@ -2202,7 +2202,7 @@ It returns a list of “words” split by whitespace. Character unescaping and
 sentence = ~w(I Love coding in elixir)
 ```
 
-We can still use the interpolation as well. Suppose, I would like to make the language dynamic in the above sentence, I mean one loves elixir and other loves some other languages . So, let’s put the language in a variable lang and interpolate it over.
+We can still use the interpolation as well. Suppose, I would like to make the language dynamic in the above sentence, I mean one loves elixir and other loves some other languages. So, let’s put the language in a variable lang and interpolate it over.
 
 ```elixir
 iex[6] lang = "haskel"
@@ -2292,7 +2292,7 @@ mix test --failed
 
 In a project, there will be many programmers who write different modules. It will hard to find who has written what.
 
-To keep the track of such things, we can add metadata to the @moduledoc . So, we come to know the developer whom we can blame to queries that hit to your mind and kept eating it while using the module.
+To keep the track of such things, we can add metadata to the @moduledoc. So, we come to know the developer whom we can blame to queries that hit to your mind and kept eating it while using the module.
 
 ```elixir
 @moduledoc "Wrong code leads you to the right bug "
