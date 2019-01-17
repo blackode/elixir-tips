@@ -121,7 +121,7 @@ nested_map = %{ name: %{ first_name: "blackode"} }     # Example of Nested Map
 first_name = get_in(nested_map, [:name, :first_name])  # Retrieving the Key
 
 # Returns nil for missing value 
-nil = get_in(nested, [:name, :last_name])              # returns nil when key is not present
+nil = get_in(nested_map, [:name, :last_name])              # returns nil when key is not present
 ```
 Read docs:  [Kernel.get_in/2](http://elixir-lang.org/docs/stable/elixir/Kernel.html#get_in/2)
 
