@@ -1127,7 +1127,7 @@ iex> {second, third, fourth}
 {2, 3, 4}
 ```
 
-### 3. get_in /Acess.all()
+### 3. get_in /Access.all()
 We all know that the get_in function is used to extract the key which is deeper inside the map by providing the list with keys like a following way…        
 
 ```elixir
