@@ -6,16 +6,6 @@ You can read specific parts with following links...
 
 [Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7) [Part 8](./#part-8)
 
-## Note
-
-Check out our Medium Publication
-
-[![Medium Blog Image](.gitbook/assets/medium_blog%20%281%29.jpg)](https://medium.com/blackode)
-
-If you wish to join our telegram channel, here it is
-
-[![Telegram Blog Image](.gitbook/assets/telegram_channel%20%281%29.png)](https://t.me/blackoders)
-
 ## Part 1
 
 ### 1. Multiple \[ OR \]
@@ -1642,7 +1632,9 @@ Now, edit the file `lib/hello.ex` in the project with the following code
     end
 ```
 
-![](https://cdn-images-1.medium.com/max/2000/1*n0RNxQCvWwy3ZQeIKeG_ZQ.png) File Scrennshot Vim Editor
+ File Scrennshot Vim Editor
+
+![](https://cdn-images-1.medium.com/max/2000/1*n0RNxQCvWwy3ZQeIKeG_ZQ.png)
 
 This file comprises of two modules `Hello` and `Printee` . The `Printee` module comprises of two functions `print/0` and `show/0` . Here purposely, `print/0` is considered as a deprecated function used inside the `Hello` module.
 
@@ -1654,7 +1646,9 @@ So, when you compile the project `mix compile`, it gives a warning saying
 
 like in the following screenshot.
 
-![image](https://cdn-images-1.medium.com/max/2000/1*iF5ROIflyq_UPuNJBtTrHA.png) Deprecated Function Warning
+ Deprecated Function Warning
+
+![image](https://cdn-images-1.medium.com/max/2000/1*iF5ROIflyq_UPuNJBtTrHA.png)
 
 #### Check the live coding
 
@@ -1684,7 +1678,9 @@ location of loc
 
 The above line of code gives the context of the module definition and collected in `module_definition` . We can use this `module_defintion` to pass as second parameter to `Module.create/3` function.
 
-![image](https://cdn-images-1.medium.com/max/2000/1*w1vIuGh7xfyLkUq_-odq4w.png) module definition context
+ module definition context
+
+![image](https://cdn-images-1.medium.com/max/2000/1*w1vIuGh7xfyLkUq_-odq4w.png)
 
 Let’s put all together and see the magic
 
@@ -1835,7 +1831,7 @@ Here, we don’t care how many keys present inside the map but we need atleast t
 
 ![image](https://cdn-images-1.medium.com/max/2000/1*Me9434rZFV1lEmwZd2toNA.png)
 
-If you observe the screenshot, we tried to access the function by sending a map with single key parameter where it is not allowed then with two keys map and the keys are exactly pattern matched where it is allowed to use the function then evenutally tried with more keys still it worked.
+If you observe the screenshot, we tried to access the function by sending a map with single key parameter where it is not allowed then with two keys map and the keys are exactly pattern matched where it is allowed to use the function then eventually tried with more keys still it worked.
 
 > Thanks to pattern matching.
 
@@ -2055,7 +2051,9 @@ iex[8]  data <|> length
 
 > “Good programmers write the code & great programmers steal the code” This tip is copied from the [Elixir Lightening Talk](https://www.youtube.com/watch?v=2vocLGYFj8Q&t=25s)
 
-![\*\*Bangpipe\*\* \*\*&amp;lt;\|&amp;gt;\*\* \*\*execution\*\*](https://cdn-images-1.medium.com/max/3820/1*FDNBw77-79TpQNyoqphuZw.png)**\*Bangpipe** **&lt;\|&gt;** **execution\***
+**\*Bangpipe** **&lt;\|&gt;** **execution\***
+
+![\*\*Bangpipe\*\* \*\*&amp;lt;\|&amp;gt;\*\* \*\*execution\*\*](https://cdn-images-1.medium.com/max/3820/1*FDNBw77-79TpQNyoqphuZw.png)
 
 ## 5 — mix hex.info
 
@@ -2071,7 +2069,9 @@ mix hex.info
 
 That gives the information about the hex and how it is built with.
 
-![mix hex.info](https://cdn-images-1.medium.com/max/3830/1*3AaPhLgTwlYDPX-tfkbslg.png)_mix hex.info_
+_mix hex.info_
+
+![mix hex.info](https://cdn-images-1.medium.com/max/3830/1*3AaPhLgTwlYDPX-tfkbslg.png)
 
 Similarly, we can find the information of any package like mix hex.info package\_name
 
@@ -2079,7 +2079,9 @@ Similarly, we can find the information of any package like mix hex.info package\
 mix hex.info typex
 ```
 
-![mix hex.info typex](https://cdn-images-1.medium.com/max/3822/1*KdnXWiWt8IiORNUgJIrUxQ.png)_mix hex.info typex_
+_mix hex.info typex_
+
+![mix hex.info typex](https://cdn-images-1.medium.com/max/3822/1*KdnXWiWt8IiORNUgJIrUxQ.png)
 
 You can be more specific too by mentioning the version of the package.
 
@@ -2117,7 +2119,9 @@ mix xref callers ***Module.fun***
 mix xref callers ***Module.fun/3***
 ```
 
-![mix xref callers Poison.decode](https://cdn-images-1.medium.com/max/3818/1*5pDTNeE2I0lrqBlR18inOQ.png)_mix xref callers Poison.decode_
+_mix xref callers Poison.decode_
+
+![mix xref callers Poison.decode](https://cdn-images-1.medium.com/max/3818/1*5pDTNeE2I0lrqBlR18inOQ.png)
 
 You can add function arity to be more specific, in this case mix xref callers Poison.decode/1 .
 
@@ -2157,7 +2161,9 @@ iex[6] is_float val
 true
 ```
 
-![Kernel./ for convert anything to float](https://cdn-images-1.medium.com/max/3830/1*P-jCkiLl8XWBiUmsgEpF1Q.png)_Kernel./ for convert anything to float_
+_Kernel./ for convert anything to float_
+
+![Kernel./ for convert anything to float](https://cdn-images-1.medium.com/max/3830/1*P-jCkiLl8XWBiUmsgEpF1Q.png)
 
 ## **8 — Sigils & Interpolation**
 

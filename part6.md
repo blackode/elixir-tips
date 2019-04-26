@@ -1,4 +1,4 @@
-# Part 6
+# Part- 6
 
 ```text
 Elixir version 1.5.1 & Erlang otp version 20

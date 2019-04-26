@@ -1,4 +1,4 @@
-# 10 Killer Elixir Tips \#8
+# part- 8
 
 Elixir Pro Tips and Tricks.
 
