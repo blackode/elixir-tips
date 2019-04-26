@@ -1,17 +1,14 @@
-
-# 10 Killer Elixir Tips #8
+# 10 Killer Elixir Tips \#8
 
 Elixir Pro Tips and Tricks.
 
-![Photo by [MILKOVÍ](https://unsplash.com/photos/UsYOap7yIMg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/@milkovi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://cdn-images-1.medium.com/max/3840/1*zRYuv9oExPWAWod_0YiePA.png)*Photo by [MILKOVÍ](https://unsplash.com/photos/UsYOap7yIMg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/@milkovi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+![Photo by \[MILKOV&#xCD;\]\(https://unsplash.com/photos/UsYOap7yIMg?utm\_source=unsplash&amp;utm\_medium=referral&amp;utm\_content=creditCopyText\) on \[Unsplash\]\(https://unsplash.com/@milkovi?utm\_source=unsplash&amp;utm\_medium=referral&amp;utm\_content=creditCopyText\)](https://cdn-images-1.medium.com/max/3840/1*zRYuv9oExPWAWod_0YiePA.png)_Photo by_ [_MILKOVÍ_](https://unsplash.com/photos/UsYOap7yIMg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) _on_ [_Unsplash_](https://unsplash.com/@milkovi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-Hey guys!
-Welcome back to another set of killer elixir tips.
+Hey guys! Welcome back to another set of killer elixir tips.
 
 This article comprises of another **10** **elixir** tips which may useful in our daily programming.
 
-Check out the previous articles of this series
-[***Killer Elixir Tips#1](https://medium.com/blackode/10-killer-elixir-tips-2a9be1bec9be?source=user_profile---------1----------) [#2](https://medium.com/blackode/10-killer-elixir-tips-2-c5f87f8a70c8?source=user_profile---------5----------) [#3](https://medium.com/blackode/10-killer-elixir-tips-3-5c196eaec376#.xoha2qjnx) [#4](https://medium.com/blackode/10-killer-elixir-tips-4-7866dfed865b) [#5](https://medium.com/blackode/10-killer-elixir-tips-5-48515cbc231a) [#6](https://medium.com/blackode/10-killer-elixir-tips-6-99dcbd0df8b1) [#7](https://medium.com/blackode/10-killer-elixir-tips-7-62efc9c5aa14)***
+Check out the previous articles of this series [_\*_Killer Elixir Tips\#1](https://medium.com/blackode/10-killer-elixir-tips-2a9be1bec9be?source=user_profile---------1----------) [\#2](https://medium.com/blackode/10-killer-elixir-tips-2-c5f87f8a70c8?source=user_profile---------5----------) [\#3](https://medium.com/blackode/10-killer-elixir-tips-3-5c196eaec376#.xoha2qjnx) [\#4](https://medium.com/blackode/10-killer-elixir-tips-4-7866dfed865b) [\#5](https://medium.com/blackode/10-killer-elixir-tips-5-48515cbc231a) [\#6](https://medium.com/blackode/10-killer-elixir-tips-6-99dcbd0df8b1) [\#7](https://medium.com/blackode/10-killer-elixir-tips-7-62efc9c5aa14)_\*_
 
 I am using the following development stack at the moment of writing this article.
 
@@ -26,6 +23,7 @@ OTP:    21.1.1
 I know, you might be thinking why some one would do that. I too had the same feeling until I met with a requirement in one of my previous projects where I was asked to replace `address1` with `address` and some other keys as well. It is a huge one. I have to do change many keys as well.
 
 I’m here with a simple `map` to keep it understandable. But, the technique is same.
+
 > The thing to remember is; be smart and stay long;
 
 ```elixir
@@ -49,7 +47,7 @@ end)
 
 ### What’s the magic here❓
 
-Nothing , just pattern_matching , the boon for functional programmers. The magic lies inside Map.new and the **anonymous** function where we used our **magic band **to see the actual **logic**.
+Nothing , just pattern\_matching , the boon for functional programmers. The magic lies inside Map.new and the **anonymous** function where we used our **magic band** to see the actual **logic**.
 
 ![](https://cdn-images-1.medium.com/max/3816/1*rlUV3ulHJ_VN7bsOTsVi3A.png)
 
@@ -86,7 +84,7 @@ iex> user_and_programming_languages =
 %{hari: "erlang", john: "elixir", latha: "elixir", toy: "perl"}
 ```
 
-Like above, the **user_names** are mapped with their **languages**. Now, our job is to filter the ***users*** of **elixir** language.
+Like above, the **user\_names** are mapped with their **languages**. Now, our job is to filter the _**users**_ of **elixir** language.
 
 Just let me know which one you do prefer after checking out the following…
 
@@ -103,7 +101,7 @@ OR, using match? for pattern based
 ```elixir
 user_and_programming_languages = 
  %{john: "elixir", latha: "elixir", hari: "erlang", toy: "perl"}
- 
+
 user_and_programming_languages |>
 Enum.filter(&match?({_, "elixir"}, &1) )
 
@@ -111,7 +109,7 @@ Enum.filter(&match?({_, "elixir"}, &1) )
 #output
 ```
 
-Checkout the screenshots of *evaluation*
+Checkout the screenshots of _evaluation_
 
 ![](https://cdn-images-1.medium.com/max/3830/1*AAW1xh_NrmGCxWWZPM3eAw.png)
 
@@ -132,7 +130,7 @@ Enum.filter(&match?(&1, {_, "elixir"},) )
 
 Let’s bump for more.
 
-## 4 — Bangpipe <|> Left and Right
+## 4 — Bangpipe &lt;\|&gt; Left and Right
 
 As we know elixir is free language, where you can build anything you need. But, be careful It is just to show you something is achievable.
 
@@ -140,11 +138,11 @@ It is a **LEFT** and **RIGHT** Pipe
 
 We usually end up with some sort of results in the format {:ok, result} . This can be found anywhere in your project sooner or later.
 
-If you pipe it to the function obviously you will end up with an unknown expectation. I am talking about run-time errors. Our |> is not smart enough to check it for whether is a direct result or {:ok, result} .
+If you pipe it to the function obviously you will end up with an unknown expectation. I am talking about run-time errors. Our \|&gt; is not smart enough to check it for whether is a direct result or {:ok, result} .
 
 Let’s build it for the **GOD** sake but not for your **client**.
 
-⚠️ ***Don’t use this ever and don’t do write macros until you write new framework.***
+⚠️ _**Don’t use this ever and don’t do write macros until you write new framework.**_
 
 ```elixir
 iex> defmodule Bangpipe do
@@ -161,9 +159,7 @@ iex> defmodule Bangpipe do
 end
 ```
 
-This Bangpipe I mean <|> is defined to do the task. Before sending the result to the function in right, it is performing the pattern matching over the result to identify what kinda result it is. I hope you understood what actually the result I am talking about.
-[**The Secret behind Elixir Operator Re-Definitions : + to -**
-*Just for Fun](https://medium.com/blackode/the-secret-behind-elixir-operator-overriding-to-a564fd6c0dd6)*
+This Bangpipe I mean &lt;\|&gt; is defined to do the task. Before sending the result to the function in right, it is performing the pattern matching over the result to identify what kinda result it is. I hope you understood what actually the result I am talking about. [**The Secret behind Elixir Operator Re-Definitions : + to -** \*Just for Fun](https://medium.com/blackode/the-secret-behind-elixir-operator-overriding-to-a564fd6c0dd6)\*
 
 We can also do re definitions on elixir operators. Check above URL.
 
@@ -181,10 +177,10 @@ iex[7]  data = {:ok, [1,2,3,4,5]}
 iex[8]  data <|> length
 5
 ```
-> “Good programmers write the code & great programmers steal the code”
-This tip is copied from the [Elixir Lightening Talk](https://www.youtube.com/watch?v=2vocLGYFj8Q&t=25s)
 
-![**Bangpipe** **<|>** **execution**](https://cdn-images-1.medium.com/max/3820/1*FDNBw77-79TpQNyoqphuZw.png)***Bangpipe** **<|>** **execution***
+> “Good programmers write the code & great programmers steal the code” This tip is copied from the [Elixir Lightening Talk](https://www.youtube.com/watch?v=2vocLGYFj8Q&t=25s)
+
+![\*\*Bangpipe\*\* \*\*&amp;lt;\|&amp;gt;\*\* \*\*execution\*\*](https://cdn-images-1.medium.com/max/3820/1*FDNBw77-79TpQNyoqphuZw.png)**\*Bangpipe** **&lt;\|&gt;** **execution\***
 
 ## 5 — mix hex.info
 
@@ -200,15 +196,15 @@ mix hex.info
 
 That gives the information about the hex and how it is built with.
 
-![mix hex.info](https://cdn-images-1.medium.com/max/3830/1*3AaPhLgTwlYDPX-tfkbslg.png)*mix hex.info*
+![mix hex.info](https://cdn-images-1.medium.com/max/3830/1*3AaPhLgTwlYDPX-tfkbslg.png)_mix hex.info_
 
-Similarly, we can find the information of any package like mix hex.info package_name
+Similarly, we can find the information of any package like mix hex.info package\_name
 
 ```elixir
 mix hex.info typex
 ```
 
-![mix hex.info typex](https://cdn-images-1.medium.com/max/3822/1*KdnXWiWt8IiORNUgJIrUxQ.png)*mix hex.info typex*
+![mix hex.info typex](https://cdn-images-1.medium.com/max/3822/1*KdnXWiWt8IiORNUgJIrUxQ.png)_mix hex.info typex_
 
 You can be more specific too by mentioning the version of the package.
 
@@ -216,15 +212,15 @@ You can be more specific too by mentioning the version of the package.
 mix hex.info <<package_name>> <<version>>
 ```
 
-Replace ***<<package_name>>*** and ***<<version>>*** as you required.
+Replace _**&lt;&gt;**_ and _**&lt;&gt;**_ as you required.
 
 ![](https://cdn-images-1.medium.com/max/3816/1*wMQpaAe5P2ldTzCs09TzVw.png)
 
 ## 6 — Finding the function callers in a project.
 
-*Let’s create a brief story here.*
+_Let’s create a brief story here._
 
-The moment when GOD’S are against you, your manager will come and give you a vast legacy project code and asked you to find out ***all the places where a particular function*** is called. In a sentence, the **callers** of a particular function.
+The moment when GOD’S are against you, your manager will come and give you a vast legacy project code and asked you to find out _**all the places where a particular function**_ is called. In a sentence, the **callers** of a particular function.
 
 **What will you do?** I don’t think it is a smart way of surfing in each and every file. I don’t. So, you don’t.
 
@@ -236,8 +232,7 @@ example
 mix xref callers Poison.decode
 ```
 
-Prints all callers of the given **CALLEE**, which can be one of: **Module**,
-**Module.function**, or **Module.function/arity**.
+Prints all callers of the given **CALLEE**, which can be one of: **Module**, **Module.function**, or **Module.function/arity**.
 
 ### Examples:
 
@@ -247,7 +242,7 @@ mix xref callers ***Module.fun***
 mix xref callers ***Module.fun/3***
 ```
 
-![mix xref callers Poison.decode](https://cdn-images-1.medium.com/max/3818/1*5pDTNeE2I0lrqBlR18inOQ.png)*mix xref callers Poison.decode*
+![mix xref callers Poison.decode](https://cdn-images-1.medium.com/max/3818/1*5pDTNeE2I0lrqBlR18inOQ.png)_mix xref callers Poison.decode_
 
 You can add function arity to be more specific, in this case mix xref callers Poison.decode/1 .
 
@@ -287,12 +282,11 @@ iex[6] is_float val
 true
 ```
 
-![Kernel./ for convert anything to float](https://cdn-images-1.medium.com/max/3830/1*P-jCkiLl8XWBiUmsgEpF1Q.png)*Kernel./ for convert anything to float*
+![Kernel./ for convert anything to float](https://cdn-images-1.medium.com/max/3830/1*P-jCkiLl8XWBiUmsgEpF1Q.png)_Kernel./ for convert anything to float_
 
 ## **8 — Sigils & Interpolation**
 
-As you already know sigils will help us in less typing for creative stuff. 
-Consider the following example of defining a list of strings.
+As you already know sigils will help us in less typing for creative stuff. Consider the following example of defining a list of strings.
 
 ```elixir
 sentence = ["I", "Love", "coding", "in", "elixir"]
@@ -300,8 +294,7 @@ sentence = ["I", "Love", "coding", "in", "elixir"]
 
 That is a lot of typing here. We can improve this without typing any " marks with the help of ~w **sigil**.
 
-It returns a list of “words” split by whitespace. Character unescaping and
-**interpolation** happens for each word.
+It returns a list of “words” split by whitespace. Character unescaping and **interpolation** happens for each word.
 
 ```elixir
 sentence = ~w(I Love coding in elixir)
@@ -329,7 +322,7 @@ iex[10] sentence = ~W(I Love #{lang})
 
 ## 9 — Grouping of things
 
-I have a collection of hotel_bookings and I need to group them based on their booking status.
+I have a collection of hotel\_bookings and I need to group them based on their booking status.
 
 To keep this simple, I am just using some false random collection.
 
@@ -372,9 +365,9 @@ iex> Enum.group_by(hotel_bookings, &Map.get(&1, :booking_status))
 }
 ```
 
-This is well and good but I need only name in the list instead of map. I mean some thing like %{fail: ["Hari", "Manoj"], ...}
+This is well and good but I need only name in the list instead of map. I mean some thing like %{fail: \["Hari", "Manoj"\], ...}
 
-We just need to tell the group_by what to return in return of grouping
+We just need to tell the group\_by what to return in return of grouping
 
 ```elixir
 iex>  Enum.group_by(hotel_bookings, &Map.get(&1, :booking_status), &Map.get(&1, :name))
@@ -403,5 +396,4 @@ To keep the track of such things, we can add metadata to the @moduledoc . So, we
 @moduledoc "Wrong code leads you to the right bug "
 @moduledoc authors: ["blackode", "doe"], since: "1.1.2"
 ```
-
 

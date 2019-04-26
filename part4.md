@@ -1,14 +1,14 @@
-## Part 4
+# Part 4
 
-### 1. Running Multiple Mix Tasks
+## 1. Running Multiple Mix Tasks
 
 ```elixir
 mix do deps.get,compile
 ```
 
-You can run multiple tasks by separating them with coma `,`
+You can run multiple tasks by separating them with coma `,`
 
-How ever you can also create aliases in your mix project in a file called `mix.exs` .
+How ever you can also create aliases in your mix project in a file called `mix.exs` .
 
 The project definition looks like the following way when you create one using a `mix` tool.
 
@@ -25,7 +25,7 @@ def project do
 
 You are also allowed to add some extra fields…
 
-Here you have to add the `aliases` field. 
+Here you have to add the `aliases` field.
 
 ```elixir
 [
@@ -33,7 +33,7 @@ Here you have to add the `aliases` field. 
 ]
 ```
 
-Don’t forget to add `,` at the end when you add this in the middle of `list` . 
+Don’t forget to add `,` at the end when you add this in the middle of `list` .
 
 The `aliases()` should return the `key-value` list.
 
@@ -58,9 +58,9 @@ def project do
   end
 ```
 
-### 2. Accessing the Documentation
+## 2. Accessing the Documentation
 
-Elixir stores the documentation inside the `bytecode` in a memory. You access the documentation with the help of `Code.get_docs/2` function . This means, the documentation accessed when it is required, but not when it is loaded in the virtual machine like  `iex`
+Elixir stores the documentation inside the `bytecode` in a memory. You access the documentation with the help of `Code.get_docs/2` function . This means, the documentation accessed when it is required, but not when it is loaded in the virtual machine like `iex`
 
 Suppose you defined a module in memory like ones you defined in **IEx**, cannot have their documentation accessed as they do not have their bytecode written to disk.
 
@@ -73,7 +73,7 @@ defmodule Test do
   @moduledoc """
   This is the test module docs
   """
-  
+
   @doc """
   This is the documentation of hello function
   """
@@ -104,8 +104,7 @@ iex> Code.get_docs Hello, :moduledoc
 nil
 ```
 
-You will see the output as `nil` when you are trying to access the **docs** of the module you have created so far. This is because, the  `bytecode` is not available in disk. 
-In simple way `beam` file is not present. Lets do that...
+You will see the output as `nil` when you are trying to access the **docs** of the module you have created so far. This is because, the `bytecode` is not available in disk. In simple way `beam` file is not present. Lets do that...
 
 Press `Ctrl+C` twice so you will come out of the shell and this time you run the command as
 
@@ -113,7 +112,7 @@ Press `Ctrl+C` twice so you will come out of the shell and this time you run the
 $ elixirc test.ex
 ```
 
-After running the command, you will see a file with name `Elixir.Test.beam` . Now the `bytecode` for the module `Test` is available in memory. Now you can access the documentation as follows...
+After running the command, you will see a file with name `Elixir.Test.beam` . Now the `bytecode` for the module `Test` is available in memory. Now you can access the documentation as follows...
 
 ```elixir
 $ iex
@@ -123,9 +122,9 @@ iex> Code.get_docs Test, :moduledoc
 
 The output is tuple with two elements. The first element is the line number of the documentation it starts and second element is the actual documentation in the binary form.
 
- You can read more about this function [here](https://hexdocs.pm/elixir/Code.html#get_docs/2)
+You can read more about this function [here](https://hexdocs.pm/elixir/Code.html#get_docs/2)
 
-### 3. Verbose Testing
+## 3. Verbose Testing
 
 When you go with `mix test` it will run all the tests defined and gives you the time of testing. However, you can see more verbose output like which test you are running with the `--trace` option like following…
 
@@ -135,7 +134,7 @@ mix test --trace
 
 It will list out the all tests with names you defined as `test "test_string"` here `test_string` is the name of the test.
 
-### 4. Dynamic Function Name in Elixir Macro
+## 4. Dynamic Function Name in Elixir Macro
 
 ```elixir
 defmacro gen_function(fun_name) do
@@ -149,7 +148,7 @@ end
 
 To be simple the name of the function should be an **atom** instead of binary.
 
-### **5. Run Shell Commands in Elixir**
+## **5. Run Shell Commands in Elixir**
 
 ```elixir
 System.cmd(command, args, options \\ [])
@@ -157,11 +156,12 @@ System.cmd(command, args, options \\ [])
 
 Executes the given command with args.
 
-- **command** is expected to be an executable available in PATH unless an absolute path is given.
-- **args** must be a list of binaries which the executable will receive as its
+* **command** is expected to be an executable available in PATH unless an absolute path is given.
+* **args** must be a list of binaries which the executable will receive as its
+
   arguments as is. This means that:
 
-#### Examples
+### Examples
 
 ```elixir
 iex> System.cmd "echo", ["hello"]
@@ -173,12 +173,11 @@ iex> System.cmd "echo", ["hello"], into: []
     {["hello\n"], 0}
 ```
 
-Get help from `iex` with `h System.cmd` 
+Get help from `iex` with `h System.cmd`
 
-Checkout the documentation about `System` for more information and 
-also check [Erlang os Module](http://www.erlang.org/doc/man/os.html).
+Checkout the documentation about `System` for more information and also check [Erlang os Module](http://www.erlang.org/doc/man/os.html).
 
-### 6. Printing List as List without ASCII-Encoding
+## 6. Printing List as List without ASCII-Encoding
 
 You know that when the list contains all the numbers as **ASCII** values, it will list out those values instead of the original numbers. Lets check that…
 
@@ -188,7 +187,7 @@ iex> IO.inspect [97, 98]
 'ab'
 ```
 
-The code point of `a` is `97` and `b` is `98` hence it is listing out them as `char_list`. However you can tell the `IO.inspect` to list them as list itself with option `char_lists: :as_list` .
+The code point of `a` is `97` and `b` is `98` hence it is listing out them as `char_list`. However you can tell the `IO.inspect` to list them as list itself with option `char_lists: :as_list` .
 
 ```elixir
 iex> IO.inspect [97, 98], charlists: :as_lists
@@ -198,7 +197,7 @@ iex> IO.inspect [97, 98], charlists: :as_lists
 
 Open `iex` and type `h Inspect.Opts`, you will see that Elixir does this kind of thing with other values as well, specifically **structs** and **binaries**.
 
-### 7. Accessing file name and line number etc…
+## 7. Accessing file name and line number etc…
 
 ```elixir
 defmacro __ENV__()
@@ -214,11 +213,11 @@ iex(5)> __ENV__.line
 5
 ```
 
-### 8. Creating Manual Pids
+## 8. Creating Manual Pids
 
 You can create the pid manually in Elixir with `pid` function. This comes with two flavors.
 
-#### def pid(string)
+### def pid\(string\)
 
 Creates the pid from the string.
 
@@ -227,7 +226,7 @@ iex> pid("0.21.32")
 #PID<0.21.32>
 ```
 
-#### def pid(a, b, c)
+### def pid\(a, b, c\)
 
 Creates a **PID** with 3 non negative integers passed as arguments to the function.
 
@@ -236,7 +235,7 @@ iex> pid(0, 21, 32)
 #PID<0.21.32>
 ```
 
-#### Why do you create the pids manually?
+### Why do you create the pids manually?
 
 Suppose you are writing a library and you want to test one of your functions for the type pid, then you can create one and test over it.
 
@@ -247,7 +246,7 @@ iex(6)> pid = #PID<0.21.32>
 ...(6)>
 ```
 
-When you do like above, **iex** shell just wait for more input as `#PID<0.21.32>` is treated as comment. 
+When you do like above, **iex** shell just wait for more input as `#PID<0.21.32>` is treated as comment.
 
 Now you enter another data to complete the expression. The entered value is the value of the pid. Lets check that…
 
@@ -256,13 +255,12 @@ iex(6)> pid = #PID<0.21.32>      # here expression is not complete
 ...(6)> 23    # here we are giving the value 23
 23            # expression is complete
 iex(7)> pid
-23            
+23
 ```
 
-### 9. Replacing the String with global option
+## 9. Replacing the String with global option
 
-The `String.replace` function will replace the given the pattern with replacing pattern. By default, it replaces all the occurrences of the pattern. 
-Lets check that…
+The `String.replace` function will replace the given the pattern with replacing pattern. By default, it replaces all the occurrences of the pattern. Lets check that…
 
 ```elixir
 iex(1)> str = "hello@hi.com, blackode@medium.com"    
@@ -272,11 +270,9 @@ iex(2)> String.replace str,"@","#"
 "hello#hi.com, blackode#medium.com
 ```
 
-The 
-`String.replace str, "@", "#"`is same as 
-`String.replace str, "@", "#", global: true`
+The `String.replace str, "@", "#"`is same as `String.replace str, "@", "#", global: true`
 
-But, if you want to replace only the first occurrence of the pattern, you need to pass the option `global: false` . So, it replaces only the first occurrence of `@` . Lets check that…
+But, if you want to replace only the first occurrence of the pattern, you need to pass the option `global: false` . So, it replaces only the first occurrence of `@` . Lets check that…
 
 ```elixir
 iex(3)> String.replace str, "@", "#", global: false
@@ -285,9 +281,9 @@ iex(3)> String.replace str, "@", "#", global: false
 
 Here only first `@` is replaced with `#`.
 
-### 10.Memory Usage
+## 10.Memory Usage
 
-You can check the memory usage (in bytes) with `:erlang.memory` 
+You can check the memory usage \(in bytes\) with `:erlang.memory`
 
 ```elixir
 iex(1)> :erlang.memory
@@ -295,9 +291,10 @@ iex(1)> :erlang.memory
  atom: 264529, atom_used: 250685, binary: 151192, code: 5845369, ets: 331768]
 ```
 
-However, you can pass option like `:erlang.memory :atom` to get the memory usage of atoms.
+However, you can pass option like `:erlang.memory :atom` to get the memory usage of atoms.
 
 ```elixir
 iex(2)> :erlang.memory :atom
 264529
 ```
+
