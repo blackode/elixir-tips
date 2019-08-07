@@ -15,7 +15,5 @@
     }
   },
   "skipCi": "true",
-  "contributors": [
-  
-  ]
+  "contributors": []
 }
