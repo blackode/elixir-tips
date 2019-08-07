@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "blackode",
+      "name": "Ankanna",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9107477?v=4",
+      "profile": "https://blackode.in",
+      "contributions": [
+        "code",
+        "test",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "elixir-tips",
+  "projectOwner": "blackode",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
