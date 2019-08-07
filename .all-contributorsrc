@@ -12,7 +12,8 @@
       "profile": "https://blackode.in",
       "contributions": [
         "code",
-        "test"
+        "test",
+        "infra"
       ]
     }
   ],
