@@ -1,4 +1,7 @@
 {
+
+  "projectName": "elixir-tips",
+  "projectOwner": "blackode",  
   "files": ["README.md"],
   "imageSize": 100,
   "contributorsPerLine": 7,
@@ -12,5 +15,7 @@
     }
   },
   "skipCi": "true",
-  "contributors": []
+  "contributors": [
+  
+  ]
 }
