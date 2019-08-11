@@ -17,6 +17,26 @@
       ]
     },
     {
+      "login": "progsmile",
+      "name": "Denis Klimenko",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6272773?v=4",
+      "profile": "https://github.com/progsmile",
+      "contributions": [
+        "code",
+        "doc",
+        "bug"
+      ]
+    },
+    {
+      "login": "techgaun",
+      "name": "Samar Dhwoj Acharya",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1886670?v=4",
+      "profile": "http://www.techgaun.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+     {
       "login": "praveenperera",
       "name": "Praveen Perera",
       "avatar_url": "https://avatars0.githubusercontent.com/u/1775346?v=4",
@@ -24,7 +44,9 @@
       "contributions": [
         "bug"
       ]
-    }
+    },
+    
+    
   ],
   "contributorsPerLine": 7,
   "projectName": "elixir-tips",
