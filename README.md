@@ -1,5 +1,5 @@
 # Killer Elixir-Tips
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Unique Tips and Tricks with a clear explanation with live examples and outputs. These tips will speed up your development and save you time in typing code as well.
 
@@ -2305,6 +2305,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://blackode.in"><img src="https://avatars2.githubusercontent.com/u/9107477?v=4" width="100px;" alt="Ankanna"/><br /><sub><b>Ankanna</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=blackode" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=blackode" title="Tests">⚠️</a> <a href="#infra-blackode" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/evnu"><img src="https://avatars2.githubusercontent.com/u/224554?v=4" width="100px;" alt="Magnus"/><br /><sub><b>Magnus</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=evnu" title="Code">💻</a></td>
   </tr>
 </table>
 
