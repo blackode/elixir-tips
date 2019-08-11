@@ -26,7 +26,17 @@
         "doc",
         "bug"
       ]
-    }
+    },
+    {
+      "login": "techgaun",
+      "name": "Samar Dhwoj Acharya",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1886670?v=4",
+      "profile": "http://www.techgaun.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    
   ],
   "contributorsPerLine": 7,
   "projectName": "elixir-tips",
