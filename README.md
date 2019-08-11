@@ -2314,6 +2314,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.techgaun.com"><img src="https://avatars2.githubusercontent.com/u/1886670?v=4" width="100px;" alt="Samar Dhwoj Acharya"/><br /><sub><b>Samar Dhwoj Acharya</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Atechgaun" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/progsmile"><img src="https://avatars3.githubusercontent.com/u/6272773?v=4" width="100px;" alt="Denis Klimenko"/><br /><sub><b>Denis Klimenko</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Documentation">📖</a> <a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aprogsmile" title="Bug reports">🐛</a></td>
   </tr>
+ <tr>
+  <td align="center"><a href="http://www.techgaun.com"><img src="https://avatars2.githubusercontent.com/u/1886670?v=4" width="100px;" alt="Samar Dhwoj Acharya"/><br /><sub><b>Samar Dhwoj Acharya</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Atechgaun" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/progsmile"><img src="https://avatars3.githubusercontent.com/u/6272773?v=4" width="100px;" alt="Denis Klimenko"/><br /><sub><b>Denis Klimenko</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Documentation">📖</a> <a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aprogsmile" title="Bug reports">🐛</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
