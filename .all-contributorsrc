@@ -17,14 +17,64 @@
       ]
     },
     {
-      "login": "evnu",
+      "login": "progsmile",
+      "name": "Denis Klimenko",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6272773?v=4",
+      "profile": "https://github.com/progsmile",
+      "contributions": [
+        "code",
+        "doc",
+        "bug"
+      ]
+    },
+    {
+      "login": "techgaun",
+      "name": "Samar Dhwoj Acharya",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1886670?v=4",
+      "profile": "http://www.techgaun.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+     {
+      "login": "praveenperera",
+      "name": "Praveen Perera",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1775346?v=4",
+      "profile": "https://praveenperera.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "leandrocp",
+      "name": "Leandro Cesquini Pereira",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/36407?v=4",
+      "profile": "http://leandrocp.com.br",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "max-si-m",
+      "name": "Maxim Dzhuliy",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8299599?v=4",
+      "profile": "http://remoter.net",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+    "login": "evnu",
       "name": "Magnus",
       "avatar_url": "https://avatars2.githubusercontent.com/u/224554?v=4",
       "profile": "https://github.com/evnu",
       "contributions": [
         "code"
       ]
-    }
+    },
+    
+    
+    
   ],
   "contributorsPerLine": 7,
   "projectName": "elixir-tips",
