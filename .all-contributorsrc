@@ -81,10 +81,16 @@
         "bug"
       ]
     },
-    
-    
-    
-    
+    {
+    "login": "thanos",
+      "name": "thanos vassilakis",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/38292?v=4",
+      "profile": "http://syntazo.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+  
   ],
   "contributorsPerLine": 7,
   "projectName": "elixir-tips",
