@@ -1,5 +1,5 @@
 # Killer Elixir-Tips
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors)
 
 Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Unique Tips and Tricks with a clear explanation with live examples and outputs. These tips will speed up your development and save you time in typing code as well.
 
@@ -2315,7 +2315,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
  <tr>
     <td align="center"><a href="https://github.com/progsmile"><img src="https://avatars3.githubusercontent.com/u/6272773?v=4" width="100px;" alt="Denis Klimenko"/><br /><sub><b>Denis Klimenko</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Documentation">📖</a> <a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aprogsmile" title="Bug reports">🐛</a></td>
       <td align="center"><a href="http://www.techgaun.com"><img src="https://avatars2.githubusercontent.com/u/1886670?v=4" width="100px;" alt="Samar Dhwoj Acharya"/><br /><sub><b>Samar Dhwoj Acharya</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Atechgaun" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/progsmile"><img src="https://avatars3.githubusercontent.com/u/6272773?v=4" width="100px;" alt="Denis Klimenko"/><br /><sub><b>Denis Klimenko</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Documentation">📖</a> <a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aprogsmile" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
