@@ -15,6 +15,17 @@
         "test",
         "infra"
       ]
+    },
+    {
+      "login": "progsmile",
+      "name": "Denis Klimenko",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6272773?v=4",
+      "profile": "https://github.com/progsmile",
+      "contributions": [
+        "code",
+        "doc",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
