@@ -36,7 +36,7 @@
         "bug"
       ]
     },
-     {
+    {
       "login": "praveenperera",
       "name": "Praveen Perera",
       "avatar_url": "https://avatars0.githubusercontent.com/u/1775346?v=4",
@@ -64,7 +64,7 @@
       ]
     },
     {
-    "login": "evnu",
+      "login": "evnu",
       "name": "Magnus",
       "avatar_url": "https://avatars2.githubusercontent.com/u/224554?v=4",
       "profile": "https://github.com/evnu",
@@ -73,7 +73,7 @@
       ]
     },
     {
-    "login": "eksperimental",
+      "login": "eksperimental",
       "name": "Eksperimental",
       "avatar_url": "https://avatars2.githubusercontent.com/u/9133420?v=4",
       "profile": "https://github.com/eksperimental",
@@ -82,15 +82,23 @@
       ]
     },
     {
-    "login": "thanos",
+      "login": "thanos",
       "name": "thanos vassilakis",
       "avatar_url": "https://avatars3.githubusercontent.com/u/38292?v=4",
       "profile": "http://syntazo.com",
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "gmsecrieru",
+      "name": "George Secrieru",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/190883?v=4",
+      "profile": "https://github.com/gmsecrieru",
+      "contributions": [
+        "bug"
+      ]
     }
-  
   ],
   "contributorsPerLine": 7,
   "projectName": "elixir-tips",
