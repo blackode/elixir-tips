@@ -6,7 +6,7 @@ Each part consists of 10 Unique Tips and Tricks with a clear explanation with li
 
 You can read specific parts with following links...
 
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](./#part-6) [Part 7](./#part-7) [Part 8](./#part-8)
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
 ## Part 1
 
@@ -117,7 +117,8 @@ end
 **Usage**
 
 ```elixir
-$ iex bug_error.ex
+iex bug_error.ex
+
 iex> raise BugError
 ** (BugError) BUG BUG ..
 iex> raise BugError, message: "I am Bug.." #here passing the message dynamic
@@ -230,10 +231,9 @@ result = :input
 
 This above tip is from [qhwa](https://medium.com/@qhwa_85848)
 
-[Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7)
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
 ## Part 2
-
 ### **1  Code Grouping**
 
 Code grouping stands for something great. It shows you how your code is grouped when you write multiple lines of code in single line with out using braces. It will be more clear with the following example.
@@ -294,7 +294,7 @@ iex> x > 34
 true
 iex> x > [1,2,3]
 true
-iex>▶ [1,2,3] < 1234567890
+iex> [1, 2, 3] < 1234567890
 false
 ```
 
@@ -350,7 +350,8 @@ iex> String.to_float value
 At beginning stage, I used to press `^c` `^c` twice and restart shell as `iex -S mix` whenever I make changes to the project files. If you are doing this now, stop it right now. You can just recompile the project.
 
 ```elixir
-$ iex -S mix
+iex -S mix
+
 iex> recompile
 ```
 
@@ -444,9 +445,8 @@ For more details on color printing check [**Printex**](https://github.com/blacko
 
 ![img](https://cdn-images-1.medium.com/max/1000/0*Qskz94BcqMSyPAuH.png)
 
-[Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7)
-
 ## Part 3
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
 ### 1. Functions as Guard Clauses
 
@@ -745,10 +745,8 @@ iex(4)> v(1) ++ v(2)
 [1, 2, 3, 4, 5, 2, 4, 6, 8, 10]
 ```
 
-[Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7)
-
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 ## Part 4
-
 ### 1. Running Multiple Mix Tasks
 
 ```elixir
@@ -1047,10 +1045,9 @@ iex(2)> :erlang.memory :atom
 264529
 ```
 
-[Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7)
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
 ## Part 5
-
 ### 1. Fetching the default Mix Compilers list
 
 ```elixir
@@ -1281,7 +1278,7 @@ iex> Enum.join(mystrings)
 "helloblackode"
 ```
 
-[Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7)
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
 ## Part 6
 
@@ -1463,9 +1460,9 @@ See this in action… [![asciicast](https://asciinema.org/a/S64h7ydwzfMXsPgOeSfc
 
 See also [Elixir Style Guide](https://github.com/christopheradams/elixir_style_guide)
 
-## Part 7
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
-[Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7)
+## Part 7
 
 ### 10\|&gt; Pretty Printing quoted Expression
 
@@ -1880,6 +1877,8 @@ In similar fashion, you can alias your current module like
 ```
 
 In general, with out using `alias __MODULE__` , we have to type full module name like `%User.Authentication{key: "key", token: ".."}` to define the struct but now simply `%Auth{key: "key", token: ".."}` will be the better approach.
+
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
 ## Part 8
 
