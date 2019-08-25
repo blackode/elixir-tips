@@ -1,11 +1,12 @@
 # Killer Elixir-Tips
 [![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
 
-Elixir Tips and Tricks from the Experience of Development. Each part consists of 10 Unique Tips and Tricks with a clear explanation with live examples and outputs. These tips will speed up your development and save you time in typing code as well.
+Elixir Tips and Tricks from the Experience of Development. 
+Each part consists of 10 Unique Tips and Tricks with a clear explanation with live examples and outputs. These tips will speed up your development and save you time in typing code as well.
 
 You can read specific parts with following links...
 
-[Part 1](./#part-1) [Part 2](./#part-2) [Part 3](./#part-3) [Part 4](./#part-4) [Part 5](./#part-5) [Part 6](./#part-6) [Part 7](./#part-7) [Part 8](./#part-8)
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](./#part-6) [Part 7](./#part-7) [Part 8](./#part-8)
 
 ## Part 1
 
