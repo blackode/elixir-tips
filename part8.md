@@ -1,14 +1,5 @@
-# part- 8
 
-Elixir Pro Tips and Tricks.
-
-![Photo by \[MILKOV&#xCD;\]\(https://unsplash.com/photos/UsYOap7yIMg?utm\_source=unsplash&amp;utm\_medium=referral&amp;utm\_content=creditCopyText\) on \[Unsplash\]\(https://unsplash.com/@milkovi?utm\_source=unsplash&amp;utm\_medium=referral&amp;utm\_content=creditCopyText\)](https://cdn-images-1.medium.com/max/3840/1*zRYuv9oExPWAWod_0YiePA.png)_Photo by_ [_MILKOVÍ_](https://unsplash.com/photos/UsYOap7yIMg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) _on_ [_Unsplash_](https://unsplash.com/@milkovi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
-Hey guys! Welcome back to another set of killer elixir tips.
-
-This article comprises of another **10** **elixir** tips which may useful in our daily programming.
-
-Check out the previous articles of this series [_\*_Killer Elixir Tips\#1](https://medium.com/blackode/10-killer-elixir-tips-2a9be1bec9be?source=user_profile---------1----------) [\#2](https://medium.com/blackode/10-killer-elixir-tips-2-c5f87f8a70c8?source=user_profile---------5----------) [\#3](https://medium.com/blackode/10-killer-elixir-tips-3-5c196eaec376#.xoha2qjnx) [\#4](https://medium.com/blackode/10-killer-elixir-tips-4-7866dfed865b) [\#5](https://medium.com/blackode/10-killer-elixir-tips-5-48515cbc231a) [\#6](https://medium.com/blackode/10-killer-elixir-tips-6-99dcbd0df8b1) [\#7](https://medium.com/blackode/10-killer-elixir-tips-7-62efc9c5aa14)_\*_
+<img class="elixirtip-img" src="assets/images/parts/elixir_tips_8.jpg"/>
 
 I am using the following development stack at the moment of writing this article.
 

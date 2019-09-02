@@ -1,4 +1,4 @@
-# Part- 1
+<img class="elixirtip-img" src="assets/images/parts/elixir_tips_1.jpg"/>
 
 ## 1. Multiple \[ OR \]
 

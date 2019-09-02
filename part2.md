@@ -1,4 +1,4 @@
-# Part- 2
+<img class="elixirtip-img" src="assets/images/parts/elixir_tips_2.jpg"/>
 
 ## **1  Code Grouping**
 

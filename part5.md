@@ -1,6 +1,4 @@
-# part- 5
-
-## Part 5
+<img class="elixirtip-img" src="assets/images/parts/elixir_tips_5.jpg"/>
 
 ### 1. Fetching the default Mix Compilers list
 
