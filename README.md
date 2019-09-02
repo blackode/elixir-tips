@@ -43,8 +43,7 @@ You can read specific parts with following links...
     </a>
   </div>
  </div>
-[![assets/images/parts/elixir_tips_1.png](part 1 image)](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
-
+ <hr>
 ## Part 1
 
 ### 1. Multiple \[ OR \]
