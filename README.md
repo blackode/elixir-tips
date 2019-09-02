@@ -12,38 +12,45 @@ You can read specific parts with following links...
 <div class="elixir-tips-parts">
   <div class="elixir-tips-section">
     <a href="part1.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_1.jpg" />
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_1.jpg" width="400px"/>
     </a>
     <a href="part2.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_2.jpg" />
-    </a>
-    <a href="part3.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_3.jpg" />
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_2.jpg" width="400px"/>
     </a>
   </div>
 
   <div class="elixir-tips-section">
-    <a href="part4.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_4.jpg" />
+    <a href="part3.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_3.jpg" width="400px"/>
     </a>
-    <a href="part5.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_5.jpg" />
+    <a href="part4.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_4.jpg" width="400px"/>
+    </a>
+  </div>
+  
+  <div class="elixir-tips-section">
+   <a href="part5.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_5.jpg" width="400px"/>
     </a>
     <a href="part6.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_6.jpg" />
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_6.jpg" width="400px"/>
     </a>
   </div>
 
   <div class="elixir-tips-section">
     <a href="part7.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_7.jpg" />
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_7.jpg" width="400px"/>
     </a>
     <a href="part8.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_8.jpg" />
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_8.jpg" width="400px"/>
     </a>
   </div>
  </div>
- <hr>
+ 
+ All Photos by [Form](https://unsplash.com/@theformfitness) on [Unsplash](https://unsplash.com)
+ 
+# Explore All Parts
+  
 ## Part 1
 
 ### 1. Multiple \[ OR \]
