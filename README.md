@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" href="assets/css/antimony.css" />
+
 # Killer Elixir-Tips
 [![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
 
@@ -6,7 +9,41 @@ Each part consists of 10 Unique Tips and Tricks with a clear explanation with li
 
 You can read specific parts with following links...
 
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
+<div class="elixir-tips-parts">
+  <div class="elixir-tips-section">
+    <a href="part1.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_1.jpg" />
+    </a>
+    <a href="part2.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_2.jpg" />
+    </a>
+    <a href="part3.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_3.jpg" />
+    </a>
+  </div>
+
+  <div class="elixir-tips-section">
+    <a href="part4.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_4.jpg" />
+    </a>
+    <a href="part5.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_5.jpg" />
+    </a>
+    <a href="part6.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_6.jpg" />
+    </a>
+  </div>
+
+  <div class="elixir-tips-section">
+    <a href="part7.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_7.jpg" />
+    </a>
+    <a href="part8.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_8.jpg" />
+    </a>
+  </div>
+ </div>
+[![assets/images/parts/elixir_tips_1.png](part 1 image)](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
 
 ## Part 1
 
