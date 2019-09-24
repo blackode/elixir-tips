@@ -544,6 +544,7 @@ defmodule Hello do
 
   def hello(name, age) when is_adult(age) do
     IO.puts "Hello Mister #{name}"
+  end
 
    def hello(name, age) do
     IO.puts "Hello Youth #{name}"
