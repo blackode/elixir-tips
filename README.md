@@ -281,7 +281,7 @@ result = :input
 
 This above tip is from [qhwa](https://medium.com/@qhwa_85848)
 
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8)
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
 
 ## Part 2
 ### **1  Code Grouping**
