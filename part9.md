@@ -109,7 +109,7 @@ location
 |> Map.merge(user)
 ```
 
-![img](/home/john/mycode/blackode/elixir-tips/assets/images/elixir-tips-9/1_o_vD912B8lmsB5ShQV4r7Q.png)
+![img](assets/images/elixir-tips-9/1_o_vD912B8lmsB5ShQV4r7Q.png)
 
 We can simply achieve this using alone `Enum.into/3`
 
@@ -122,7 +122,7 @@ Enum.into(location, user, fn
 end)
 ```
 
-![img](/home/john/mycode/blackode/elixir-tips/assets/images/elixir-tips-9/1_NK77RCY7txKVz1GABKTCfg.png)
+![img](assets/images/elixir-tips-9/1_NK77RCY7txKVz1GABKTCfg.png)
 
 
 
@@ -144,7 +144,7 @@ You can type in your terminal not iex print the number of processing units avail
 $ nproc
 ```
 
-![img](/home/john/mycode/blackode/elixir-tips/assets/images/elixir-tips-9/1_ppPYT6DiXR3Z3TVkefiH-w.png)
+![img](assets/images/elixir-tips-9/1_ppPYT6DiXR3Z3TVkefiH-w.png)
 
 
 
@@ -172,7 +172,7 @@ iex> Process.info(self, :message_que_len)
 {:message_queue_len, 2}
 ```
 
-![img](/home/john/mycode/blackode/elixir-tips/assets/images/elixir-tips-9/1_nDTqT7HYzKw5imFoSbPCRw.png)
+![img](assets/images/elixir-tips-9/1_nDTqT7HYzKw5imFoSbPCRw.png)
 
 Now we handle one message using receive block and will check the queue length once again.
 
@@ -192,7 +192,7 @@ iex> receive, do: (:hello -> "I GOT HI")
 {:message_queue_len, 0}
 ```
 
-![img](/home/john/mycode/blackode/elixir-tips/assets/images/elixir-tips-9/1_2Hx-vUT40ghdkPm7Sj9vEg.png)
+![img](assets/images/elixir-tips-9/1_2Hx-vUT40ghdkPm7Sj9vEg.png)
 
 
 
@@ -212,7 +212,7 @@ Whenever you start `iex` shell, it looks for `.iex.exs` file in the current work
 
 If file isn’t exist in the current directory, then it looks in your **home** directory i.e `~/.iex.exs`.
 
-![img](/home/john/mycode/blackode/elixir-tips/assets/images/elixir-tips-9/1_TaWgvSn-6HbYGS_Cu3Vsdg.png)
+![img](assets/images/elixir-tips-9/1_TaWgvSn-6HbYGS_Cu3Vsdg.png)
 
 
 
