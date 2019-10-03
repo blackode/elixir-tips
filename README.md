@@ -2529,7 +2529,7 @@ iex> receive, do: (:hello -> "I GOT HI")
 {:message_queue_len, 0}
 ```
 
-![img](/home/john/mycode/blackode/elixir-tips/assets/images/elixir-tips-9/1_2Hx-vUT40ghdkPm7Sj9vEg.png)
+![img](assets/images/elixir-tips-9/1_2Hx-vUT40ghdkPm7Sj9vEg.png)
 
 
 
