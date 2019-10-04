@@ -2500,7 +2500,7 @@ iex> send self, :hello
 iex> send self, :hi
 ```
 
-Above  lines will send two messages to the current process. As we did not  write any receive block here, they keep waiting inside mailbox queue.
+Above lines will send two messages to the current process. As we did not  write any receive block here, they keep waiting inside mailbox queue.
 
 Now we will check the messages queue length of the current process `self`
 
@@ -2514,7 +2514,7 @@ iex> Process.info(self, :message_que_len)
 Now we handle one message using receive block and will check the queue length once again.
 
 ```elixir
-iex> receive, do: (:hello -> "I GOT HELLO")
+iex> receive do: (:hello -> "I GOT HELLO")
 "I GOT HELLO"iex> Process.info(self, :message_queue_len)
 {:message_queue_len, 1}
 ```
@@ -2524,7 +2524,7 @@ Did you see that, we have only one message in queue as we handled `:hello` messa
 Again, we handle the left over message `:hi` and this time the length will be `0` Of course it will be as there are no more messages to handle.
 
 ```elixir
-iex> receive, do: (:hello -> "I GOT HI")
+iex> receive do: (:hello -> "I GOT HI")
 "I GOT HI"iex> Process.info(self, :message_queue_len)
 {:message_queue_len, 0}
 ```
@@ -2606,7 +2606,9 @@ We can re design the inspect output for any specific type by implementing the In
 ```elixir
 defmodule Student do  
   defstruct name: "John", place: "Earth"
-enddefimpl Inspect, for: Student do
+end
+
+defimpl Inspect, for: Student do
   def inspect(student, _opts) do
     """
     -----------|---------------------
@@ -2616,7 +2618,9 @@ enddefimpl Inspect, for: Student do
     -----------|---------------------
     """
   end
-endiex> %Student{}
+end
+
+iex> %Student{}
 -----------|---------------------
    Name    :     John 
 -----------|---------------------
