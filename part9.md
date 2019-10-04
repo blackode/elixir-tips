@@ -71,8 +71,8 @@ Don’t believe, check it down
 
 ```elixir
 defmodule Address do  
-	@derive {Inspect, only: [:name, :country]}  
-	defstruct [name: "john", street: "2nd lane", door_no: "12-3", state: "mystate",    	country: "My Country"  ]
+  @derive {Inspect, only: [:name, :country]}  
+  defstruct [name: "john", street: "2nd lane", door_no: "12-3", state: "mystate",    	country: "My Country"  ]
 end
 
 iex> Address%{}
@@ -177,7 +177,7 @@ iex> Process.info(self, :message_que_len)
 Now we handle one message using receive block and will check the queue length once again.
 
 ```elixir
-iex> receive, do: (:hello -> "I GOT HELLO")
+iex> receive do: (:hello -> "I GOT HELLO")
 "I GOT HELLO"iex> Process.info(self, :message_queue_len)
 {:message_queue_len, 1}
 ```
@@ -187,7 +187,7 @@ Did you see that, we have only one message in queue as we handled `:hello` messa
 Again, we handle the left over message `:hi` and this time the length will be `0` Of course it will be as there are no more messages to handle.
 
 ```elixir
-iex> receive, do: (:hello -> "I GOT HI")
+iex> receive do: (:hello -> "I GOT HI")
 "I GOT HI"iex> Process.info(self, :message_queue_len)
 {:message_queue_len, 0}
 ```
@@ -269,7 +269,9 @@ We can re design the inspect output for any specific type by implementing the In
 ```elixir
 defmodule Student do  
   defstruct name: "John", place: "Earth"
-enddefimpl Inspect, for: Student do
+end
+
+defimpl Inspect, for: Student do
   def inspect(student, _opts) do
     """
     -----------|---------------------
@@ -279,7 +281,9 @@ enddefimpl Inspect, for: Student do
     -----------|---------------------
     """
   end
-endiex> %Student{}
+end
+
+iex> %Student{}
 -----------|---------------------
    Name    :     John 
 -----------|---------------------
