@@ -2360,7 +2360,6 @@ to_string float
 ```
 
 
-
 Again, he asked me to not use `to_string` then I have shown him this
 
 ```elixir
@@ -2409,10 +2408,10 @@ Don’t believe, check it down
 ```elixir
 defmodule Address do  
 	@derive {Inspect, only: [:name, :country]}  
-	defstruct [name: "john", street: "2nd lane", door_no: "12-3", state: "mystate",    	country: "My Country"  ]
+	defstruct [name: "john", street: "2nd lane", door_no: "12-3", state: "mystate", country: "My Country"  ]
 end
 
-iex> Address%{}
+iex> %Address{}
 #Address<country: "My Country", name: "john", ...>  #OUTPUT
 ```
 
@@ -2515,7 +2514,9 @@ Now we handle one message using receive block and will check the queue length on
 
 ```elixir
 iex> receive do: (:hello -> "I GOT HELLO")
-"I GOT HELLO"iex> Process.info(self, :message_queue_len)
+"I GOT HELLO"
+
+iex> Process.info(self, :message_queue_len)
 {:message_queue_len, 1}
 ```
 
@@ -2525,7 +2526,9 @@ Again, we handle the left over message `:hi` and this time the length will be `0
 
 ```elixir
 iex> receive do: (:hello -> "I GOT HI")
-"I GOT HI"iex> Process.info(self, :message_queue_len)
+"I GOT HI"
+
+iex> Process.info(self, :message_queue_len)
 {:message_queue_len, 0}
 ```
 
