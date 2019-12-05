@@ -56,31 +56,9 @@ You can read specific parts with following links...
 
  All Photos by [Form](https://unsplash.com/@theformfitness) on [Unsplash](https://unsplash.com)
 
-# Explore All Parts
+# Taste Before you Eat :)
 
-## Part 1
-
-### 1. Multiple \[ OR \]
-
-This is just the other way of writing Multiple **OR** conditions. This is not the recommended approach because in the regular approach when the condition evaluates to **true** , it stops executing the remaining conditions which saves evaluation time unlike this approach which evaluates all conditions first in list. This is just bad but good for discoveries.
-
-```elixir
-# Regular Approach
-find = fn(x) when x>10 or x<5 or x==7 -> x end 
-
-# Our Hack
-hell = fn(x) when true in [x>10,x<5,x==7] -> x end
-```
-
-### 2. i\( term\) Elixir Term Type and Meta Data
-
-Prints information about the data type of any given term. Try that in `iex` and see the magic.
-
-```elixir
-iex> i(1..5)
-```
-
-### 3. iex Custom Configuration - iex Decoration
+### iex Custom Configuration - iex Decoration
 
 Copy the content into a file and save the file as `.iex.exs` in your `~` home directory and see the magic. You can also download the file [HERE](https://gist.github.com/blackode/5728517116d7a4d08f0a4faddd8c145a)
 
@@ -120,7 +98,7 @@ IEx.configure(
 
 ![img](https://cdn-images-1.medium.com/max/800/1*iy-IELdB8fjTo5H0sABlBQ.png)
 
-### 4. Creating Custom Sigils and Documenting
+### Creating Custom Sigils and Documenting
 
 Each `x` sigil calls its respective `sigil_x` definition
 
@@ -154,7 +132,7 @@ iex> ~u/hello/l
 ["H", "E", "L", "L", "O"]
 ```
 
-### 5. Custom Error Definitions
+### Custom Error Definitions
 
 #### Define Custom Error
 
@@ -175,40 +153,7 @@ iex> raise BugError, message: "I am Bug.." #here passing the message dynamic
 ** (BugError) I am Bug..
 ```
 
-### 6. Get a Value from Nested Maps Easily
-
-The `get_in` function can be used to retrieve a nested value in nested maps using a list of keys.
-
-```elixir
-nested_map = %{ name: %{ first_name: "blackode"} }     # Example of Nested Map
-first_name = get_in(nested_map, [:name, :first_name])  # Retrieving the Key
-
-# Returns nil for missing value 
-nil = get_in(nested_map, [:name, :last_name])              # returns nil when key is not present
-```
-
-Read docs: [Kernel.get\_in/2](http://elixir-lang.org/docs/stable/elixir/Kernel.html#get_in/2)
-
-### 7. With Statement Benefits
-
-The special form `with` is used to chain a sequence of matches in order and finally return the result of `do:` if all the clauses match. However, if one of the clauses does not match, the result of the miss matched expression is immediately returned.
-
-```elixir
-iex> with 1 <- 1+0,
-          2 <- 1+1,
-          do: IO.puts "all matched"
-"all matched"
-```
-
-```elixir
-iex> with 1 <- 1+0,
-          2 <- 3+1,
-          do: IO.puts "all matched"
-4
-## since  2 <- 3+1 is not matched so the result of 3+1 is returned
-```
-
-### 8. Writing Protocols
+### Writing Protocols
 
 #### Define a Protocol
 
@@ -243,7 +188,7 @@ Triple.triple([1, 2])
 [1, 2, 1, 2, 1, 2]
 ```
 
-### 9. Ternary Operator
+### Ternary Operator
 
 There is no ternary operator like `true ? "yes" : "no"` . So, the following is suggested.
 
@@ -251,7 +196,7 @@ There is no ternary operator like `true ? "yes" : "no"` . So, the following is s
 "no" = if 1 == 0, do: "yes", else: "no"
 ```
 
-### 10. Advantage of Kernel.\|\|
+### Advantage of Kernel.\|\|
 
 When using pipelines, sometimes we break the pipeline for `or` operation. For example:
 
@@ -281,10 +226,7 @@ result = :input
 
 This above tip is from [qhwa](https://medium.com/@qhwa_85848)
 
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
-
-## Part 2
-### **1  Code Grouping**
+### Checking Out Code Grouping
 
 Code grouping stands for something great. It shows you how your code is grouped when you write multiple lines of code in single line with out using braces. It will be more clear with the following example.
 
@@ -299,11 +241,11 @@ quote(do: one 1 |> two()) |> Macro.to_string |> IO.puts
 one(1 |> two())
 ```
 
-So, by using the `quote` and `Macro.to_string` you can see how our code is grouped.
+So, by using the `quote` and `Macro.to_string` you can see how our code was grouped into.
 
 This tip came out in discussion with the creator of **Ecto** [**MichalMuskala**](https://elixirforum.com/users/michalmuskala) in the Elixir forum.
 
-### 2  Elixir Short Circuit Operators && — \|\|
+### Elixir Short Circuit Operators && — \|\|
 
 These replaces the nested complicated conditions. These are my best friends in the situations dealing with more complex comparisons. Trust me you gonna love this.
 
@@ -329,7 +271,7 @@ iex> salary = is_login && is_admin && is_staff && 100_000
 
 This `&&` returns the second expression if the first expression is `true` or else it returns the first expression with out evaluating the second expression. In the above examples the last one is the situation where we encounter to use the `&&` operator.
 
-### 3  Comparing two different data types
+### Comparing two different data types
 
 I have self experience with this. When I was a novice in elixir, I just compared `"5" > 4` unknowingly by an accident and to my surprise it returned with `true`.
 
@@ -352,7 +294,7 @@ false
 
 > number &lt; atom &lt; reference &lt; fun &lt; port &lt; pid &lt; tuple &lt; map &lt; list &lt; bitstring \(binary\)
 
-### 4  Arithmetic Operators as Lambda functions
+### Arithmetic Operators as Lambda functions
 
 When I see this first time, I said to my self “**Elixir is Crazy**”. This tip really saves time and it resembles your smartness. In Elixir every operator is a macro. So, we can use them as lambda functions.
 
@@ -369,7 +311,7 @@ iex> Enum.reduce([1,2,3], 3, &//2)
 0.5
 ```
 
-### 5  Binary pattern matching
+### Binary Pattern Matching
 
 This is my recent discovery. I always encounter a situation like converting `"$34.56"` which is a string and I suppose do arithmetic operations. I usually do something like this before binary pattern matching..
 
@@ -395,60 +337,9 @@ iex> String.to_float value
 34.56
 ```
 
-### 6  Recompiling Project
+### Ought to Know the Diffrences of Map keys as :atoms and binary\(strings\)
 
-At beginning stage, I used to press `^c` `^c` twice and restart shell as `iex -S mix` whenever I make changes to the project files. If you are doing this now, stop it right now. You can just recompile the project.
-
-```elixir
-iex -S mix
-
-iex> recompile
-```
-
-**Warning:** The changes in the `config/config.ex` are not reflected. You have to restart the shell again.
-
-### 7  Logger Module
-
-Logger is one of my favorite modules. This come by default and starts along with your application. You have to just `require` this module. When I was new to Elixir, I always used to write the console outputs as `IO.puts "This is value of data"` for code debugging but, those lines get mixed up with other lines of information and It became hard to trace those lines.
-
-This `Logger` module solved my problem. It has many features but, I use three definitions very often `warn` `info` and `error` Each definition prints the information with different **colors** which is more easy to find the statement at a glance.
-
-The best side of this module is that it prints along with the **time**, that means it also prints the time while executing your statement. So, you can know the direction of flow of execution.
-
-Before using the `Logger` module one has to do `require Logger` so all macros will be loaded inside your working module.
-
-![img](https://cdn-images-1.medium.com/max/800/0*DQf-KHbpd6qcgEpz.)
-
-```elixir
-iex> require Logger
-Logger
-iex> Logger.info "This is the info"
-15:04:33.102 [info]  This is the info
-:ok
-iex> Logger.warn "This is warning"
-15:04:56.712 [warn]  This is warning
-:ok
-iex> Logger.error "This is error"
-15:05:19.570 [error] This is error
-:ok
-```
-
-This tip is from [Anwesh Reddy](https://medium.com/@kanishkablack)
-
-### 8  Finding All Started Applications
-
-We can check the all the applications which are started along with our application. Sometimes we have to check whether a particular application is started or not. So, it helps you in those situations. If you are a beginner, you don’t feel will be using this much. But I am pretty sure of this tip will become handy when you work with multiple applications.
-
-```elixir
-iex> Application.started_applications
-[{:logger, 'logger', '1.4.0'}, {:iex, 'iex', '1.4.0'},
- {:elixir, 'elixir', '1.4.0'}, {:compiler, 'ERTS  CXC 138 10', '7.0.1'},
- {:stdlib, 'ERTS  CXC 138 10', '3.0.1'}, {:kernel, 'ERTS  CXC 138 10', '5.0.1'}]
-```
-
-### 9  Advantage of Map keys as :atoms and binary\(strings\)
-
-Before I let you to use this tip, I just want to remind you that **:atoms** are not garbage collected. Atom keys are great! If you have a fixed number of them defined statically in your code, you are in no danger. What you should not do is convert user supplied input into atoms without sanitizing them first because it can lead to out of memory. **You should also be cautious if you create dynamic atoms in your code.**
+Before I let you to use this tip, I just want to remind you that **:atoms** are not garbage collected. Atom keys are great! If you have a defined atoms, you are in no danger. What you should not do is converting user supplied input into atoms without sanitizing them first because it can lead to out of memory. **You should also be cautious if you create dynamic atoms in your code.**
 
 But, you can use the `.` to retrieve the data from the keys as `map.key` unlike the usual notation like `map["key"]` . That really saves on typing. But, I don’t encourage this because, as programmers we should really care about memory.
 
@@ -457,13 +348,15 @@ But, you can use the `.` to retrieve the data from the keys as `map.key` unlike 
 ```elixir
 iex> map = %{name: "blackode", blog: "medium"}
 %{blog: "medium", name: "blackode"}
+
 iex> map.name
 "blackode"
+
 iex> map.blog
 "medium"
 ```
 
-Be sure that when you try to retrieve a key with `.` form which is not present in the map, it will raise an **key error** instead of returning the `nil` unlike the `map["key"]` which returns `nil` if `key` is not present in `map`
+Be sure that when you try to retrieve a key with `.` form which is not present in the map, it will raise a **key error** instead of returning the `nil` unlike the `map["key"]` which returns `nil` if `key` is not present in a `map`.
 
 ```elixir
 iex> map["age"]
@@ -476,7 +369,7 @@ Bug Bug ..!!** (KeyError) key :age not found in: %{blog: "medium", name: "blacko
 Bug Bug ..!!
 ```
 
-### 10 Color Printing
+### Add Some Color To Your Console Prints
 
 Elixir `>=1.4.0` has **ANSI** color printing option to console. You can have great fun with colors. You can also provide **background colors**.
 
@@ -495,24 +388,24 @@ For more details on color printing check [**Printex**](https://github.com/blacko
 
 ![img](https://cdn-images-1.medium.com/max/1000/0*Qskz94BcqMSyPAuH.png)
 
-## Part 3
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
+### Functional Macros as Guard Clauses
 
-## 1. Functions as Guard Clauses
-
-We cannot make use of the functions as guard clauses in elixir. It means, `when` cannot accept functions that returns Boolean values as conditions. Consider the following lines of code…
+We cannot make use of the functions as guard clauses in elixir. It means, `when` cannot accept cusotm defined functions. Consider the following lines of code…
 
 ```elixir
 defmodule Hello do
   def hello(name, age) when is_kid(age) do
     IO.puts "Hello Kid #{name}"
   end
+  
   def hello(name, age) when is_adult(age) do
     IO.puts "Hello Mister #{name}"
   end
+  
   def is_kid age do
     age < 12
   end
+  
   def is_adult age do
     age > 18
   end
@@ -618,20 +511,7 @@ Check the following execution screen shot.
 
 ![ScreenShot Defguard Execution](.gitbook/assets/defguard%20%281%29.png)
 
-### 2. Finding the presence of Sub-String
-
-Using `=~` operator we can find whether the **right** sub-string present in **left** string or not..
-
-```elixir
-iex> "blackode" =~ "kode" 
-true  
-iex> "blackode" =~ "medium" 
-false  
-iex> "blackode" =~ "" 
-true
-```
-
-### 3. Finding whether Module is loaded or not
+### Finding whether Module was loaded or not
 
 Sometimes, we have to make sure that certain module is loaded before making a call to the function. We are supposed to ensure the module is loaded.
 
@@ -648,7 +528,7 @@ iex> Code.ensure_loaded :kernel
 
 Similarly we are having `ensure_compile` to check whether the module is compiled or not…
 
-### 4. Binary to Capital Atom
+### Converting Binary to Capital Atom
 
 Elixir provides a special syntax which is usually used for module names. What is called a module name is an _**uppercase ASCII letter**_ followed by any number of _lowercase_ or _uppercase ASCII letters_, _numbers_, or _underscores_.
 
@@ -665,7 +545,7 @@ Blackode
 
 In Command line applications whatever you pass they convert it into **binary**. So, again you suppose to do some casting operations …
 
-### 5. Pattern match \[ vs \] destructure.
+### Pattern match \[ vs \] destructure.
 
 We all know that `=` does the pattern match for left and right side. We cannot do `[a, b, c] = [1, 2, 3, 4]` this raise a `MatchError`
 
@@ -691,7 +571,7 @@ iex> {a, b, c}
 {1, nil, nil}
 ```
 
-### 6. Data decoration \[ inspect with :label \] option
+### The Goodness of Data decoration \[ inspect with :label \] option
 
 We can decorate our output with `inspect` and `label` option. The string of `label` is added at the beginning of the data we are inspecting.
 
@@ -719,7 +599,7 @@ after change: [2, 4, 6]
 3
 ```
 
-### 7. Anonymous functions to pipe
+### Piping Anonymous functions
 
 We can pass the anonymous functions in two ways. One is directly using `&`like following..
 
@@ -740,7 +620,7 @@ square = & &1 * &1
 
 The above style is much better than previous . You can also use `fn` to define anonymous functions.
 
-### 8. Retrieve Character Integer Codepoints — ?
+### Retrieve Character Integer Codepoints — ?
 
 We can use `?` operator to retrieve character integer codepoints.
 
@@ -753,7 +633,7 @@ iex> ?#
 
 The following two tips are mostly useful for beginners…
 
-### 9. Subtraction over Lists
+### Performing Subtraction on Lists
 
 We can perform the subtraction over lists for removing the elements in list.
 
@@ -779,28 +659,7 @@ iex(13)> 'blackode' -- 'z'
 
 If the element to subtract is not present in the list then it simply returns the list.
 
-### 10. Using Previous results in IEx
-
-When you are working with `iex` environment , you can see a number increment every time you evaluate an expression in the shell like `iex(2)>` `iex(3)>`
-
-Those numbers helps us to reuse the result with `v/1` function which has been loaded by default..
-
-```elixir
-iex(1)> list = [1, 2, 3, 4, 5]
-[1, 2, 3, 4, 5]
-iex(2)> double_lsit = Enum.map(list, &(&1*2))
-[2, 4, 6, 8, 10]
-iex(3)> v 1
-[1, 2, 3, 4, 5]
-iex(4)> v(1) ++ v(2)
-[1, 2, 3, 4, 5, 2, 4, 6, 8, 10]
-```
-
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
-
-## Part 4
-
-### 1. Running Multiple Mix Tasks
+### Running Multiple Mix Tasks
 
 ```elixir
 mix do deps.get,compile
@@ -924,17 +783,9 @@ The output is tuple with two elements. The first element is the line number of t
 
 You can read more about this function [here](https://hexdocs.pm/elixir/Code.html#get_docs/2)
 
-### 3. Verbose Testing
-
-When you go with `mix test` it will run all the tests defined and gives you the time of testing. However, you can see more verbose output like which test you are running with the `--trace` option like following…
-
-```elixir
-mix test --trace
-```
-
-It will list out the all tests with names you defined as `test "test_string"` here `test_string` is the name of the test.
-
 ### 4. Dynamic Function Name in Elixir Macro
+
+The hack is name of a function should be an **atom** instead of binary.
 
 ```elixir
 defmacro gen_function(fun_name) do
@@ -946,38 +797,8 @@ defmacro gen_function(fun_name) do
 end
 ```
 
-To be simple the name of the function should be an **atom** instead of binary.
 
-### **5. Run Shell Commands in Elixir**
-
-```elixir
-System.cmd(command, args, options \\ [])
-```
-
-Executes the given command with args.
-
-* **command** is expected to be an executable available in PATH unless an absolute path is given.
-* **args** must be a list of binaries which the executable will receive as its
-
-  arguments as is. This means that:
-
-#### Examples
-
-```elixir
-iex> System.cmd "echo", ["hello"]
-    {"hello\n", 0}
-```
-
-```elixir
-iex> System.cmd "echo", ["hello"], into: []
-    {["hello\n"], 0}
-```
-
-Get help from `iex` with `h System.cmd`
-
-Checkout the documentation about `System` for more information and also check [Erlang os Module](http://www.erlang.org/doc/man/os.html).
-
-### 6. Printing List as List without ASCII-Encoding
+### Printing List as List without ASCII-Encoding
 
 You know that when the list contains all the numbers as **ASCII** values, it will list out those values instead of the original numbers. Lets check that…
 
@@ -997,7 +818,7 @@ iex> IO.inspect [97, 98], charlists: :as_lists
 
 Open `iex` and type `h Inspect.Opts`, you will see that Elixir does this kind of thing with other values as well, specifically **structs** and **binaries**.
 
-### 7. Accessing file name and line number etc…
+### Fetching out file name and line number the expression is on
 
 ```elixir
 defmacro __ENV__()
@@ -1013,7 +834,7 @@ iex(5)> __ENV__.line
 5
 ```
 
-### 8. Creating Manual Pids
+### Creating Manual Pids for Unit Testing
 
 You can create the pid manually in Elixir with `pid` function. This comes with two flavors.
 
@@ -1037,7 +858,7 @@ iex> pid(0, 21, 32)
 
 #### Why do you create the pids manually?
 
-Suppose you are writing a library and you want to test one of your functions for the type pid, then you can create one and test over it.
+Suppose, you are writing a library and you want to test one of your functions for the type `pid`, then you can create one and test with it.
 
 You cannot create the pid like assigning `pid = #PID<0.21.32>` because `#` is considered as comment here.
 
@@ -1081,7 +902,7 @@ iex(3)> String.replace str, "@", "#", global: false
 
 Here only first `@` is replaced with `#`.
 
-### 10.Memory Usage
+### Memory Usage
 
 You can check the memory usage \(in bytes\) with `:erlang.memory`
 
@@ -1098,40 +919,9 @@ iex(2)> :erlang.memory :atom
 264529
 ```
 
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
-
-## Part 5
-### 1. Fetching the default Mix Compilers list
-
-```elixir
-iex> Mix.compilers
-```
-
-Returns the default compilers used by Mix. The output will look something similar to `[:yecc, :leex, :erlang, :elixir, :xref, :app]` .  
-It can be used in your `mix.exs` to prepend or append new compilers to Mix:
-
-```elixir
-#mix.exs
-def project do
- [compilers: Mix.compilers ++ [:gettext]
-end
-```
-
 ### 2. Picking out the elements in List
 
 We all know that a proper list is a combination of `head` and `tail` like `[head | tail]` . We can use the same principle for picking out the elements in the list like the following way…
-
-```elixir
-iex> [first | [second | [third | [ fourth | _rest ]]]] = [1, 2, 3, 4, 5, 6, 7]
-[1, 2, 3, 4, 5, 6, 7]
-iex> first
-1
-iex> {second, third, fourth}
-{2, 3, 4}
-iex(5)>
-```
-
-We can also use simplified syntax for the same job:
 
 ```elixir
 iex> [first, second, third, fourth | _rest] = [1, 2, 3, 4, 5, 6, 7]
@@ -1142,7 +932,7 @@ iex> {second, third, fourth}
 {2, 3, 4}
 ```
 
-### 3. get\_in /Access.all\(\)
+### The combination effect of get\_in /Access.all\(\)
 
 We all know that the get\_in function is used to extract the key which is deeper inside the map by providing the list with keys like a following way…
 
@@ -1162,6 +952,7 @@ iex> users=[%{"user" => %{"first_name" => "john", "age" => 23}},
 # that is a list of maps 
 iex> get_in users, [Access.all(), "user", "age"]
 [23, 22, 21]
+
 iex> get_in users, [Access.all(), "user", "first_name"]
 ["john", "hari", "mahesh"]
 ```
@@ -1202,7 +993,7 @@ iex> get_in user, [:books, Access.all(), :name]
 
 Here, user is not a list unlike in the previous examples where we passed the users as a list. But, we changed the position of `Access.all()` and inside the list of keys `[:books, Access.all(), :name]`, the value of the key `:books` should return the list, other wise it raises an error.
 
-### 4. Data Comprehension along with filters
+### Data Comprehension along with filters using FOR
 
 We achieve the data comprehension through `for x <- [1, 2, 3], do: x + 1` . But we can also add the comprehension along with filter.
 
@@ -1224,7 +1015,7 @@ iex> for x <- [1, 2, 3, 4], y <- [5, 6, 7, 8], rem(x * y, 2) == 0, do: {x, y, x 
 #here rem(x * y, 2) is acting as a filter.
 ```
 
-## 5. Comprehension with binary strings.
+### Comprehension with binary strings.
 
 Comprehension with binary is little different. You supposed to wrap inside `<<>>`
 
@@ -1240,7 +1031,7 @@ iex> for << x <- b_string >>, do: x + 1
 
 Did you observe that `x <- b_string` is just changed something like `<< x <- b_string >>` to make the sense.
 
-## 6. Advanced Comprehension IO.stream
+### Advanced Comprehension IO.stream
 
 Here we are taking the elixir comprehension to the next level.  
 We read the input from the keyboard and convert that to upcase and after that it should wait for another entry.
@@ -1264,19 +1055,20 @@ BLACKODE
 ^c ^c # to break
 ```
 
-## 7. Single Line Multiple module aliasing
+### Single Line Multiple module aliasing
 
 We can also alias multiple modules in one line:
 
 ```elixir
 alias Hello.{One,Two,Three}
+
 #The above line is same as the following 
 alias Hello.One
 alias Hello.Two
 alias Hello.Three
 ```
 
-## 8. Importing Underscore Functions
+### Importing Underscore Functions from a Module
 
 By default the functions with \_ are not imported. However, you can do that by importing them with `:only` explicitly.
 
@@ -1284,62 +1076,7 @@ By default the functions with \_ are not imported. However, you can do that by i
 import File.Stream, only: [__build__: 3]
 ```
 
-## 9. Sub string in Elixir
-
-There is no direct `sub_str` like function in elixir. However you can achieve that by `String.slice/2`
-
-```elixir
-iex> String.slice("blackode", 1..-1)
-"lackode"
-iex> String.slice("blackode", 0..-4)
-"black"
-```
-
-## 10. String Concatenation
-
-We can do the string concatenation in two ways.
-
-```elixir
-iex> str1 = "hello"
-iex> str2 = "blackode"
-```
-
-I am taking above lines of code for example…
-
-**String Interpolation**
-
-```elixir
-iex> mystring = "#{str1}#{str2}"
-helloblackode
-```
-
-**Using &lt;&gt; operator**
-
-```elixir
-iex> mystring = str1 <> str2
-helloblackode
-```
-
-This is the best style and recommended one.
-
-If you are having the list of strings `["hello", "blackode"]` then use `Enum.join`
-
-```elixir
-iex> mystrings = ["hello", "blackode"]
-["hello", "blackode"]
-iex> Enum.join(mystrings)
-"helloblackode"
-```
-
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
-
-## Part 6
-
-```text
-Elixir version 1.5.1 & Erlang otp version 20
-```
-
-### 1 Extracting Project Information
+### Extracting Project Information
 
 ```elixir
 Mix.Project.config[:version] # returns the version
@@ -1348,7 +1085,7 @@ Mix.Project.config[:app] # returns app name
 
 You have to be inside the `mix project` when you are trying. See this in action… [![asciicast](https://asciinema.org/a/g75QG1GmKR1Ret0PMThjxDd8u.png)](https://asciinema.org/a/g75QG1GmKR1Ret0PMThjxDd8u)
 
-### 2 Inner Binary Representation of String
+### Inner Binary Representation of String
 
 This is a common trick in `elixir` . You have to concatenate the null byte `<<0>>` to a string that you want to see its inner binary representation like in the following way…
 
@@ -1357,7 +1094,7 @@ iex> “hello” <> <<0>>
 <<104, 101, 108, 108, 111, 0>>
 ```
 
-### 3 Initialisation of Multiple with Same value
+### Multiple Bindings of a value
 
 ```elixir
 iex> x = y = z = 5
@@ -1374,7 +1111,7 @@ See this in action here...
 
 [![asciicast](https://asciinema.org/a/135066.png)](https://asciinema.org/a/135066)
 
-### 4 Not Null implementation in Structs
+### Not Null implementation in Structs
 
 This is much like adding a not null constraint to the structs. When you try to define the struct with the absence of that key in the struct, it should raise an exception. Lets do that…  
 You have to use `@enforce_keys [<keys>]` while defining the struct…
@@ -1395,7 +1132,7 @@ See this in action... [![asciicast](https://asciinema.org/a/dYmXUDeUoQ2gneSwM7ti
 
 **Warning** Keep in mind `@enforce_keys` is a simple compile-time guarantee to aid developers when building structs. It is not enforced on updates and it does not provide any sort of value-validation. The above warning is from the [ORIGINAL DOCUMENTATION](https://hexdocs.pm/elixir/Kernel.html#defstruct/1-enforcing-keys)
 
-### 5 Check Whether Function is Exported or not
+### Check Whether Function is Exported or not
 
 Elixir provides `function_exported?/3` to achieve this…
 
@@ -1418,7 +1155,7 @@ false
 
 See this in action... [![asciicast](https://asciinema.org/a/135080.png)](https://asciinema.org/a/135080)
 
-### 6 Splitting the string with Pattern
+### Splitting the string with multiple Patterns
 
 We all know how to split a string with `String.split/2 function`. But you can also pass a **pattern** to match that over and over and splitting the string whenever it matches the **pattern**.
 
@@ -1437,13 +1174,14 @@ String.split string, [" ", "!", "-", "*"]
 
 The pattern is generated at run time. You can still validate with `:binary.compiled`
 
-### 7 Checking the closeness of strings
+### Checking the closeness of strings
 
 You can find the distance between the two strings using `String.jaro_distance/2`. This gives a float value in the range `0..1` Taking the `0` for no close and `1` is for exact closeness.
 
 ```elixir
 iex> String.jaro_distance "ping", "pong"
 0.8333333333333334
+
 iex> String.jaro_distance "color", "colour"
 0.9444444444444445
 iex> String.jaro_distance "foo", "foo"
@@ -1452,22 +1190,8 @@ iex> String.jaro_distance "foo", "foo"
 
 For the **FUN**, you can find your closeness with your name and your partner or lover in case if aren’t married. Hey… ! I am just kidding…. It is just an algorithm which is predefined where our love is undefined. Cheers …….. :\)
 
-### 8 last and first for Strings
 
-We know that `first` and `last` for `lists` gets you the element first and last respectively in the given list. Similarly, the strings give you the first and last `graphemes` in the given string.
-
-```elixir
-iex> string = "blackode medium"
-"blackode medium"
-iex> String.first string
-"b"
-iex> String.last string
-"m"
-```
-
-See this in action… [![asciicast](https://asciinema.org/a/vc3j3LXurrwWdskBME5vTDsYF.png)](https://asciinema.org/a/vc3j3LXurrwWdskBME5vTDsYF)
-
-### 9 Executing code Immediately after loading a Module
+### Executing code Immediately after loading a Module
 
 Elixir provides `@on_load` which accepts `atom` as function name in the same module or a `tuple` with function\_name and its arity like `{function_name, 0}`.
 
@@ -1490,7 +1214,7 @@ Elixir.Hello is loaded successfully
 
 You can see this in live here… [![asciicast](https://asciinema.org/a/GGmD9jUuRQQNherMh3fY5Zn4e.png)](https://asciinema.org/a/GGmD9jUuRQQNherMh3fY5Zn4e)
 
-### 10 Chain of \[ or \] ’ s  in guards
+### Chain of \[ or \] ’ s  in guard clauses with when
 
 This is about multiple guards in the same clause and writing `or` conditions with out using `or` We all know that `or` is used as a conjunction for two conditions resulting true if either one of them is true. Many of us writing the or conditions in the guard as following way…
 
@@ -1513,11 +1237,7 @@ See this in action… [![asciicast](https://asciinema.org/a/S64h7ydwzfMXsPgOeSfc
 
 See also [Elixir Style Guide](https://github.com/christopheradams/elixir_style_guide)
 
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
-
-## Part 7
-
-### 10\|&gt; Pretty Printing quoted Expression
+### Prett Printing of a quoted Expression
 
 #### Macro.to\_string \|&gt; IO.puts
 
@@ -1560,7 +1280,7 @@ To print the new lines, you pipe the string output from `Macro.to_string` to `IO
 
 [![asciicast](https://asciinema.org/a/161913.png)](https://asciinema.org/a/161913)
 
-### 9\|&gt; Finding the loaded files in iex and dynamic loading files on-fly
+### Finding the loaded files in iex and dynamic loading files on-fly
 
 1. **Finding the loaded files**
 
@@ -1637,7 +1357,7 @@ Let us assume that we have a file `hello.ex` in our current directory and open `
 
 [![asciicast](https://asciinema.org/a/161920.png)](https://asciinema.org/a/161920)
 
-### 8\|&gt; Providing deprecation reason with
+### Making Providing deprecation reason 
 
 **@deprecated**
 
@@ -1684,8 +1404,6 @@ Now, edit the file `lib/hello.ex` in the project with the following code
     end
 ```
 
- File Scrennshot Vim Editor
-
 ![](https://cdn-images-1.medium.com/max/2000/1*n0RNxQCvWwy3ZQeIKeG_ZQ.png)
 
 This file comprises of two modules `Hello` and `Printee` . The `Printee` module comprises of two functions `print/0` and `show/0` . Here purposely, `print/0` is considered as a deprecated function used inside the `Hello` module.
@@ -1706,9 +1424,9 @@ like in the following screenshot.
 
 [![asciicast](https://asciinema.org/a/161939.png)](https://asciinema.org/a/161939)
 
-### 7\|&gt; Module Creation with create function
+### Module Creation with create function
 
-#### **Module.create/3**
+#### Module.create/3
 
 As we all know `defmodule` is used to create a module. In similar, `Module.create/3` is also used to create a module.
 
@@ -1754,17 +1472,20 @@ Creating another module `Foo` with same module function
 
 [![asciicast](https://asciinema.org/a/162255.png)](https://asciinema.org/a/162255)
 
-### 6\|&gt; Finding the list of bound values in iex
+### Finding the list of bound values in iex
 
 #### binding
 
 ```elixir
     iex> binding
     []
+    
     iex> name = "blackode"
     "blackode"
+    
     iex> blog = "medium"
     "medium"
+    
     iex> binding
     [blog: "medium", name: "blackode"]
 ```
@@ -1834,60 +1555,7 @@ Try your own names as well and find your value with base
     'BLACKODE'
 ```
 
-### 4\|&gt; Extracting Process Information
-
-With the help of `Process.info` , we can extract the process information like linked processes etc…
-
-It is used in two different ways.
-
-**Note: \***We get the information if and only if process is alive\*
-
-Here, we try to create a process and linking it to the current process using `spawn_link` and will try to extract only linked processes. With no surprise, it should give the `self` output pid which is the current process in our case.
-
-```elixir
-    iex> pid = spawn_link fn -> receive do :name -> IO.puts "Hello Medium" end end
-    #PID<0.210.0>
-    iex> Process.info pid, :links                                                 
-    {:links, [#PID<0.85.0>]}
-    iex> self
-    #PID<0.85.0>
-```
-
-![image](https://cdn-images-1.medium.com/max/2000/1*hn9b7mxHSZkqxRfhnRMcJA.png)
-
-#### Extracting whole information
-
-```elixir
-    iex> Process.info pid
-```
-
-![image](https://cdn-images-1.medium.com/max/2000/1*0GfghGYjk_lqKuggf23sOA.png)
-
-### 3\|&gt; Forcing Keys in a Map parameter in functions
-
-Consider that you need to pass a **map** to a function and you have to ensure certain **keys** in the map then allow it to use the function body.
-
-You can achieve this using structs with `@enforce_keys` attribute. But, you can still use the pattern matching to the keys of a map.
-
-```elixir
-    defmodule Hello do
-      def hello(%{name: _name, blog: _blog} = map) do
-        IO.inspect map
-      end
-    end
-```
-
-Here, we don’t care how many keys present inside the map but we need atleast two keys `name`, `blog` to be present inside the map with any values.
-
-#### Execution screenshot
-
-![image](https://cdn-images-1.medium.com/max/2000/1*Me9434rZFV1lEmwZd2toNA.png)
-
-If you observe the screenshot, we tried to access the function by sending a map with single key parameter where it is not allowed then with two keys map and the keys are exactly pattern matched where it is allowed to use the function then eventually tried with more keys still it worked.
-
-> Thanks to pattern matching.
-
-### 2\|&gt; Universal Code base formatter
+### Universal Code base formatter
 
 Code formatting is easy now with the help of mix task `mix format`. It will take care of all you care about cleaning and refactoring as well. It can assure a clean code base or simply universal code base which maintains some useful standards. This really saves a lot of time.
 
@@ -1903,47 +1571,8 @@ To know more about the codebase formatting, check out my recent article on
 
 which explains all about using `mix format` task and its configuration in detail with screen shots of vivid examples.
 
-### 1\|&gt; Alias multiple modules in one line
 
-```elixir
-    alias Mod.{One, Two, Three}
-```
-
-is same as following
-
-```elixir
-    alias Mod.One
-    alias Mod.Two
-    alias Mod.Three
-```
-
-In similar fashion, you can alias your current module like
-
-```elixir
-    defmodule User.Authentication do
-      defstruct [:key, :token]
-
-      alias __MODULE__, as: Auth
-
-      .....
-    end
-```
-
-In general, with out using `alias __MODULE__` , we have to type full module name like `%User.Authentication{key: "key", token: ".."}` to define the struct but now simply `%Auth{key: "key", token: ".."}` will be the better approach.
-
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
-
-## Part 8
-
-I am using the following development stack at the moment of writing this article.
-
-```elixir
-Hex:    0.18.1
-Elixir: 1.7.3
-OTP:    21.1.1
-```
-
-## 1— Replacing a Key in Map
+## Replacing a Key in Map
 
 I know, you might be thinking why some one would do that. I too had the same feeling until I met with a requirement in one of my previous projects where I was asked to replace `address1` with `address` and some other keys as well. It is a huge one. I have to do change many keys as well.
 
@@ -1976,25 +1605,7 @@ Nothing , just pattern\_matching, the boon for functional programmers. The magic
 
 ![](https://cdn-images-1.medium.com/max/3816/1*rlUV3ulHJ_VN7bsOTsVi3A.png)
 
-## 2— Exchanging the Two values
-
-This is just to know things can be done in **elixir** for beginners.
-
-```elixir
-iex> x=5
-5
-iex> y=7
-7
-iex> {x,y}={y,x}
-{7,5}
-
-iex>x
-7
-iex>y
-5
-```
-
-## 3 — Filtering With match?
+## Filtering With match?
 
 As we know, `Enum.filter` will do the job based on the evaluation of a condition. But still, we can use the **pattern** to **filter** things.
 
@@ -2055,7 +1666,7 @@ Enum.filter(&match?(&1, {_, "elixir"},) )
 
 Let’s bump for more.
 
-## 4 — Bangpipe &lt;\|&gt; Left and Right
+## Bangpipe &lt;\|&gt; Left and Right
 
 As we know elixir is free language, where you can build anything you need. But, be careful It is just to show you something is achievable.
 
@@ -2109,45 +1720,8 @@ iex[8]  data <|> length
 
 ![\*\*Bangpipe\*\* \*\*&amp;lt;\|&amp;gt;\*\* \*\*execution\*\*](https://cdn-images-1.medium.com/max/3820/1*FDNBw77-79TpQNyoqphuZw.png)
 
-## 5 — mix hex.info
 
-This is highly recommended command to check out **what hex version** is installed and how it is **build** with.
-
-### Why is that useful?
-
-I have had experienced a bug in the project in my machine but not from my co-programmer though we work on the same project. The actual problem is we are using different hex versions. I came to know this by running mix hex.info in both systems. That saved a lot of time.
-
-```elixir
-mix hex.info
-```
-
-That gives the information about the hex and how it is built with.
-
-_mix hex.info_
-
-![mix hex.info](https://cdn-images-1.medium.com/max/3830/1*3AaPhLgTwlYDPX-tfkbslg.png)
-
-Similarly, we can find the information of any package like mix hex.info package\_name
-
-```elixir
-mix hex.info typex
-```
-
-_mix hex.info typex_
-
-![mix hex.info typex](https://cdn-images-1.medium.com/max/3822/1*KdnXWiWt8IiORNUgJIrUxQ.png)
-
-You can be more specific too by mentioning the version of the package.
-
-```elixir
-mix hex.info <<package_name>> <<version>>
-```
-
-Replace _**&lt;&gt;**_ and _**&lt;&gt;**_ as you required.
-
-![](https://cdn-images-1.medium.com/max/3816/1*wMQpaAe5P2ldTzCs09TzVw.png)
-
-## 6 — Finding the function callers in a project.
+## Finding the function callers in a project.
 
 _Let’s create a brief story here._
 
@@ -2189,73 +1763,7 @@ Explore more about **xref**
 mix help **xref**
 ```
 
-## 7 — Integer to Float Conversion
-
-You need this in rare cases to meet the type specifications while evaluating some kinda conditional code logic which results to a Boolean value.
-
-```elixir
-iex[12] 5.0==5             # types are not considered here
-true
-iex[13] 5.0===5          # types are strict considered here
-false
-```
-
-To convert integer to float I just divide the value by 1 using Kernel./ .
-
-```elixir
-iex[2] val = 5
-5
-iex[3] is_integer val
-true
-iex[4] val = val/1
-5.0
-iex[5] is_integer val
-false
-iex[6] is_float val
-true
-```
-
-_Kernel./ for convert anything to float_
-
-![Kernel./ for convert anything to float](https://cdn-images-1.medium.com/max/3830/1*P-jCkiLl8XWBiUmsgEpF1Q.png)
-
-## **8 — Sigils & Interpolation**
-
-As you already know sigils will help us in less typing for creative stuff. Consider the following example of defining a list of strings.
-
-```elixir
-sentence = ["I", "Love", "coding", "in", "elixir"]
-```
-
-That is a lot of typing here. We can improve this without typing any " marks with the help of ~w **sigil**.
-
-It returns a list of “words” split by whitespace. Character unescaping and **interpolation** happens for each word.
-
-```elixir
-sentence = ~w(I Love coding in elixir)
-```
-
-We can still use the interpolation as well. Suppose, I would like to make the language dynamic in the above sentence, I mean one loves elixir and other loves some other languages. So, let’s put the language in a variable lang and interpolate it over.
-
-```elixir
-iex[6] lang = "haskel"
-"haskel"
-iex[7] sentence = **~w(I Love #{lang})**
-["I", "Love", "haskel"]
-iex[8] lang = "Rust"
-"Rust"
-iex[9] sentence = ~w(I Love #{lang})
-["I", "Love", "Rust"]
-```
-
-What if you don’t want the interpolation? just use ~W a capital form.
-
-```elixir
-iex[10] sentence = ~W(I Love #{lang})
-["I", "Love", "\#{lang}"]
-```
-
-## 9 — Grouping of things
+### Using Enum.group_by beyohnd Grouping of things
 
 I have a collection of hotel\_bookings and I need to group them based on their booking status.
 
@@ -2313,93 +1821,13 @@ iex>  Enum.group_by(hotel_bookings, &Map.get(&1, :booking_status), &Map.get(&1, 
 }
 ```
 
-## 10 — Running your previous failed test only
+##  Running only failed tests 
 
 ```elixir
 mix test --failed
 ```
 
-## BONUS
-
-### Documentation Metadata
-
-In a project, there will be many programmers who write different modules. It will hard to find who has written what.
-
-To keep the track of such things, we can add metadata to the @moduledoc. So, we come to know the developer whom we can blame to queries that hit to your mind and kept eating it while using the module.
-
-```elixir
-@moduledoc "Wrong code leads you to the right bug "
-@moduledoc authors: ["blackode", "doe"], since: "1.1.2"
-```
-
-
-
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3) [Part 4](#part-4) [Part 5](#part-5) [Part 6](#part-6) [Part 7](#part-7) [Part 8](#part-8) [Part 9](#part-9)
-
-## Part 9
-
-I am using the following development stack at the moment of writing this article.
-
-```elixir
-Erlang/OTP 22 [erts-10.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [hipe]Elixir 1.9.1 (compiled with Erlang/OTP 20)
-```
-
-
-## 1. Float to binary — Required Decimal Precision
-
-The title of this tip may look odd, but it makes sense when you see the requirement. 
-I just developed a fake story.       
-
-I have a float number `3.4` and a friend of mine asked to convert that to a *binary* . 
-I said that it is so simple just use `to_string` function from `Kernel` module.
-
-```elixir
-float = 3.4
-to_string float
-"3.4"
-```
-
-
-Again, he asked me to not use `to_string` then I have shown him this
-
-```elixir
-float = 3.4
-float_string = inspect(float)
-"3.4"
-```
-
-
-
-He said that he don’t want to use any function then I have shown him this
-
-```elixir
-float = 3.4
-float_string = "#{float}"
-```
-
-
-
-He is still not convinced. He needs two **decimals** after a period. It’s like **"3.40"**
-
-After thinking a while, I revisited modules in `Elixir`. I found `Float.to_string` but it is not going to solve our problem.
-
-The `Erlang` is the place where you find more hidden treasures. If you need to convert a **float** to a **string** with an explicit **decimal** precision, use the built-in **Erlang** function `float_to_binary`
-
-```
-iex> :erlang.float_to_binary 3.4, decimals: 2  
-"3.40"
-
-iex> :erlang.float_to_binary 3.4, decimals: 5
-"3.40000"
-```
-
-**NOTE**
-
-The decimals option should be with in the range **0-253**
-
-
-
-## 2. Inspecting Only Derived Elements in Structs
+## Inspecting Only Derived Elements in Structs
 
 We can limit the keys to print while we **inspect** structs using `@derive` attribute.       
 
@@ -2417,7 +1845,7 @@ iex> %Address{}
 
 
 
-## 3. Enumeration & Merging two maps
+## Enumeration & Merging two maps
 
 Let’s  consider we have a requirement to modify a map and need to merge the  modified map with some other map. **API** developers always face this  situation like modifying the response according to the client.
 
@@ -2462,7 +1890,7 @@ end)
 
 
 
-## 4. Finding System Cpu’s available count
+### Finding System Schedulers available count
 
 ```elixir
 System.schedulers
@@ -2484,7 +1912,7 @@ $ nproc
 
 
 
-## 5. Finding Message Queue Length of a Process
+### Finding Message Queue Length of a Process
 
 We can know queue length of a process using `Process.info/2`
 
@@ -2540,7 +1968,7 @@ https://asciinema.org/a/271142?source=post_page-----7155532befd7----------------
 
 
 
-## 6. Loading project Module aliases (.iex.exs)
+### Loading project Module aliases (.iex.exs)
 
 We always try to execute the project module functions in `iex` interactive shell to check its behavior.
 
@@ -2555,38 +1983,7 @@ If file isn’t exist in the current directory, then it looks in your **home** d
 ![img](assets/images/elixir-tips-9/1_TaWgvSn-6HbYGS_Cu3Vsdg.png)
 
 
-
-## 7. Float to a binary with out precision
-
-Requirement `3.4 to “3”`
-
-To meet our needs, we need to convert the float to integer using `trunc` function from `Kernel` module and then passing it to the `to_string` function.
-
-Initially, I was doing like in the following which I don’t recommend you to do.
-
-## #Don’t Do
-
-```elixir
-float = 3.4
-float
-|> Kernel.trunc()
-|> to_string()
-```
-
-It is too much typing and have to use extra conversion here.
-
-We can achieve this using `:erlang.float_to_binary` passing `decimals` option.
-
-## #Do
-
-```elixir
-:erlang.float_to_binary(3.4, decimals: 0)
-"3"
-```
-
-
-
-## 8. Finding N slowest tests in mix application
+## Finding N slowest tests in mix application
 
 ```elixir
 mix test --slowest N  # N is integerexamplemix test --slowest 3
@@ -2598,7 +1995,7 @@ It automatically adds`--trace` and`--preload-modules`
 
 
 
-## 9. Re-Designing Custom data type inspection across the app
+### Re-Designing Custom data type inspection across the app
 
 It is simply implementing **Inspect** protocol for our custom type.
 
@@ -2637,7 +2034,7 @@ It is highly useful for custom structs where we can define what we need to see w
 
 
 
-## 10. Writable Temporary Directory
+### Writable Temporary Directory
 
 It is trivial that we need a temporary directory to write certain files and to delete later based on our code logic.
 
