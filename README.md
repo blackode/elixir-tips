@@ -136,6 +136,8 @@ iex> ~u/hello/l
 ["H", "E", "L", "L", "O"]
 ```
 
+<hr>
+
 ### Custom Error Definitions
 
 #### Define Custom Error
@@ -622,7 +624,7 @@ If you closely observe this it again returns the inspected data. So, we can use 
 
 You will see the following `output`
 
-```elixir
+```text
 before change: [1, 2, 3]
 after change: [2, 4, 6]
 3
@@ -858,6 +860,8 @@ iex> IO.inspect [97, 98], charlists: :as_lists
 ```
 
 Open `iex` and type `h Inspect.Opts`, you will see that Elixir does this kind of thing with other values as well, specifically **structs** and **binaries**.
+
+<hr>
 
 ### Fetching out file name and line number the expression is on
 
