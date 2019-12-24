@@ -413,7 +413,7 @@ For more details on color printing check [**Printex**](https://github.com/blacko
 
 ### Functional Macros as Guard Clauses
 
-We cannot make use of the functions as guard clauses in elixir. It means, `when` cannot accept cusotm defined functions. Consider the following lines of code…
+We cannot make use of the functions as guard clauses in elixir. It means, `when` cannot accept custom defined functions. Consider the following lines of code…
 
 ```elixir
 defmodule Hello do
