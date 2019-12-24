@@ -98,11 +98,21 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "erickgnavar",
+      "name": "Erick Navarro",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/862022?v=4",
+      "profile": "https://erick.navarro.io",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "elixir-tips",
   "projectOwner": "blackode",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
