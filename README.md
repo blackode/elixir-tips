@@ -2202,24 +2202,28 @@ Contribute to `Part-9` creating a new branch `Part-9` and make a pull request wi
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://blackode.in"><img src="https://avatars2.githubusercontent.com/u/9107477?v=4" width="100px;" alt="Ankanna"/><br /><sub><b>Ankanna</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=blackode" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=blackode" title="Tests">⚠️</a> <a href="#infra-blackode" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-    <td align="center"><a href="https://github.com/progsmile"><img src="https://avatars3.githubusercontent.com/u/6272773?v=4" width="100px;" alt="Denis Klimenko"/><br /><sub><b>Denis Klimenko</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Documentation">📖</a> <a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aprogsmile" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="http://www.techgaun.com"><img src="https://avatars2.githubusercontent.com/u/1886670?v=4" width="100px;" alt="Samar Dhwoj Acharya"/><br /><sub><b>Samar Dhwoj Acharya</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Atechgaun" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://praveenperera.com"><img src="https://avatars0.githubusercontent.com/u/1775346?v=4" width="100px;" alt="Praveen Perera"/><br /><sub><b>Praveen Perera</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Apraveenperera" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="http://leandrocp.com.br"><img src="https://avatars3.githubusercontent.com/u/36407?v=4" width="100px;" alt="Leandro Cesquini Pereira"/><br /><sub><b>Leandro Cesquini Pereira</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=leandrocp" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://remoter.net"><img src="https://avatars1.githubusercontent.com/u/8299599?v=4" width="100px;" alt="Maxim Dzhuliy"/><br /><sub><b>Maxim Dzhuliy</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Amax-si-m" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/evnu"><img src="https://avatars2.githubusercontent.com/u/224554?v=4" width="100px;" alt="Magnus"/><br /><sub><b>Magnus</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=evnu" title="Code">💻</a></td>
+    <td align="center"><a href="https://blackode.in"><img src="https://avatars2.githubusercontent.com/u/9107477?v=4" width="100px;" alt=""/><br /><sub><b>Ankanna</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=blackode" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=blackode" title="Tests">⚠️</a> <a href="#infra-blackode" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/progsmile"><img src="https://avatars3.githubusercontent.com/u/6272773?v=4" width="100px;" alt=""/><br /><sub><b>Denis Klimenko</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=progsmile" title="Documentation">📖</a> <a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aprogsmile" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://www.techgaun.com"><img src="https://avatars2.githubusercontent.com/u/1886670?v=4" width="100px;" alt=""/><br /><sub><b>Samar Dhwoj Acharya</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Atechgaun" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://praveenperera.com"><img src="https://avatars0.githubusercontent.com/u/1775346?v=4" width="100px;" alt=""/><br /><sub><b>Praveen Perera</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Apraveenperera" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://leandrocp.com.br"><img src="https://avatars3.githubusercontent.com/u/36407?v=4" width="100px;" alt=""/><br /><sub><b>Leandro Cesquini Pereira</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=leandrocp" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://remoter.net"><img src="https://avatars1.githubusercontent.com/u/8299599?v=4" width="100px;" alt=""/><br /><sub><b>Maxim Dzhuliy</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Amax-si-m" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/evnu"><img src="https://avatars2.githubusercontent.com/u/224554?v=4" width="100px;" alt=""/><br /><sub><b>Magnus</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=evnu" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/eksperimental"><img src="https://avatars2.githubusercontent.com/u/9133420?v=4" width="100px;" alt="Eksperimental"/><br /><sub><b>Eksperimental</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aeksperimental" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="http://syntazo.com"><img src="https://avatars3.githubusercontent.com/u/38292?v=4" width="100px;" alt="thanos vassilakis"/><br /><sub><b>thanos vassilakis</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Athanos" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/gmsecrieru"><img src="https://avatars0.githubusercontent.com/u/190883?v=4" width="100px;" alt="George Secrieru"/><br /><sub><b>George Secrieru</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Agmsecrieru" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/eksperimental"><img src="https://avatars2.githubusercontent.com/u/9133420?v=4" width="100px;" alt=""/><br /><sub><b>Eksperimental</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Aeksperimental" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://syntazo.com"><img src="https://avatars3.githubusercontent.com/u/38292?v=4" width="100px;" alt=""/><br /><sub><b>thanos vassilakis</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Athanos" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/gmsecrieru"><img src="https://avatars0.githubusercontent.com/u/190883?v=4" width="100px;" alt=""/><br /><sub><b>George Secrieru</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Agmsecrieru" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://erick.navarro.io"><img src="https://avatars3.githubusercontent.com/u/862022?v=4" width="100px;" alt=""/><br /><sub><b>Erick Navarro</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=erickgnavar" title="Documentation">📖</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
