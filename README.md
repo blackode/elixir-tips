@@ -2219,6 +2219,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://syntazo.com"><img src="https://avatars3.githubusercontent.com/u/38292?v=4" width="100px;" alt=""/><br /><sub><b>thanos vassilakis</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Athanos" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/gmsecrieru"><img src="https://avatars0.githubusercontent.com/u/190883?v=4" width="100px;" alt=""/><br /><sub><b>George Secrieru</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Agmsecrieru" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://erick.navarro.io"><img src="https://avatars3.githubusercontent.com/u/862022?v=4" width="100px;" alt=""/><br /><sub><b>Erick Navarro</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=erickgnavar" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://twitter.com/irisTa56"><img src="https://avatars1.githubusercontent.com/u/27466252?v=4" width="100px;" alt=""/><br /><sub><b>Takayuki Kobayashi</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=irisTa56" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=irisTa56" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
