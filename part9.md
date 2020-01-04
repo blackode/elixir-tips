@@ -153,7 +153,7 @@ $ nproc
 We can know queue length of a process using `Process.info/2`
 
 ```elixir
-Process.info(pid, :message_que_len)
+Process.info(pid, :message_queue_len)
 ```
 
 Let’s check that
@@ -168,7 +168,7 @@ Above  lines will send two messages to the current process. As we did not  write
 Now we will check the messages queue length of the current process `self`
 
 ```elixir
-iex> Process.info(self, :message_que_len)
+iex> Process.info(self, :message_queue_len)
 {:message_queue_len, 2}
 ```
 
