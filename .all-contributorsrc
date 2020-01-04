@@ -107,6 +107,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "irisTa56",
+      "name": "Takayuki Kobayashi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/27466252?v=4",
+      "profile": "https://twitter.com/irisTa56",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
