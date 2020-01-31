@@ -290,7 +290,7 @@ Those numbers helps us to reuse the result with `v/1` function which has been lo
 ```elixir
 iex(1)> list = [1, 2, 3, 4, 5]
 [1, 2, 3, 4, 5]
-iex(2)> double_lsit = Enum.map(list, &(&1*2))
+iex(2)> double_list = Enum.map(list, &(&1*2))
 [2, 4, 6, 8, 10]
 iex(3)> v 1
 [1, 2, 3, 4, 5]
