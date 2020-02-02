@@ -411,3 +411,4 @@ In general, with out using `alias __MODULE__` , we have to type full module name
 
 ## Happy Coding!
 
+[Prev](part6.md) [Next](part8.md)

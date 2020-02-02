@@ -183,3 +183,4 @@ Thanks for Reading.
 
 If you feel they are useful...
 
+[Prev](part5.md) [Next](part7.md)
