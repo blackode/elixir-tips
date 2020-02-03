@@ -220,3 +220,4 @@ result = :input
 
 This above tip is from [qhwa](https://medium.com/@qhwa_85848)
 
+[Next](part2.md)

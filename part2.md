@@ -210,3 +210,5 @@ For more details on color printing check [**Printex**](https://github.com/blacko
 
 ![img](https://cdn-images-1.medium.com/max/1000/0*Qskz94BcqMSyPAuH.png)
 
+
+[Prev](part1.md) [Next](part3.md)
