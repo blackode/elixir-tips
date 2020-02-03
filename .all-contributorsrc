@@ -117,6 +117,16 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "maximemenager",
+      "name": "maximemenager",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/43468959?v=4",
+      "profile": "https://github.com/maximemenager",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
