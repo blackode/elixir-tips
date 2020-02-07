@@ -50,6 +50,10 @@ You can read specific parts with following links...
     <a href="part9.md">
     <img class="elixirtip-img" src="assets/images/parts/elixir_tips_9.jpg" width="400px"/>
     </a>
+
+    <a href="part10.md">
+    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_10.jpg" width="400px"/>
+    </a>
 </div>
 
  </div>
