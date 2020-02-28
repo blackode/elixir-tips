@@ -127,7 +127,7 @@
         "code"
       ]
     },
-    {      
+    {
       "login": "maximemenager",
       "name": "maximemenager",
       "avatar_url": "https://avatars2.githubusercontent.com/u/43468959?v=4",
@@ -135,6 +135,16 @@
       "contributions": [
         "code",
         "bug"
+      ]
+    },
+    {
+      "login": "tt67wq",
+      "name": "tt67wq",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/12907812?v=4",
+      "profile": "https://blog.tt67wq.top/",
+      "contributions": [
+        "bug",
+        "doc"
       ]
     }
   ],
