@@ -2225,7 +2225,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://twitter.com/irisTa56"><img src="https://avatars1.githubusercontent.com/u/27466252?v=4" width="100px;" alt=""/><br /><sub><b>Takayuki Kobayashi</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=irisTa56" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/commits?author=irisTa56" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://vasuadari.com"><img src="https://avatars1.githubusercontent.com/u/3678553?v=4" width="100px;" alt=""/><br /><sub><b>Vasu Adari</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=vasuadari" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/maximemenager"><img src="https://avatars2.githubusercontent.com/u/43468959?v=4" width="100px;" alt=""/><br /><sub><b>maximemenager</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/commits?author=maximemenager" title="Code">💻</a> <a href="https://github.com/blackode/elixir-tips/issues?q=author%3Amaximemenager" title="Bug reports">🐛</a></td>
-
+  </tr>
+  <tr>
+    <td align="center"><a href="https://blog.tt67wq.top/"><img src="https://avatars3.githubusercontent.com/u/12907812?v=4" width="100px;" alt=""/><br /><sub><b>tt67wq</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Att67wq" title="Bug reports">🐛</a> <a href="https://github.com/blackode/elixir-tips/commits?author=tt67wq" title="Documentation">📖</a></td>
   </tr>
 </table>
 
