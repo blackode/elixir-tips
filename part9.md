@@ -189,7 +189,7 @@ Did you see that, we have only one message in queue as we handled `:hello` messa
 Again, we handle the left over message `:hi` and this time the length will be `0` Of course it will be as there are no more messages to handle.
 
 ```elixir
-iex> receive do: (:hello -> "I GOT HI")
+iex> receive do: (:hi -> "I GOT HI")
 "I GOT HI"
 
 iex> Process.info(self, :message_queue_len)
