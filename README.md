@@ -359,7 +359,7 @@ iex> String.to_float value
 ```
 <hr>
 
-### Must Know the Diffrences of Map keys as :atoms and binary\(strings\)
+### Must Know the Differences of Map keys as :atoms and binary\(strings\)
 
 Before I let you to use this tip, I just want to remind you that **:atoms** are not garbage collected. Atom keys are great! If you have a defined atoms, you are in no danger. What you should not do is converting user supplied input into atoms without sanitizing them first because it can lead to out of memory. **You should also be cautious if you create dynamic atoms in your code.**
 
