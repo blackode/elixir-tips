@@ -2228,6 +2228,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://blog.tt67wq.top/"><img src="https://avatars3.githubusercontent.com/u/12907812?v=4" width="100px;" alt=""/><br /><sub><b>tt67wq</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Att67wq" title="Bug reports">🐛</a> <a href="https://github.com/blackode/elixir-tips/commits?author=tt67wq" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://wildanfathan.com"><img src="https://avatars3.githubusercontent.com/u/10251361?v=4" width="100px;" alt=""/><br /><sub><b>Wildan Fathan</b></sub></a><br /><a href="https://github.com/blackode/elixir-tips/issues?q=author%3Af4th4n" title="Bug reports">🐛</a> <a href="https://github.com/blackode/elixir-tips/commits?author=f4th4n" title="Documentation">📖</a></td>
   </tr>
 </table>
 

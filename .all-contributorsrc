@@ -146,6 +146,16 @@
         "bug",
         "doc"
       ]
+    },
+    {
+      "login": "f4th4n",
+      "name": "Wildan Fathan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10251361?v=4",
+      "profile": "https://wildanfathan.com",
+      "contributions": [
+        "bug",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
