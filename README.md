@@ -655,6 +655,14 @@ square = & &1 * &1
 
 The above style is much better than previous . You can also use `fn` to define anonymous functions.
 
+Or use `Kernel.then/2` function since 1.12.0
+
+```elixir
+[1, 2, 3, 4, 5]
+|> length()
+|> then(& &1 * &1)
+```
+
 <hr>
 
 ### Retrieve Character Integer Codepoints — ?
