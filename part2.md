@@ -1,4 +1,4 @@
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_2.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips2.jpg"/>
 
 ## **1  Code Grouping**
 

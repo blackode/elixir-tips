@@ -1,4 +1,4 @@
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_4.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips4.jpg"/>
 
 ## 1. Running Multiple Mix Tasks
 

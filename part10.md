@@ -1,5 +1,5 @@
 
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_10.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips10.jpg"/>
 
 
 It is a great pleasure to come up with another set of tips that you may or may 

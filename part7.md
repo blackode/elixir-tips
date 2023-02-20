@@ -1,5 +1,5 @@
 
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_7.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips7.jpg"/>
 
 ## 10\|&gt; Pretty Printing quoted Expression
 

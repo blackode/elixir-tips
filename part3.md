@@ -1,4 +1,4 @@
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_3.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips3.jpg"/>
 
 ## 1. Functions as Guard Clauses
 

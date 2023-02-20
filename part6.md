@@ -1,5 +1,5 @@
 
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_6.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips6.jpg"/>
 
 ```text
 Elixir version 1.5.1 & Erlang otp version 20

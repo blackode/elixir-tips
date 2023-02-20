@@ -1,4 +1,4 @@
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_9.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips9.jpg"/>
 
 I am using the following development stack at the moment of writing this article.
 

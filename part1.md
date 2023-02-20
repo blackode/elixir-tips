@@ -1,4 +1,4 @@
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_1.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips1.jpg"/>
 
 ## 1. Multiple \[ OR \]
 

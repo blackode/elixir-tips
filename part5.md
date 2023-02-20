@@ -1,4 +1,4 @@
-<img class="elixirtip-img" src="assets/images/parts/elixir_tips_5.jpg"/>
+<img class="elixirtip-img" src="assets/images/parts/tips5.jpg"/>
 
 ### 1. Fetching the default Mix Compilers list
 
