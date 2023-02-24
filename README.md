@@ -12,7 +12,7 @@ You can read specific parts with following links...
 <div class="elixir-tips-parts">
   <div class="elixir-tips-section">
     <a href="part1.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_1.jpg" width="400px"/>
+    <img class="elixirtip-img" src="./assets/images/parts/tips1.jpg" width="400px"/>
     </a>
     <a href="part2.md">
     <img class="elixirtip-img" src="assets/images/parts/elixir_tips_2.jpg" width="400px"/>
