@@ -12,46 +12,46 @@ You can read specific parts with following links...
 <div class="elixir-tips-parts">
   <div class="elixir-tips-section">
     <a href="part1.md">
-    <img class="elixirtip-img" src="./assets/images/parts/tips1.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips1.jpg" width="400px"/>
     </a>
     <a href="part2.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_2.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips2.jpg" width="400px"/>
     </a>
   </div>
 
   <div class="elixir-tips-section">
     <a href="part3.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_3.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips3.jpg" width="400px"/>
     </a>
     <a href="part4.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_4.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips4.jpg" width="400px"/>
     </a>
   </div>
 
   <div class="elixir-tips-section">
    <a href="part5.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_5.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips5.jpg" width="400px"/>
     </a>
     <a href="part6.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_6.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips6.jpg" width="400px"/>
     </a>
   </div>
 
   <div class="elixir-tips-section">
     <a href="part7.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_7.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips7.jpg" width="400px"/>
     </a>
     <a href="part8.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_8.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips8.jpg" width="400px"/>
     </a>
 </div>
 
   <div class="elixir-tips-section">
     <a href="part9.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_9.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips9.jpg" width="400px"/>
     </a>
     <a href="part10.md">
-    <img class="elixirtip-img" src="assets/images/parts/elixir_tips_10.jpg" width="400px"/>
+    <img class="elixirtip-img" src="assets/images/parts/tips10.jpg" width="400px"/>
     </a>
 </div>
 
